@@ -1,0 +1,9 @@
+/* Customizações extras */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f5f5f5;
+}
+
+a.btn {
+    transition: all 0.3s ease;
+}

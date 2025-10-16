@@ -1,0 +1,20 @@
+Estrutura do projeto Smart Life Brasil
+---------------------------------------
+
+index.html               → Página inicial com menu, busca e destaques
+sobre.html               → Quem somos / proposta
+contato.html             → Redes sociais e formulário de contato (Formspree)
+
+produtos/                → Páginas individuais de produtos
+  ├── alexa-echo-pop.html
+  ├── interruptor-smart.html
+  ├── camera-wifi.html
+
+assets/                  → Recursos do site
+  ├── css/               → Estilos e Tailwind customizado
+  ├── js/                → Scripts de interação
+  ├── img/               → Imagens e ícones
+
+Outros arquivos
+  ├── .gitignore
+  ├── estrutura.txt

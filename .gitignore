@@ -1,0 +1,20 @@
+# Sistema / Cache / Temporários
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+
+# Node / Build (se usar futuramente)
+node_modules/
+dist/
+build/
+
+# IDEs e editores
+.vscode/
+.idea/
+*.code-workspace
+
+# Arquivos locais
+*.env
+*.bak
+*.zip

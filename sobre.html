@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sobre - Smart Life Brasil</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen">
+
+  <!-- Header -->
+  <header class="bg-white shadow-md p-4 flex justify-between items-center">
+    <h1 class="text-xl font-bold"><a href="index.html">Smart Life Brasil</a></h1>
+    <nav>
+      <ul class="hidden md:flex space-x-6">
+        <li><a href="index.html" class="text-gray-700 hover:text-blue-500">Início</a></li>
+        <li><a href="sobre.html" class="text-blue-600 font-semibold">Sobre</a></li>
+        <li><a href="contato.html" class="text-gray-700 hover:text-blue-500">Contato</a></li>
+      </ul>
+      <button class="md:hidden text-gray-700 focus:outline-none" id="menu-btn">☰</button>
+    </nav>
+  </header>
+
+  <!-- Conteúdo -->
+  <main class="flex-grow max-w-4xl mx-auto p-6">
+    <h2 class="text-3xl font-bold mb-4 text-center">Sobre a Smart Life Brasil</h2>
+    <p class="text-lg text-gray-700 leading-relaxed mb-4 text-justify">
+      A <strong>Smart Life Brasil</strong> nasceu da paixão por tecnologia e inovação aplicada ao dia a dia. 
+      Nosso objetivo é conectar você às melhores soluções inteligentes para transformar sua casa, seu escritório e sua vida.
+    </p>
+
+    <p class="text-lg text-gray-700 leading-relaxed mb-4 text-justify">
+      Reunimos em um só lugar produtos selecionados das principais lojas online, para que você possa comparar, 
+      escolher e comprar com confiança. Trabalhamos com programas de afiliados de grandes marketplaces, garantindo transparência e segurança em todas as indicações.
+    </p>
+
+    <p class="text-lg text-gray-700 leading-relaxed mb-4 text-justify">
+      Queremos que cada ambiente se torne mais prático, conectado e eficiente — e que a tecnologia trabalhe a favor do seu conforto.
+    </p>
+
+    <div class="mt-6 text-center">
+      <a href="index.html" class="bg-blue-500 text-white px-6 py-3 rounded hover:bg-blue-600 transition">Ver Produtos</a>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white p-4 mt-10 text-center">
+    <p>&copy; 2025 Smart Life Brasil</p>
+    <p>Produtos inteligentes para sua casa, seu escritório e sua vida!</p>
+  </footer>
+
+  <!-- Script Menu Mobile -->
+  <script>
+    const btn = document.getElementById('menu-btn');
+    btn.addEventListener('click', () => {
+      const ul = document.querySelector('header nav ul');
+      ul.classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>
