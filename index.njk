@@ -2,10 +2,63 @@
 layout: base.njk
 title: Smart Life Brasil - Produtos Inteligentes
 description: Produtos inteligentes para sua casa, seu negócio e sua vida! Encontre as melhores ofertas de dispositivos smart.
-script: /assets/home.js
 customCSS: |
   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap');
   body { font-family: 'Poppins', sans-serif; }
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+customScript: |
+  // === FILTROS ===
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const filtro = btn.dataset.filter;
+      const produtosCards = document.querySelectorAll('.grid-produtos > div');
+      
+      produtosCards.forEach(p => {
+        if (filtro === 'all' || p.dataset.categoria === filtro) {
+          p.classList.remove('hidden');
+        } else {
+          p.classList.add('hidden');
+        }
+      });
+      
+      // Destaca o botão ativo
+      filterBtns.forEach(b => {
+        b.classList.remove('ring-2', 'ring-blue-300', 'bg-blue-600');
+        b.classList.add('bg-blue-500');
+      });
+      btn.classList.add('ring-2', 'ring-blue-300', 'bg-blue-600');
+      btn.classList.remove('bg-blue-500');
+    });
+  });
+
+  // === PESQUISA ===
+  const searchInput = document.getElementById('search-input');
+  const searchBtn = document.getElementById('search-btn');
+
+  function pesquisar() {
+    const termo = searchInput.value.toLowerCase();
+    const produtosCards = document.querySelectorAll('.grid-produtos > div');
+    
+    produtosCards.forEach(p => {
+      const nome = p.querySelector('h3').textContent.toLowerCase();
+      if (nome.includes(termo)) {
+        p.classList.remove('hidden');
+      } else {
+        p.classList.add('hidden');
+      }
+    });
+  }
+
+  searchBtn.addEventListener('click', pesquisar);
+  searchInput.addEventListener('keyup', e => {
+    if (e.key === 'Enter') pesquisar();
+  });
 
 ---
 
@@ -35,8 +88,70 @@ customCSS: |
   <!-- Grid de produtos -->
   <section id="produtos">
     <h2 class="text-2xl font-bold mb-6">Ofertas em destaque</h2>
+
+    <!-- Mostra quantidade de produtos -->
+    <p class="text-gray-600 mb-4">{{ collections.produto.length }} produto(s) encontrado(s)</p>
+    
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 grid-produtos">
-      <!-- Produtos carregados via JS -->
+      
+      {% for produto in collections.produto %}
+      <div class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col transform transition duration-300 hover:scale-105 hover:shadow-xl" 
+           data-categoria="{{ produto.data.categoria or 'geral' }}">
+        
+        <!-- Imagem -->
+        <div class="relative">
+          <img src="{{ produto.data.imagemCard or produto.data.imagens[0].src or '/assets/img/placeholder.jpg' }}" 
+               alt="{{ produto.data.produtoNome }}" 
+               class="w-full h-48 object-contain bg-gray-100 p-2">
+          
+          <!-- Badge NOVO (se tiver) -->
+          {% if produto.data.novo %}
+          <span class="absolute top-2 right-2 bg-red-500 text-white px-2 py-1 text-xs font-bold rounded">NOVO</span>
+          {% endif %}
+        </div>
+        
+        <!-- Conteúdo -->
+        <div class="p-4 flex flex-col flex-grow">
+          <!-- Marca -->
+          {% if produto.data.marca %}
+          <p class="text-xs text-gray-500 uppercase tracking-wide mb-1">{{ produto.data.marca }}</p>
+          {% endif %}
+          
+          <!-- Nome -->
+          <h3 class="text-lg font-bold mb-2 leading-tight">{{ produto.data.produtoNome }}</h3>
+          
+          <!-- Descrição -->
+          <p class="text-gray-600 text-sm mb-4 flex-grow line-clamp-3">
+            {{ produto.data.description or produto.data.produtoDescricao or "Descrição não disponível" }}
+          </p>
+          
+          <!-- Preço -->
+          {% if produto.data.preco %}
+          <p class="text-xl font-bold text-green-600 mb-3">R$ {{ produto.data.preco }}</p>
+          {% endif %}
+          
+          <!-- Avaliações (se tiver) -->
+          {% if produto.data.avaliacoes %}
+          <p class="text-xs text-gray-500 mb-3">{{ produto.data.avaliacoes }}</p>
+          {% endif %}
+          
+          <!-- Botão -->
+          <a href="{{ produto.url }}" 
+             class="bg-blue-500 text-white px-4 py-2 rounded text-center hover:bg-blue-600 transition font-semibold">
+            Ver Produto
+          </a>
+        </div>
+      </div>
+      {% endfor %}
+      
+      <!-- Mensagem se não houver produtos -->
+      {% if collections.produto.length == 0 %}
+      <div class="col-span-full text-center py-12 bg-white rounded-lg shadow-md">
+        <p class="text-gray-500 text-lg mb-2">😕 Nenhum produto cadastrado ainda.</p>
+        <p class="text-gray-400 text-sm">Adicione produtos com <code class="bg-gray-100 px-2 py-1 rounded">tags: ["produto"]</code></p>
+      </div>
+      {% endif %}
+
     </div>
   </section>
 </main>
