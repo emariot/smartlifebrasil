@@ -1,0 +1,96 @@
+---
+layout: base.njk
+title: Contato - Smart Life Brasil
+description: Entre em contato conosco. Tire dúvidas, sugira produtos ou faça parcerias com a Smart Life Brasil.
+---
+
+<main class="flex-grow max-w-3xl mx-auto p-6 mt-6">
+  <h2 class="text-3xl font-bold mb-4 text-center">Entre em Contato</h2>
+  <p class="text-lg text-gray-700 mb-6 text-center">
+    Quer tirar dúvidas, sugerir produtos ou fazer parcerias? Fale conosco! 
+  </p>
+
+  <!-- Formulário (Netlify Forms ou Formspree) -->
+  <form 
+    name="contato" 
+    method="POST" 
+    data-netlify="true" 
+    netlify-honeypot="bot-field"
+    action="/obrigado/"
+    class="bg-white shadow-md rounded-lg p-6 space-y-4">
+    
+    <!-- Campo oculto para Netlify Forms -->
+    <input type="hidden" name="form-name" value="contato" />
+    
+    <!-- Honeypot para anti-spam -->
+    <p class="hidden">
+      <label>Não preencha se for humano: <input name="bot-field" /></label>
+    </p>
+
+    <div>
+      <label for="nome" class="block text-gray-700 font-medium">Nome</label>
+      <input 
+        type="text" 
+        id="nome" 
+        name="nome" 
+        required 
+        class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+    </div>
+
+    <div>
+      <label for="email" class="block text-gray-700 font-medium">E-mail</label>
+      <input 
+        type="email" 
+        id="email" 
+        name="email" 
+        required 
+        class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+    </div>
+
+    <div>
+      <label for="assunto" class="block text-gray-700 font-medium">Assunto</label>
+      <select 
+        id="assunto" 
+        name="assunto" 
+        class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+        <option value="duvida">Dúvida sobre produto</option>
+        <option value="sugestao">Sugestão de produto</option>
+        <option value="parceria">Proposta de parceria</option>
+        <option value="outro">Outro assunto</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="mensagem" class="block text-gray-700 font-medium">Mensagem</label>
+      <textarea 
+        id="mensagem" 
+        name="mensagem" 
+        rows="5" 
+        required 
+        placeholder="Escreva sua mensagem aqui..."
+        class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+    </div>
+
+    <button 
+      type="submit" 
+      class="w-full bg-blue-500 text-white py-3 rounded hover:bg-blue-600 transition font-semibold">
+      Enviar Mensagem
+    </button>
+  </form>
+
+  <!-- Redes Sociais -->
+  <div class="text-center mt-8">
+    <p class="text-gray-700 mb-4 font-medium">Ou entre em contato pelas redes sociais:</p>
+    <div class="flex justify-center gap-6 text-3xl">
+      <a href="https://instagram.com/smartlifebrasil" target="_blank" rel="noopener noreferrer" class="hover:scale-110 transition-transform" title="Instagram">📸</a>
+      <a href="https://facebook.com/smartlifebrasil" target="_blank" rel="noopener noreferrer" class="hover:scale-110 transition-transform" title="Facebook">📘</a>
+      <a href="https://wa.me/5541999999999" target="_blank" rel="noopener noreferrer" class="hover:scale-110 transition-transform" title="WhatsApp">💬</a>
+      <a href="mailto:contato@smartlifebrasil.com.br" class="hover:scale-110 transition-transform" title="E-mail">✉️</a>
+    </div>
+  </div>
+
+  <!-- Informações adicionais -->
+  <div class="mt-8 text-center text-gray-600">
+    <p class="text-sm">Respondemos em até 24 horas úteis</p>
+  </div>
+</main>

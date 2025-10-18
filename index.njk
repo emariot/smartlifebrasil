@@ -1,0 +1,42 @@
+---
+layout: base.njk
+title: Smart Life Brasil - Produtos Inteligentes
+description: Produtos inteligentes para sua casa, seu negócio e sua vida! Encontre as melhores ofertas de dispositivos smart.
+script: /assets/home.js
+customCSS: |
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap');
+  body { font-family: 'Poppins', sans-serif; }
+
+---
+
+<!-- Banner / slogan -->
+<section class="text-center py-6 bg-gray-100">
+  <h2 class="text-2xl font-bold">Produtos inteligentes para sua casa, seu negócio e sua vida!</h2>
+</section>
+
+<!-- Main -->
+<main class="max-w-7xl mx-auto p-4">
+  <!-- Menu de filtros + pesquisa -->
+  <section class="mb-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+    <!-- Filtros -->
+    <div class="flex flex-wrap gap-2">
+      <button class="filter-btn bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600" data-filter="casa">Sua Casa</button>
+      <button class="filter-btn bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600" data-filter="escritorio">Seu Negócio</button>
+      <button class="filter-btn bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600" data-filter="vida">Sua Vida</button>
+      <button class="filter-btn bg-gray-300 text-gray-700 px-4 py-2 rounded hover:bg-gray-400" data-filter="all">Todos</button>
+    </div>
+    <!-- Barra de pesquisa -->
+    <div class="flex">
+      <input type="text" id="search-input" placeholder="Pesquisar produto..." class="border border-gray-300 rounded-l px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+      <button id="search-btn" class="bg-blue-500 text-white px-4 py-2 rounded-r hover:bg-blue-600">🔍</button>
+    </div>
+  </section>
+  
+  <!-- Grid de produtos -->
+  <section id="produtos">
+    <h2 class="text-2xl font-bold mb-6">Ofertas em destaque</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 grid-produtos">
+      <!-- Produtos carregados via JS -->
+    </div>
+  </section>
+</main>

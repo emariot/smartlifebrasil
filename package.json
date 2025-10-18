@@ -1,0 +1,32 @@
+{
+  "name": "smart_life_brasil",
+  "version": "1.0.0",
+  "description": "Smart Life Brasil - E-commerce de produtos inteligentes com foco em soluções para casa, escritório e estilo de vida. Oferece comparativos de preços e links de afiliados.",
+  "scripts": {
+    "dev": "eleventy --serve",
+    "build": "eleventy",
+    "start": "eleventy --serve",
+    "clean": "rimraf _site"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emariot/smartlifebrasil.git"
+  },
+  "keywords": [
+    "ecommerce",
+    "produtos-inteligentes",
+    "automacao",
+    "smart-home",
+    "afiliados",
+    "tecnologia"
+  ],
+  "author": "Smart Life Brasil",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/emariot/smartlifebrasil/issues"
+  },
+  "homepage": "https://github.com/emariot/smartlifebrasil#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.2"
+  }
+}

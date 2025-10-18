@@ -1,20 +1,33 @@
-Estrutura do projeto Smart Life Brasil
----------------------------------------
-
-index.html               → Página inicial com menu, busca e destaques
-sobre.html               → Quem somos / proposta
-contato.html             → Redes sociais e formulário de contato (Formspree)
-
-produtos/                → Páginas individuais de produtos
-  ├── alexa-echo-pop.html
-  ├── interruptor-smart.html
-  ├── camera-wifi.html
-
-assets/                  → Recursos do site
-  ├── css/               → Estilos e Tailwind customizado
-  ├── js/                → Scripts de interação
-  ├── img/               → Imagens e ícones
-
-Outros arquivos
-  ├── .gitignore
-  ├── estrutura.txt
+smart_life_brasil/
+├── _includes/              ← Templates reutilizáveis
+│   ├── base.njk
+│   ├── header.njk
+│   ├── footer.njk
+│   └── produto.njk        ← (opcional, para padronizar produtos)
+│
+├── produtos/
+│   └── casa/
+│       └── lampadas-inteligentes/
+│           └── elgin/
+│               └── smart-color-led.njk
+│
+├── assets/
+│   ├── img/
+│   ├── home.js            ← Script da home
+│   └── style.css          ← CSS customizado
+│
+├── data/                  ← JSONs dos produtos
+│   ├── casa/
+│   ├── negocios/
+│   └── vida/
+│
+├── _site/                 ← GERADO (não versionar)
+│
+├── .eleventy.js          ← Config do Eleventy
+├── .gitignore            ← Ignorar node_modules e _site
+├── package.json          ← Dependências e scripts
+├── index.njk             ← Home
+├── sobre.njk
+├── contato.njk
+├── obrigado.njk
+└── README.md

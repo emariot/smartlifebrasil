@@ -1,0 +1,205 @@
+---
+layout: base.njk
+customScript: |
+  // Carrossel de imagens
+  const carousel = document.getElementById('carousel');
+  if (carousel && carousel.children.length > 1) {
+    const total = carousel.children.length;
+    let index = 0;
+
+    document.getElementById('next').onclick = () => {
+      index = (index + 1) % total;
+      carousel.style.transform = `translateX(-${index * 100}%)`;
+    };
+
+    document.getElementById('prev').onclick = () => {
+      index = (index - 1 + total) % total;
+      carousel.style.transform = `translateX(-${index * 100}%)`;
+    };
+    
+    // Auto-play (opcional)
+    setInterval(() => {
+      index = (index + 1) % total;
+      carousel.style.transform = `translateX(-${index * 100}%)`;
+    }, 5000); // Troca a cada 5 segundos
+  }
+---
+
+<main class="max-w-7xl mx-auto p-4 mt-6">
+  
+  <!-- Breadcrumb (navegação) -->
+  <nav class="text-sm mb-4 text-gray-600">
+    <a href="/" class="hover:text-blue-500">Início</a>
+    <span class="mx-2">/</span>
+    <a href="/produtos/" class="hover:text-blue-500">Produtos</a>
+    {% if categoria %}
+    <span class="mx-2">/</span>
+    <span class="capitalize">{{ categoria }}</span>
+    {% endif %}
+  </nav>
+
+  <div class="flex flex-col lg:flex-row gap-8">
+    
+    <!-- Coluna Esquerda: Imagens e Vídeo -->
+    <div class="lg:w-1/2 space-y-4">
+      
+      <!-- Carrossel de Imagens -->
+      {% if imagens and imagens.length > 0 %}
+      <div class="relative w-full overflow-hidden rounded-lg shadow-md bg-white">
+        <div id="carousel" class="flex transition-transform duration-500">
+          {% for img in imagens %}
+          <img src="{{ img.src }}" 
+               class="w-full flex-shrink-0 object-contain bg-white p-4" 
+               style="height: 400px;"
+               alt="{{ img.alt or produtoNome }}">
+          {% endfor %}
+        </div>
+        
+        {% if imagens.length > 1 %}
+        <!-- Botões de navegação -->
+        <button id="prev" class="absolute left-3 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full shadow-lg transition">
+          ←
+        </button>
+        <button id="next" class="absolute right-3 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full shadow-lg transition">
+          →
+        </button>
+        
+        <!-- Indicadores -->
+        <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+          {% for img in imagens %}
+          <div class="w-2 h-2 rounded-full bg-white/50"></div>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </div>
+      {% endif %}
+
+      <!-- Vídeo do YouTube -->
+      {% if video %}
+      <div>
+        <h3 class="text-lg font-semibold mb-2">📺 Vídeo explicativo</h3>
+        <div class="relative w-full rounded-lg overflow-hidden shadow-md" style="padding-bottom: 56.25%;">
+          <iframe class="absolute top-0 left-0 w-full h-full"
+            src="{{ video }}"
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+      {% endif %}
+    </div>
+
+    <!-- Coluna Direita: Informações do Produto -->
+    <div class="lg:w-1/2 flex flex-col gap-4">
+      
+      <!-- Nome do Produto -->
+      <h1 class="text-3xl font-bold text-gray-800">{{ produtoNome }}</h1>
+      
+      <!-- Marca (se tiver) -->
+      {% if marca %}
+      <div class="text-sm text-gray-500">
+        Marca: <span class="font-semibold text-gray-700">{{ marca }}</span>
+      </div>
+      {% endif %}
+
+      <!-- Descrição -->
+      <p class="text-gray-700 leading-relaxed">{{ produtoDescricao }}</p>
+
+      <!-- Preço (se tiver) -->
+      {% if preco %}
+      <div class="text-3xl font-bold text-green-600">
+        R$ {{ preco }}
+      </div>
+      {% endif %}
+
+      <!-- Botões de Compra -->
+      <div class="flex flex-col sm:flex-row gap-4 mt-4">
+        {% if linkAmazon %}
+        <a href="{{ linkAmazon }}" 
+           target="_blank" 
+           rel="noopener noreferrer nofollow"
+           class="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 text-center font-semibold transition shadow-md hover:shadow-lg">
+          🛒 Comprar na Amazon
+        </a>
+        {% endif %}
+        
+        {% if linkMercadoLivre %}
+        <a href="{{ linkMercadoLivre }}" 
+           target="_blank" 
+           rel="noopener noreferrer nofollow"
+           class="bg-yellow-400 text-gray-800 px-6 py-3 rounded-lg hover:bg-yellow-500 text-center font-semibold transition shadow-md hover:shadow-lg">
+          🛍️ Mercado Livre
+        </a>
+        {% endif %}
+        
+        {% if linkOutro %}
+        <a href="{{ linkOutro }}" 
+           target="_blank" 
+           rel="noopener noreferrer nofollow"
+           class="bg-green-500 text-white px-6 py-3 rounded-lg hover:bg-green-600 text-center font-semibold transition shadow-md hover:shadow-lg">
+          🏪 {{ linkOutroTexto or "Outro Marketplace" }}
+        </a>
+        {% endif %}
+      </div>
+
+      <!-- Características / Benefícios -->
+      {% if caracteristicas and caracteristicas.length > 0 %}
+      <div class="mt-6">
+        <h3 class="text-xl font-semibold mb-3">✨ Características</h3>
+        <ul class="space-y-2">
+          {% for item in caracteristicas %}
+          <li class="flex items-start">
+            <span class="text-green-500 mr-2">✓</span>
+            <span class="text-gray-700">{{ item }}</span>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endif %}
+
+      <!-- Especificações Técnicas -->
+      {% if especificacoes %}
+      <div class="mt-6">
+        <h3 class="text-xl font-semibold mb-3">🔧 Especificações Técnicas</h3>
+        <div class="bg-gray-50 rounded-lg p-4 space-y-2">
+          {% for key, value in especificacoes %}
+          <div class="flex justify-between border-b border-gray-200 pb-2">
+            <span class="font-medium text-gray-600">{{ key }}:</span>
+            <span class="text-gray-800">{{ value }}</span>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
+
+      <!-- Avaliações -->
+      {% if avaliacoes %}
+      <div class="mt-6 bg-blue-50 rounded-lg p-4">
+        <h4 class="text-lg font-semibold mb-2">⭐ Avaliações de usuários</h4>
+        <p class="text-gray-700">{{ avaliacoes }}</p>
+      </div>
+      {% endif %}
+
+      <!-- Badge de frete grátis (exemplo) -->
+      {% if freteGratis %}
+      <div class="mt-4">
+        <span class="inline-block bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-semibold">
+          🚚 Frete Grátis
+        </span>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+
+  <!-- Seção Extra: Conteúdo Adicional (SEO) -->
+  {% if conteudoExtra %}
+  <div class="mt-12 prose max-w-none">
+    <h2 class="text-2xl font-bold mb-4">📝 Mais Informações</h2>
+    <div class="text-gray-700 leading-relaxed">
+      {{ conteudoExtra | safe }}
+    </div>
+  </div>
+  {% endif %}
+
+</main>

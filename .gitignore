@@ -1,20 +1,30 @@
-# Sistema / Cache / Temporários
+# Eleventy
+_site/
+.cache/
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS
 .DS_Store
 Thumbs.db
-*.log
-*.tmp
 
-# Node / Build (se usar futuramente)
-node_modules/
-dist/
-build/
-
-# IDEs e editores
+# Editor
 .vscode/
 .idea/
-*.code-workspace
+*.swp
+*.swo
+*~
 
-# Arquivos locais
-*.env
+# Env
+.env
+.env.local
+
+# Arquivos antigos (backup)
+*.old
 *.bak
-*.zip
+assets/layout.js.old
+assets/script.js.old

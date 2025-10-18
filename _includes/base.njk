@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title or "Smart Life Brasil" }}</title>
+  <meta name="description" content="{{ description or 'Produtos inteligentes para sua casa, negócio e vida' }}">
+  <link rel="icon" type="image/png" href="/assets/img/mascote.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  {% if customCSS %}
+  <style>
+    {{ customCSS | safe }}
+  </style>
+  {% endif %}
+</head>
+<body class="bg-gray-100 font-sans">
+  
+  {% include "header.njk" %}
+  
+  {{ content | safe }}
+  
+  {% include "footer.njk" %}
+  
+  {% if script %}
+  <script src="{{ script }}"></script>
+  {% endif %}
+  
+  {% if customScript %}
+  <script>
+    {{ customScript | safe }}
+  </script>
+  {% endif %}
+</body>
+</html>
