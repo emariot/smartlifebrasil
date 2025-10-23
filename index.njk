@@ -17,53 +17,76 @@ customCSS: |
   /* Cards com hover suave */
   .product-card {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    overflow: visible; 
+    position: relative;
   }
   .product-card:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   }
   
-  /* Ofertas expandíveis - overlay absoluto */
-  .ofertas-expandiveis {
-    animation: slideDown 0.25s ease-out;
+  /* Overlay de ofertas - cobre todo o card */
+  .ofertas-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 20;
   }
   
-  @keyframes slideDown {
+  .ofertas-overlay.show {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  
+  .ofertas-overlay-content {
+    animation: fadeInUp 0.3s ease-out;
+  }
+  
+  @keyframes fadeInUp {
     from {
       opacity: 0;
-      transform: translateY(-5px);
+      transform: translateY(20px);
     }
     to {
       opacity: 1;
       transform: translateY(0);
     }
   }
-  
-  /* Dropdown toggle - rotação da seta */
-  .dropdown-arrow {
-    transition: transform 0.3s ease;
-  }
-  .dropdown-arrow.open {
-    transform: rotate(180deg);
-  }
 
 customScript: |
-  // === TOGGLE DROPDOWN OFERTAS ===
+  // === TOGGLE OFERTAS OVERLAY ===
   document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('.toggle-dropdown').forEach(btn => {
+    document.querySelectorAll('.toggle-ofertas').forEach(btn => {
       btn.addEventListener('click', (e) => {
         e.stopPropagation();
+        e.preventDefault();
         const card = btn.closest('.product-card');
-        const dropdown = card.querySelector('.ofertas-expandiveis');
-        const arrow = btn.querySelector('.dropdown-arrow');
-        
-        if (dropdown.classList.contains('hidden')) {
-          dropdown.classList.remove('hidden');
-          arrow.classList.add('open');
-        } else {
-          dropdown.classList.add('hidden');
-          arrow.classList.remove('open');
+        const overlay = card.querySelector('.ofertas-overlay');
+        overlay.classList.add('show');
+      });
+    });
+    
+    // Fechar overlay
+    document.querySelectorAll('.close-ofertas').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const overlay = btn.closest('.ofertas-overlay');
+        overlay.classList.remove('show');
+      });
+    });
+    
+    // Fechar ao clicar fora
+    document.querySelectorAll('.ofertas-overlay').forEach(overlay => {
+      overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) {
+          overlay.classList.remove('show');
         }
       });
     });
@@ -149,13 +172,13 @@ customScript: |
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 grid-produtos">
       
       {% for produto in collections.produto %}
-      {% set ofertas = produto.data.ofertas | sort(attribute='posicao') %}
+      {% set ofertas = produto.data.ofertas | sort(attribute='preco') %}
       {% set melhorOferta = ofertas[0] if ofertas else null %}
       
-      <div class="product-card bg-white rounded-lg shadow-md flex flex-col" 
+      <div class="product-card bg-white rounded-lg shadow-md flex flex-col overflow-hidden" 
            data-categoria="{{ produto.data.categoria or 'geral' }}">
         
-        <!-- Imagem Container (MENOR) -->
+        <!-- Imagem Container -->
         <div class="relative w-full h-48 bg-white flex items-center justify-center p-4">
           <img src="{{ produto.data.imagemCard or produto.data.imagens[0].src or '/assets/img/placeholder.jpg' }}" 
                alt="{{ produto.data.produtoNome }}" 
@@ -178,48 +201,19 @@ customScript: |
             {{ produto.data.description or produto.data.produtoDescricao or "Descrição não disponível" }}
           </p>
           
-          <!-- DROPDOWN INLINE NO PREÇO -->
+          <!-- Preço + Botão Ver Ofertas -->
           {% if melhorOferta %}
-          <div class="mb-3 relative">
-            <button class="toggle-dropdown flex items-center justify-between w-full bg-green-50 hover:bg-green-100 transition rounded-lg px-3 py-2 group">
-              <div class="flex items-center gap-2">
-                <span class="text-xs text-gray-600">A partir de</span>
-                <span class="text-xl font-bold text-green-600">R$ {{ melhorOferta.preco | replace(".", ",") }}</span>
-              </div>
-              <svg class="dropdown-arrow w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-              </svg>
-            </button>
-
-            <!-- OFERTAS EXPANDÍVEIS (Overlay Absoluto) -->
-            {% if ofertas and ofertas.length > 0 %}
-            <div class="ofertas-expandiveis hidden absolute left-0 right-0 top-full mt-1 bg-white border border-gray-200 rounded-lg shadow-lg p-2 space-y-1.5 z-10">
-              {% for oferta in ofertas %}
-              {% set emoji = '🥇' if oferta.posicao == 1 else ('🥈' if oferta.posicao == 2 else ('🥉' if oferta.posicao == 3 else ('4️⃣' if oferta.posicao == 4 else '🏪'))) %}
-              {% set bgColor = 'bg-blue-600 hover:bg-blue-700' %}
-              {% if oferta.marketplace == 'Mercado Livre' %}
-                {% set bgColor = 'bg-yellow-400 hover:bg-yellow-500 text-gray-800' %}
-              {% elif oferta.marketplace == 'Shopee' %}
-                {% set bgColor = 'bg-orange-500 hover:bg-orange-600' %}
-              {% elif oferta.marketplace == 'Amazon' %}
-                {% set bgColor = 'bg-blue-600 hover:bg-blue-700' %}
-              {% else %}
-                {% set bgColor = 'bg-green-500 hover:bg-green-600' %}
-              {% endif %}
-              
-              <a href="{{ oferta.link }}" 
-                 target="_blank" 
-                 rel="noopener noreferrer nofollow"
-                 class="{{ bgColor }} text-white px-3 py-1.5 rounded-lg text-sm font-semibold transition shadow-sm hover:shadow-md flex items-center justify-between gap-2">
-                <span class="flex items-center gap-1.5">
-                  <span class="text-xs">{{ emoji }}</span>
-                  <span>{{ oferta.marketplace }}</span>
-                </span>
-                <span class="font-bold">R$ {{ oferta.preco | replace(".", ",") }}</span>
-              </a>
-              {% endfor %}
+          <div class="mb-3">
+            <div class="bg-green-50 rounded-lg px-3 py-2 mb-2">
+              <p class="text-xs text-gray-600">A partir de</p>
+              <p class="text-xl font-bold text-green-600">R$ {{ melhorOferta.preco | replace(".", ",") }}</p>
             </div>
-            {% endif %}
+            <button class="toggle-ofertas w-full bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition font-semibold flex items-center justify-center gap-2">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+              Ver Ofertas
+            </button>
           </div>
           {% endif %}
           
@@ -232,6 +226,70 @@ customScript: |
             </svg>
           </a>
         </div>
+        
+        <!-- OVERLAY DE OFERTAS -->
+        {% if ofertas and ofertas.length > 0 %}
+        <div class="ofertas-overlay">
+          <div class="ofertas-overlay-content">
+            <!-- Botão Fechar -->
+            <button class="close-ofertas absolute top-3 right-3 bg-white/20 hover:bg-white/30 text-white p-2 rounded-full transition">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+              </svg>
+            </button>
+            
+            <!-- Título -->
+            <div class="text-center mb-6">
+              <h3 class="text-white text-xl font-bold mb-1">💰 Melhores Ofertas</h3>
+              <p class="text-gray-300 text-sm">Clique para comprar</p>
+            </div>
+            
+            <!-- Lista de Ofertas -->
+            <div class="space-y-2">
+              {% for oferta in ofertas %}
+              {% set posicao = loop.index %}
+              {% set emoji = '🥇' if posicao == 1 else ('🥈' if posicao == 2 else ('🥉' if posicao == 3 else ('4️⃣' if posicao == 4 else '🏪'))) %}
+              {% set bgColor = 'bg-blue-600 hover:bg-blue-700' %}
+              {% if oferta.marketplace == 'Mercado Livre' %}
+                {% set bgColor = 'bg-yellow-400 hover:bg-yellow-500 text-gray-800' %}
+              {% elif oferta.marketplace == 'Shopee' %}
+                {% set bgColor = 'bg-orange-500 hover:bg-orange-600' %}
+              {% elif oferta.marketplace == 'Amazon' %}
+                {% set bgColor = 'bg-blue-600 hover:bg-blue-700' %}
+              {% else %}
+                {% set bgColor = 'bg-green-500 hover:bg-green-600' %}
+              {% endif %}
+              
+  
+
+              <a href="{{ oferta.link }}" 
+                target="_blank" 
+                rel="noopener noreferrer nofollow"
+                class="{{ bgColor }} text-white text-sm px-4 py-3 rounded-lg font-semibold transition shadow-md hover:shadow-lg flex items-center justify-between gap-2">
+                <span class="flex items-center gap-2">
+                  <span class="text-lg">{{ emoji }}</span>
+                  <span class="flex flex-col items-start leading-tight">
+                    <span>{{ oferta.marketplace }}</span>
+                    {% if oferta.freteGratis %}
+                      <span class="text-xs text-white font-normal">Frete grátis</span>
+                    {% else %}
+                      <span class="text-xs text-white font-normal">Consulte o frete</span>
+                    {% endif %}
+                  </span>
+                </span>
+                <span class="text-lg font-bold">R$ {{ oferta.preco | replace(".", ",") }}</span>
+              </a>
+
+
+
+
+
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+        {% endif %}
+        
       </div>
       {% endfor %}
       

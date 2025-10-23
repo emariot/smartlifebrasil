@@ -7,12 +7,10 @@ customScript: |
     const total = carousel.children.length;
     let index = 0;
 
-    // Função para atualizar carrossel
     function updateCarousel(newIndex) {
       index = newIndex;
       carousel.style.transform = `translateX(-${index * 100}%)`;
       
-      // Atualizar indicadores
       document.querySelectorAll('.carousel-indicator').forEach((dot, i) => {
         if (i === index) {
           dot.classList.remove('bg-white/50');
@@ -23,7 +21,6 @@ customScript: |
         }
       });
       
-      // Atualizar thumbnails
       document.querySelectorAll('.thumbnail').forEach((thumb, i) => {
         if (i === index) {
           thumb.classList.add('ring-2', 'ring-blue-500');
@@ -33,7 +30,6 @@ customScript: |
       });
     }
 
-    // Navegação anterior/próxima
     document.getElementById('next').onclick = () => {
       updateCarousel((index + 1) % total);
     };
@@ -42,22 +38,18 @@ customScript: |
       updateCarousel((index - 1 + total) % total);
     };
     
-    // Indicadores clicáveis
     document.querySelectorAll('.carousel-indicator').forEach((dot, i) => {
       dot.onclick = () => updateCarousel(i);
     });
     
-    // Thumbnails clicáveis
     document.querySelectorAll('.thumbnail').forEach((thumb, i) => {
       thumb.onclick = () => updateCarousel(i);
     });
     
-    // Auto-play
     let autoplay = setInterval(() => {
       updateCarousel((index + 1) % total);
     }, 5000);
     
-    // Pausar autoplay ao interagir
     carousel.parentElement.addEventListener('mouseenter', () => {
       clearInterval(autoplay);
     });
@@ -78,7 +70,6 @@ customScript: |
       button.addEventListener('click', () => {
         const tabId = button.dataset.tab;
 
-        // Remove active de todos os botões e conteúdos
         tabButtons.forEach(btn => {
           btn.classList.remove('active', 'border-blue-500', 'text-gray-700');
           btn.classList.add('border-transparent', 'text-gray-500');
@@ -87,11 +78,9 @@ customScript: |
           content.classList.add('hidden');
         });
 
-        // Adiciona active no botão clicado
         button.classList.add('active', 'border-blue-500', 'text-gray-700');
         button.classList.remove('border-transparent', 'text-gray-500');
 
-        // Mostra o conteúdo correspondente
         const targetContent = document.getElementById(`tab-${tabId}`);
         if (targetContent) {
           targetContent.classList.remove('hidden');
@@ -116,13 +105,12 @@ customScript: |
 
   <div class="flex flex-col lg:flex-row gap-8">
     
-    <!-- Coluna Esquerda: Imagens -->
+    <!-- Coluna Esquerda: Imagens + Resumo IA -->
     <div class="lg:w-1/2 space-y-4">
       
-      <!-- Carrossel de Imagens MELHORADO -->
+      <!-- Carrossel de Imagens -->
       {% if imagens and imagens.length > 0 %}
       <div class="space-y-3">
-        <!-- Carrossel Principal -->
         <div class="relative w-full overflow-hidden rounded-lg shadow-md bg-white">
           <div id="carousel" class="flex transition-transform duration-500">
             {% for img in imagens %}
@@ -134,7 +122,6 @@ customScript: |
           </div>
           
           {% if imagens.length > 1 %}
-          <!-- Botões de navegação -->
           <button id="prev" class="absolute left-3 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white p-3 rounded-full shadow-lg transition hover:scale-110">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
@@ -146,7 +133,6 @@ customScript: |
             </svg>
           </button>
           
-          <!-- Indicadores clicáveis -->
           <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
             {% for img in imagens %}
             <button class="carousel-indicator w-2.5 h-2.5 rounded-full bg-white/50 hover:bg-white/80 transition cursor-pointer"></button>
@@ -155,7 +141,6 @@ customScript: |
           {% endif %}
         </div>
         
-        <!-- Thumbnails (miniaturas clicáveis) -->
         {% if imagens.length > 1 %}
         <div class="flex gap-2 overflow-x-auto pb-2">
           {% for img in imagens %}
@@ -170,25 +155,42 @@ customScript: |
       </div>
       {% endif %}
 
+      <!-- RESUMO DE OPINIÕES (IA) -->
+      {% if resumoIA %}
+      <div class="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-xl p-6 border border-indigo-100">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="bg-indigo-500 text-white p-3 rounded-lg">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+            </svg>
+          </div>
+          <div>
+            <h2 class="text-xl font-bold text-gray-800">Resumo de Opiniões</h2>
+            <p class="text-xs text-gray-500">Gerado por Inteligência Artificial</p>
+          </div>
+        </div>
+        <div class="bg-white rounded-lg p-4 text-gray-700 leading-relaxed">
+          {{ resumoIA }}
+        </div>
+      </div>
+      {% endif %}
+
     </div>
 
-    <!-- Coluna Direita: Informações do Produto -->
+    <!-- Coluna Direita: Informações + Ofertas -->
     <div class="lg:w-1/2 flex flex-col gap-4">
       
-      <!-- Nome do Produto -->
       <h1 class="text-3xl font-bold text-gray-800">{{ produtoNome }}</h1>
       
-      <!-- Marca -->
       {% if marca %}
       <div class="text-sm text-gray-500">
         Marca: <span class="font-semibold text-gray-700">{{ marca }}</span>
       </div>
       {% endif %}
 
-      <!-- Descrição -->
       <p class="text-gray-700 leading-relaxed">{{ produtoDescricao }}</p>
 
-      <!-- SEÇÃO DE OFERTAS MELHORADA -->
+      <!-- OFERTAS -->
       {% if ofertas and ofertas.length > 0 %}
       <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-5 border border-blue-100 shadow-sm mt-2">
         <div class="flex items-center gap-2 mb-4">
@@ -202,32 +204,30 @@ customScript: |
           {% set ofertasOrdenadas = ofertas | sort(attribute='preco') %}
           {% for oferta in ofertasOrdenadas %}
           {% set posicaoAtual = loop.index %}
-          <div class="bg-white rounded-lg p-4 {% if oferta.posicao == 1 %}border-2 border-yellow-400 shadow-md{% else %}border border-gray-200{% endif %} hover:shadow-lg transition">
+          <div class="bg-white rounded-lg p-4 {% if posicaoAtual == 1 %}border-2 border-yellow-400 shadow-md{% else %}border border-gray-200{% endif %} hover:shadow-lg transition">
             <div class="flex items-center justify-between">
               <div class="flex items-center gap-3">
-                <span class="{% if oferta.posicao == 1 %}text-2xl{% else %}text-xl{% endif %}">
-                  {% if oferta.posicao == 1 %}🥇
-                  {% elif oferta.posicao == 2 %}🥈
-                  {% elif oferta.posicao == 3 %}🥉
-                  {% elif oferta.posicao == 4 %}4️⃣
+                <span class="{% if posicaoAtual == 1 %}text-2xl{% else %}text-xl{% endif %}">
+                  {% if posicaoAtual == 1 %}🥇
+                  {% elif posicaoAtual == 2 %}🥈
+                  {% elif posicaoAtual == 3 %}🥉
+                  {% elif posicaoAtual == 4 %}4️⃣
                   {% else %}🏪{% endif %}
                 </span>
                 <div>
                   <div class="text-xs text-gray-500 uppercase font-semibold">{{ oferta.marketplace }}</div>
-                  <div class="{% if oferta.posicao == 1 %}text-2xl font-bold text-green-600{% else %}text-xl font-bold text-gray-800{% endif %}">
+                  <div class="{% if posicaoAtual == 1 %}text-2xl font-bold text-green-600{% else %}text-xl font-bold text-gray-800{% endif %}">
                     R$ {{ oferta.preco | replace(".", ",") }}
                   </div>
                 </div>
               </div>
-              {% set btnColor = 'bg-blue-600 hover:bg-blue-700 text-white' %}
-              {% if oferta.posicao == 1 %}
+              {% set btnColor = 'bg-green-500 hover:bg-green-600 text-white' %}
+              {% if oferta.marketplace == 'Amazon' %}
                 {% set btnColor = 'bg-blue-600 hover:bg-blue-700 text-white' %}
               {% elif oferta.marketplace == 'Mercado Livre' %}
                 {% set btnColor = 'bg-yellow-400 hover:bg-yellow-500 text-gray-800' %}
               {% elif oferta.marketplace == 'Shopee' %}
                 {% set btnColor = 'bg-orange-500 hover:bg-orange-600 text-white' %}
-              {% else %}
-                {% set btnColor = 'bg-green-500 hover:bg-green-600 text-white' %}
               {% endif %}
               <a href="{{ oferta.link }}" 
                  target="_blank" 
@@ -258,7 +258,6 @@ customScript: |
           {% endfor %}
         </div>
         
-        <!-- Timestamp de atualização -->
         <div class="mt-4 text-xs text-gray-500 text-center flex items-center justify-center gap-1">
           <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
@@ -270,39 +269,12 @@ customScript: |
     </div>
   </div>
 
-  <!-- RESUMO DE OPINIÕES GERADO POR IA -->
-  {% if resumoIA %}
-  <div class="mt-12">
-    <div class="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-xl p-6 border border-indigo-100">
-      <div class="flex items-center gap-3 mb-4">
-        <div class="bg-indigo-500 text-white p-3 rounded-lg">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
-          </svg>
-        </div>
-        <div>
-          <h2 class="text-xl font-bold text-gray-800">Resumo de Opiniões</h2>
-          <p class="text-xs text-gray-500">Gerado por Inteligência Artificial</p>
-        </div>
-      </div>
-      <div class="bg-white rounded-lg p-4 text-gray-700 leading-relaxed">
-        {{ resumoIA }}
-      </div>
-    </div>
-  </div>
-  {% endif %}
-
-  <!-- SEÇÃO: VÍDEO + TABS LADO A LADO -->
+  <!-- VÍDEO + TABS -->
   <div class="mt-12 flex flex-col lg:flex-row gap-8">
-    
-    <!-- Coluna Esquerda: Vídeo -->
-    <!-- Coluna Esquerda: Vídeo Responsivo e Seguro -->
     
     {% if video %}
     <div class="lg:w-1/2">
       <div class="bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl p-6 border border-purple-100 h-full">
-        
-        <!-- Cabeçalho do vídeo -->
         <div class="flex items-center gap-3 mb-4">
           <div class="bg-purple-500 text-white p-3 rounded-lg">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -312,24 +284,19 @@ customScript: |
           </div>
           <h2 class="text-2xl font-bold text-gray-800">Vídeo Explicativo</h2>
         </div>
-
-        <!-- Container responsivo do vídeo -->
         <div class="relative w-full rounded-lg overflow-hidden shadow-lg" style="padding-bottom: 56.25%;">
           <iframe class="absolute top-0 left-0 w-full h-full"
-            src="{{ video }}?rel=0&modestbranding=1&controls=1&showinfo=0"
+            src="{{ video }}"
             frameborder="0" 
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
             allowfullscreen>
           </iframe>
         </div>
-
       </div>
     </div>
     {% endif %}
 
-    <!-- Coluna Direita: TABS -->
     <div class="{% if video %}lg:w-1/2{% else %}w-full{% endif %}">
-      <!-- Tab Headers -->
       <div class="flex border-b border-gray-200 mb-6">
         <button class="tab-button active px-6 py-3 font-semibold text-gray-700 border-b-2 border-blue-500 hover:text-blue-600 transition" data-tab="caracteristicas">
           ✨ Características
@@ -339,7 +306,6 @@ customScript: |
         </button>
       </div>
 
-      <!-- Tab Content: Características -->
       <div id="tab-caracteristicas" class="tab-content">
         {% if caracteristicas and caracteristicas.length > 0 %}
         <div class="space-y-3">
@@ -361,7 +327,6 @@ customScript: |
         {% endif %}
       </div>
 
-      <!-- Tab Content: Especificações -->
       <div id="tab-especificacoes" class="tab-content hidden">
         {% if especificacoes %}
         <div class="bg-white rounded-lg border border-gray-200 overflow-hidden">
@@ -383,7 +348,7 @@ customScript: |
     </div>
   </div>
 
-  <!-- MAIS INFORMAÇÕES (SEO) - Width 100% -->
+  <!-- MAIS INFORMAÇÕES (SEO) -->
   {% if conteudoExtra %}
   <div class="mt-12 bg-gray-50 rounded-xl p-8 border border-gray-200">
     <div class="flex items-center gap-3 mb-6">
