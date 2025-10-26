@@ -18,7 +18,6 @@ module.exports = function(eleventyConfig) {
   
   // Ignora arquivos desnecessários
   eleventyConfig.ignores.add("README.md");
-  eleventyConfig.addPassthroughCopy("sitemap.xml");
    
   // ========== FILTROS ==========
 
