@@ -1,35 +1,73 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="google-site-verification" content="IY1SA4_5ifg63QmeFKa5B68RwXu8Gobi8wn3HGJpvLQ" />
+
   <title>{{ title or "Smart Life Brasil" }}</title>
-  <meta name="description" content="{{ description or 'Produtos inteligentes para sua casa, negócio e vida' }}">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Smart Life Brasil",
+    "url": "https://smartlifebrasil.netlify.app/",
+    "logo": "https://smartlifebrasil.netlify.app/assets/img/mascote.png"
+  }
+  </script>
+
+  <meta name="description" content="{{ description or 'Produtos inteligentes para sua casa, negócio e vida' }}">  
   <link rel="icon" type="image/png" href="/assets/img/mascote.png">
+  
+  {% set dominio = "https://smartlifebrasil.netlify.app" %}
+  
+  <link rel="canonical" href="{{ dominio + page.url | url }}">
+
+  <meta property="og:site_name" content="Smart Life Brasil">
+  <meta property="og:title" content="{{ title or 'Smart Life Brasil' }}">
+  <meta property="og:description" content="{{ description or 'Produtos inteligentes para sua casa, negócio e vida' }}">
+  <meta property="og:image" content="{{ dominio + (imagem or '/assets/img/mascote.png') | url }}">
+  <meta property="og:url" content="{{ dominio + page.url | url }}">
+  <meta property="og:type" content="{% if 'produto' in (tags | default([])) %}product{% elif 'post' in (tags | default([])) %}article{% else %}website{% endif %}">
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ title or 'Smart Life Brasil' }}">
+  <meta name="twitter:description" content="{{ description or 'Produtos inteligentes para sua casa, negócio e vida' }}">
+  <meta name="twitter:image" content="{{ dominio + (imagem or '/assets/img/mascote.png') | url }}">
+  
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="'https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Merriweather:wght@400;700&display=swap' rel="stylesheet">
+
+  
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- CSS customizado -->
+  <link rel="stylesheet" href="/assets/css/styles.css">
   
   {% if customCSS %}
   <style>
     {{ customCSS | safe }}
   </style>
   {% endif %}
+  
 </head>
+
 <body class="bg-gray-100 font-sans">
   
   {% include "header.njk" %}
   
-  {{ content | safe }}
+  <main class="container mx-auto px-4">
+    {{ content | safe }}
+  </main>
   
   {% include "footer.njk" %}
   
-  {% if script %}
-  <script src="{{ script }}"></script>
-  {% endif %}
-  
-  {% if customScript %}
-  <script>
-    {{ customScript | safe }}
-  </script>
-  {% endif %}
+  <script src="/assets/js/main.js" defer></script>
+
 </body>
 </html>

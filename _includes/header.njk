@@ -27,29 +27,9 @@
 <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
   <ul class="flex flex-col p-4 space-y-3">
     <li><a href="/" class="block text-gray-700 hover:text-blue-500 hover:bg-gray-50 px-4 py-2 rounded transition">Início</a></li>
-    <li><a href="/blog/" class="block text-gray-700 hover:text-blue-500 hover:bg-gray-50 px-4 py-2 rounded transition font-semibold">📰 Blog</a></li>
+    <li><a href="/blog/" class="block text-gray-700 hover:text-blue-500 hover:bg-gray-50 px-4 py-2 rounded transition font-semibold">Blog</a></li>
     <li><a href="/sobre/" class="block text-gray-700 hover:text-blue-500 hover:bg-gray-50 px-4 py-2 rounded transition">Sobre</a></li>
     <li><a href="/contato/" class="block text-gray-700 hover:text-blue-500 hover:bg-gray-50 px-4 py-2 rounded transition">Contato</a></li>
   </ul>
 </div>
 
-<script>
-  // Menu mobile
-  const menuBtn = document.getElementById('menu-btn');
-  const mobileMenu = document.getElementById('mobile-menu');
-  
-  if (menuBtn && mobileMenu) {
-    menuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-      menuBtn.textContent = mobileMenu.classList.contains('hidden') ? '☰' : '✕';
-    });
-    
-    // Fechar menu ao clicar em um link
-    mobileMenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu.classList.add('hidden');
-        menuBtn.textContent = '☰';
-      });
-    });
-  }
-</script>

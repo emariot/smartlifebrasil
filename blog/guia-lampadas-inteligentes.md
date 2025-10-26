@@ -105,7 +105,9 @@ A lâmpada precisa entrar no **modo de configuração**:
 
 **📸 Exemplo de tela do app:**
 
-![Tela do app Smart Life mostrando opções de adicionar dispositivo](/assets/img/blog/lampada-inteligente-exemplo.jpg)
+<div class="flex justify-center my-6">
+<img src="/assets/img/blog/lampada-inteligente-exemplo.jpg" alt="Tela do app Smart Life mostrando opções de adicionar dispositivo" class="w-full max-w-md rounded-lg shadow-md">
+</div>
 
 ---
 
@@ -209,7 +211,7 @@ Testamos dezenas de modelos. Essas são as TOP 5 para quem está começando:
 **Por que é a melhor:** Melhor custo-benefício, versátil e colorida.
 
 - **Marca:** Elgin
-- **Preço:** R$ 40.75 (em promoção)
+- **Preço:** R$ 40.75 
 - **Cores:** 16 milhões
 - **App:** Elgin Smart
 - **Compatível:** Alexa, Google, Smart Life e Tuya
@@ -223,7 +225,7 @@ Testamos dezenas de modelos. Essas são as TOP 5 para quem está começando:
     - Potência de 10W pode não ser suficiente para ambientes maiores.
     - Conectividade pode ser instável em redes Wi-Fi congestionadas
 
-[🛒 Página do produto com melhores ofertas ](/produtos/casa/lampadas-inteligentes/elgin/smart-color-led-A60/)
+[🛒 Página do produto com melhores ofertas -> ](/produtos/casa/lampadas-inteligentes/elgin/smart-color-led-A60/)
 
 ---
 
@@ -244,13 +246,14 @@ Testamos dezenas de modelos. Essas são as TOP 5 para quem está começando:
     - Interface do aplicativo menos intuitiva
     - Integração com outros dispositivos fora do ecossistema Intelbras pode ser limitada.
 
-[🛒 Página do produto com melhores ofertas ](/produtos/casa/lampadas-inteligentes/intelbras/led-smart-EWS410/)
+[🛒 Página do produto com melhores ofertas -> ](/produtos/casa/lampadas-inteligentes/intelbras/led-smart-EWS410/)
 
 ---
 
 ### 3. 🥉 Led Smart maior potência 30W
 **Por que vale a pena:** Maior potência
 
+- **Marca:** Elgin
 - **Preço:** R$ 65.73
 - **Cores:** RGB + branco
 - **App:** Elgin Smart
@@ -263,7 +266,7 @@ Testamos dezenas de modelos. Essas são as TOP 5 para quem está começando:
     - Maior consumo de energia em comparação com modelos de menor potência.
     - Preço mais elevado que modelos de menor potência
 
-[🛒 Página do produto com melhores ofertas ](/produtos/casa/lampadas-inteligentes/elgin/led-smart-30W/)
+[🛒 Página do produto com melhores ofertas->](/produtos/casa/lampadas-inteligentes/elgin/led-smart-30W/)
 
 ---
 
@@ -282,7 +285,7 @@ Testamos dezenas de modelos. Essas são as TOP 5 para quem está começando:
 - **Pontos fracos:**
     - Conectividade pode ser afetada por redes Wi-Fi com sinal fraco.
 
-[🛒 Página do produto com melhores ofertas ](/produtos/casa/lampadas-inteligentes/tapo/multicolor-tapo-L530E/)
+[🛒 Página do produto com melhores ofertas ->](/produtos/casa/lampadas-inteligentes/tapo/multicolor-tapo-L530E/)
 
 ---
 
@@ -301,20 +304,88 @@ Testamos dezenas de modelos. Essas são as TOP 5 para quem está começando:
     - Qualidade de construção poderia ser melhor
     - Marca menos conhecida, suporte pode ser limitado
 
-[🛒 Página do produto com melhores ofertas ](/produtos/casa/lampadas-inteligentes/g-light/smart-led-A60/)
+[🛒 Página do produto com melhores ofertas ->](/produtos/casa/lampadas-inteligentes/g-light/smart-led-A60/)
 
 ---
 
 ## 📊 Comparação Rápida
 
+<div class="overflow-x-auto -mx-4 px-4">
+<table class="min-w-full text-xs">
+<thead class="bg-gray-100">
+<tr>
+<th class="p-2 text-left">Modelo</th>
+<th class="p-2">R$</th>
+<th class="p-2">W</th>
+<th class="p-2">lm</th>
+<th class="p-2">RGB</th>
+<th class="p-2">Dim</th>
+<th class="p-2">App</th>
+<th class="p-2">Compat.</th>
+<th class="p-2">★</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border-b">
+<td class="p-2">Elgin A60</td>
+<td class="p-2">40,75</td>
+<td class="p-2">10</td>
+<td class="p-2">803</td>
+<td class="p-2">✅</td>
+<td class="p-2">✅</td>
+<td class="p-2">Elgin</td>
+<td class="p-2">A,G,SL,T</td>
+<td class="p-2">5</td>
+</tr>
+<tr class="border-b">
+<td class="p-2">Intelbras EWS410</td>
+<td class="p-2">40,58</td>
+<td class="p-2">10</td>
+<td class="p-2">806</td>
+<td class="p-2">✅</td>
+<td class="p-2">✅</td>
+<td class="p-2">Izy</td>
+<td class="p-2">A,G</td>
+<td class="p-2">4</td>
+</tr>
+<tr class="border-b">
+<td class="p-2">Elgin 30W</td>
+<td class="p-2">65,73</td>
+<td class="p-2">30</td>
+<td class="p-2">2.600</td>
+<td class="p-2">✅</td>
+<td class="p-2">✅</td>
+<td class="p-2">Elgin</td>
+<td class="p-2">A,G</td>
+<td class="p-2">4</td>
+</tr>
+<tr class="border-b">
+<td class="p-2">Tapo L530E</td>
+<td class="p-2">44,99</td>
+<td class="p-2">8,3</td>
+<td class="p-2">806</td>
+<td class="p-2">✅</td>
+<td class="p-2">✅</td>
+<td class="p-2">Tapo</td>
+<td class="p-2">A,G</td>
+<td class="p-2">4</td>
+</tr>
+<tr>
+<td class="p-2">G-light A60</td>
+<td class="p-2">29,90</td>
+<td class="p-2">10</td>
+<td class="p-2">~810</td>
+<td class="p-2">✅</td>
+<td class="p-2">✅</td>
+<td class="p-2">G-light</td>
+<td class="p-2">A,G</td>
+<td class="p-2">3</td>
+</tr>
+</tbody>
+</table>
+</div>
 
-| Modelo | Preço | Potência | Fluxo Luminoso | RGB | Dimmer (controle de intensidade) | App | Compatível | Nota |
-|--------|-------|----------|----------------|-----|--------|-----|------------|------|
-| Elgin Smart Color LED A60 | R$ 40,75 | 10W | 803lm | ✅ | ✅ | Elgin Smart | Alexa, Google, Smart Life, Tuya | ⭐⭐⭐⭐⭐ |
-| Led Smart EWS410 Intelbras | R$ 40,58 | 10W | 806lm | ✅ | ✅ | Izy Smart | Alexa, Google | ⭐⭐⭐⭐ |
-| Led Smart Elgin 30W | R$ 65,73 | 30W | 2.600lm | ✅ | ✅ | Elgin Smart | Alexa, Google | ⭐⭐⭐⭐ |
-| Tapo L530E (TP-Link) | R$ 44,99 | 8,3W | 806lm | ✅ | ✅ | Tapo | Alexa, Google | ⭐⭐⭐⭐ |
-| G-light Smart LED A60 | R$ 29,90 | 10W | ~810lm | ✅ | ✅ | G-light Smart | Alexa, Google | ⭐⭐⭐ |
+<p class="text-xs mt-2">Legenda: A=Alexa, G=Google, SL=Smart Life, T=Tuya.</p>
 
 
 ---

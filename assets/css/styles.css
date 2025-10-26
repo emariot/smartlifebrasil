@@ -1,0 +1,144 @@
+/* Customizações extras */
+body { font-family: 'Poppins', sans-serif'
+  }
+
+a.btn {
+    transition: all 0.3s ease;
+}
+
+/* Line clamp */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2; 
+  overflow: hidden;
+}
+
+/* Cards com hover suave */
+.product-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+.product-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Overlay de ofertas - cobre todo o card */
+.ofertas-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 20;
+}
+
+.ofertas-overlay.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.ofertas-overlay-content {
+  animation: fadeInUp 0.3s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========================================
+   MELHORIAS DO CARROSSEL
+   ======================================== */
+
+/* 2. GPU acceleration + transição suave */
+#carousel {
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* 4. Fade nas bordas quando há mais imagens */
+.carousel-container::before,
+.carousel-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 60px;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.carousel-container.has-multiple::before {
+  left: 0;
+  background: linear-gradient(to right, rgba(255,255,255,0.8), transparent);
+  opacity: 1;
+}
+
+.carousel-container.has-multiple::after {
+  right: 0;
+  background: linear-gradient(to left, rgba(255,255,255,0.8), transparent);
+  opacity: 1;
+}
+
+/* 5. Animação suave dos indicadores */
+.carousel-indicator {
+  transition: all 0.3s ease;
+}
+
+/* 6. Loading skeleton */
+.carousel-skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.carousel-skeleton.loaded {
+  display: none;
+}
+
+/* Imagens lazy carregando */
+.carousel-image {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.carousel-image.loaded {
+  opacity: 1;
+}
+
+/* 3. Screen reader only - oculta visualmente mas mantém para leitores */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+

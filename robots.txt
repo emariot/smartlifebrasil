@@ -1,0 +1,18 @@
+# Dizer a todos os user-agents (robôs) para seguir as regras abaixo
+User-agent: *
+
+# Permitir o rastreamento de todas as páginas (padrão)
+Allow: /
+
+# EXCLUSÕES DE ROTAS (Se aplicável)
+# Se você tivesse uma página de login ou admin, você a bloquearia aqui:
+# Disallow: /admin/
+# Disallow: /login/
+
+# OBRIGADO: Bloqueia a página de "Obrigado" (thank-you page),
+# pois ela já está convertida e não precisa ser indexada.
+Disallow: /obrigado/
+
+# LOCALIZAÇÃO DO SITEMAP
+# Essencial para que os motores de busca o encontrem
+Sitemap: https://smartlifebrasil.netlify.app/sitemap.xml

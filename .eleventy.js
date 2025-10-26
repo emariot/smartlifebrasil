@@ -1,15 +1,39 @@
+const pluginSitemap = require("@quasibit/eleventy-plugin-sitemap");
+
 module.exports = function(eleventyConfig) {
+
+  // Sitemap
+  eleventyConfig.addPlugin(pluginSitemap, {
+    sitemap: {
+      hostname: "https://smartlifebrasil.netlify.app"
+    }
+  });
+
   // Copia assets e data sem processar
   eleventyConfig.addPassthroughCopy("assets");
   eleventyConfig.addPassthroughCopy("data");
+  eleventyConfig.addPassthroughCopy("robots.txt");
   
   // Ignora arquivos desnecessários
   eleventyConfig.ignores.add("README.md");
-  eleventyConfig.ignores.add("node_modules");
-  
+   
   // ========== FILTROS ==========
+
+  // Filtro para acessar um atributo de um objeto
+  eleventyConfig.addFilter("attr", function(obj, key) {
+    if (obj && obj[key] !== undefined) {
+      return obj[key];
+    }
+    return undefined;
+  });
   
-  // Filtro para truncar texto (usado no line-clamp)
+  // Filtro para formatar data para ISO
+  eleventyConfig.addFilter("dateToISO", function(date) {
+    if (!date) return '';
+    return new Date(date).toISOString();
+  });
+  
+  // Filtro para truncar texto
   eleventyConfig.addFilter("excerpt", function(content, maxLength = 150) {
     if (!content) return '';
     const stripped = content.replace(/<[^>]+>/g, '');
@@ -18,7 +42,7 @@ module.exports = function(eleventyConfig) {
       : stripped;
   });
   
-  // Filtro para formatar data (ex: "15 de janeiro de 2025")
+  // Filtro para formatar data
   eleventyConfig.addFilter("formatDate", function(date) {
     if (!date) return '';
     const d = new Date(date);
@@ -26,7 +50,7 @@ module.exports = function(eleventyConfig) {
     return d.toLocaleDateString('pt-BR', options);
   });
   
-  // Filtro para data curta (ex: "15 jan 2025")
+  // Filtro para data curta
   eleventyConfig.addFilter("shortDate", function(date) {
     if (!date) return '';
     const d = new Date(date);
@@ -64,14 +88,12 @@ module.exports = function(eleventyConfig) {
   
   // ========== COLLECTIONS - BLOG ==========
   
-  // Collection: posts do blog ordenados por data (mais recentes primeiro)
   eleventyConfig.addCollection("blog", function(collection) {
     return collection.getFilteredByTag("post").sort((a, b) => {
       return b.date - a.date;
     });
   });
   
-  // Collection: posts por categoria do blog
   eleventyConfig.addCollection("blogGuias", function(collection) {
     return collection.getFilteredByTag("post").filter(item => {
       return item.data.categoriaBlog === "guias";
