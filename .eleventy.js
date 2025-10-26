@@ -1,14 +1,5 @@
-const pluginSitemap = require("@quasibit/eleventy-plugin-sitemap");
 
 module.exports = function(eleventyConfig) {
-
-  // Sitemap
-  eleventyConfig.addPlugin(pluginSitemap, {
-    sitemap: {
-      hostname: "https://smartlifebrasil.netlify.app",
-      sitemapPath: "sitemap.xml"
-    }
-  });
 
 
   // Copia assets e data sem processar
@@ -20,6 +11,18 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.ignores.add("README.md");
    
   // ========== FILTROS ==========
+
+  // Filtro para criar URL absoluta
+  eleventyConfig.addFilter("absoluteUrl", function(url, base) {
+    try {
+      // Garantir que a URL base termine em '/'
+      const baseUrl = base.endsWith('/') ? base : base + '/';
+      return (new URL(url, baseUrl)).toString();
+    } catch (e) {
+      console.error("Filtro absoluteUrl falhou: ", e);
+      return base + url;
+    }
+  });
 
   // Filtro para acessar um atributo de um objeto
   eleventyConfig.addFilter("attr", function(obj, key) {
