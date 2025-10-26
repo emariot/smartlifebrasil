@@ -5,7 +5,8 @@ module.exports = function(eleventyConfig) {
   // Sitemap
   eleventyConfig.addPlugin(pluginSitemap, {
     sitemap: {
-      hostname: "https://smartlifebrasil.netlify.app"
+      hostname: "https://smartlifebrasil.netlify.app",
+      sitemapPath: "sitemap.xml"
     }
   });
 
@@ -17,6 +18,7 @@ module.exports = function(eleventyConfig) {
   
   // Ignora arquivos desnecessários
   eleventyConfig.ignores.add("README.md");
+  eleventyConfig.addPassthroughCopy("sitemap.xml");
    
   // ========== FILTROS ==========
 
