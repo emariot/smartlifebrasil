@@ -1,0 +1,8 @@
+[build]
+  publish = "_site"
+  command = "npx eleventy"
+
+[[redirects]]
+  from = "/sitemap.xml"
+  to = "/sitemap.xml"
+  status = 200

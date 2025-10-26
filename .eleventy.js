@@ -9,6 +9,7 @@ module.exports = function(eleventyConfig) {
     }
   });
 
+
   // Copia assets e data sem processar
   eleventyConfig.addPassthroughCopy("assets");
   eleventyConfig.addPassthroughCopy("data");
