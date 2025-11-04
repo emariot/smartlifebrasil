@@ -65,7 +65,7 @@ A **Elgin Smart Color 10W** é perfeita para quem quer automatizar a casa gastan
 
 
 <div class="w-full flex justify-start my-4 px-2">
-  <a href="https://smartlifebrasil.netlify.app/produtos/casa/lampadas-inteligentes/intelbras/led-smart-ews410/" 
+  <a href="https://smartlifebrasil.netlify.app/produtos/casa/lampadas-inteligentes/intelbras/led-smart-EWS410/" 
   target="_blank" 
   rel="noopener noreferrer"
   title="Página do produto em uma nova aba">
@@ -93,11 +93,11 @@ A **Intelbras EWS410** é uma ótima escolha nacional, oferecendo bom equilíbri
 <h2 id="elgin-smart-led-30w">🥉 Elgin Smart LED 30W – Potência e Versatilidade</h2>
 
 <div class="w-full flex justify-start my-4 px-2">
-  <a href="https://smartlifebrasil.netlify.app/produtos/casa/lampadas-inteligentes/elgin/led-smart-30w/" 
+  <a href="https://smartlifebrasil.netlify.app/produtos/casa/lampadas-inteligentes/elgin/led-smart-30W/" 
   target="_blank" 
   rel="noopener noreferrer"
   title="Página do produto em uma nova aba">
-    <img src="/assets/img/casa/lampadas_inteligentes/elgin/led-smart-30w/principal.jpg"
+    <img src="/assets/img/casa/lampadas_inteligentes/elgin/led-smart-30W/principal.jpg"
          alt="Lâmpada Elgin Smart LED 30W"
          class="w-48 sm:w-56 md:w-64 lg:w-72 rounded-lg shadow-md my-2 hover:opacity-90 transition duration-200">
   </a>
@@ -120,7 +120,7 @@ A versão de 30W da Elgin é indicada para quem busca potência e praticidade. �
 <h2 id="tp-link-tapo-l530e">4️⃣ TP-Link Tapo L530E – Eficiência Energética</h2>
 
 <div class="w-full flex justify-start my-4 px-2">
-  <a href="https://smartlifebrasil.netlify.app/produtos/casa/lampadas-inteligentes/tapo/multicolor-tapo-l530e/" 
+  <a href="https://smartlifebrasil.netlify.app/produtos/casa/lampadas-inteligentes/tapo/multicolor-tapo-L530E/" 
   target="_blank" 
   rel="noopener noreferrer"
   title="Página do produto em uma nova aba">
@@ -148,7 +148,7 @@ A **TP-Link Tapo L530E** é uma lâmpada prática e eficiente, perfeita para que
 <h2 id="glite-smart-led-10w">5️⃣ G-lite Smart LED A60 – Mais barata</h2>
 
 <div class="w-full flex justify-start my-4 px-2">
-  <a href="http://smartlifebrasil.netlify.app/produtos/casa/lampadas-inteligentes/g-light/smart-led-a60/" 
+  <a href="http://smartlifebrasil.netlify.app/produtos/casa/lampadas-inteligentes/g-light/smart-led-A60/" 
   target="_blank" 
   rel="noopener noreferrer"
   title="Página do produto em uma nova aba">
