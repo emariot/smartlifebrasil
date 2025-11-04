@@ -97,7 +97,7 @@ A **Intelbras EWS410** é uma ótima escolha nacional, oferecendo bom equilíbri
   target="_blank" 
   rel="noopener noreferrer"
   title="Página do produto em uma nova aba">
-    <img src="/assets/img/casa/lampadas_inteligentes/elgin/led-smart-30W/principal.jpg"
+    <img src="/assets/img/casa/lampadas_inteligentes/elgin/led-smart-30W/principal.webp"
          alt="Lâmpada Elgin Smart LED 30W"
          class="w-48 sm:w-56 md:w-64 lg:w-72 rounded-lg shadow-md my-2 hover:opacity-90 transition duration-200">
   </a>
