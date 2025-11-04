@@ -17,9 +17,21 @@ permalink: /blog/como-instalar-lampada-inteligente/
 
 Se você nunca instalou uma lâmpada inteligente e tem medo de errar, relaxa! Este guia vai te mostrar **exatamente** o que fazer, passo a passo.
 
-## 🛠️ O que você vai precisar
+- [O que você vai precisar](#o-que-você-vai-precisar)
+- [Passo 1: Instalação Física](#passo-1-instalação-física)
+- [Passo 2: Configuração no App](#passo-2-configuração-no-app)
+- [Passo 3: Primeira Configuração](#passo-3-primeira-configuração)
+- [Passo 4: Crie Sua Primeira Automação](#passo-4-crie-sua-primeira-automação)
+- [Problemas Comuns e Soluções](#problemas-comuns)
+- [5 Melhores Lâmpadas para Iniciantes](#5-melhores-lâmpadas-para-iniciantes)
+- [Comparação Rápida](#comparação-rápida)
+- [Conclusão](#conclusão)
+- [Dúvidas Frequentes](#dúvidas-frequentes)
 
-Antes de começar, certifique-se de ter:
+
+<h2 id="o-que-você-vai-precisar">🛠️ O que você vai precisar</h2>
+
+Antes de começar, certifique-se de ter: 
 
 - **Lâmpada inteligente** - [Ver melhores modelos aqui](/)
 - **Wi-Fi 2.4GHz** (⚠️ Não funciona com 5GHz!)
@@ -30,7 +42,7 @@ Antes de começar, certifique-se de ter:
 
 ---
 
-## Passo 1: Instalação Física
+<h2 id="passo-1-instalação-física">Passo 1: Instalação Física</h2>
 
 ### 1.1 Desligue a energia no disjuntor
 
@@ -62,7 +74,7 @@ Antes de começar, certifique-se de ter:
 
 ---
 
-## Passo 2: Configuração no App
+<h2 id="passo-2-configuração-no-app">Passo 2: Configuração no App</h2>
 
 ### 2.1 Baixe o aplicativo
 
@@ -106,12 +118,12 @@ A lâmpada precisa entrar no **modo de configuração**:
 **📸 Exemplo de tela do app:**
 
 <div class="flex justify-center my-6">
-<img src="/assets/img/blog/lampada-inteligente-exemplo.jpg" alt="Tela do app Smart Life mostrando opções de adicionar dispositivo" class="w-full max-w-md rounded-lg shadow-md">
+<img src="/assets/img/blog/lampada-inteligente-exemplo.webp" alt="Tela do app Smart Life mostrando opções de adicionar dispositivo" class="w-full max-w-md rounded-lg shadow-md">
 </div>
 
 ---
 
-## Passo 3: Primeira Configuração
+<h2 id="passo-3-primeira-configuração">Passo 3: Primeira Configuração</h2>
 
 ### 3.1 Teste os controles básicos
 
@@ -141,7 +153,7 @@ No app, teste:
 
 ---
 
-## Passo 4: Crie Sua Primeira Automação
+<h2 id="passo-4-crie-sua-primeira-automação">Passo 4: Crie Sua Primeira Automação</h2>
 
 Vamos criar uma rotina simples: **Lâmpada acende às 18h automaticamente**
 
@@ -203,7 +215,7 @@ Pronto! Agora sua casa tem uma automação!
 
 ---
 
-## 💡 5 Melhores Lâmpadas para Iniciantes
+<h2 id="5-melhores-lâmpadas-para-iniciantes">💡 5 Melhores Lâmpadas para Iniciantes</h2>
 
 Testamos dezenas de modelos. Essas são as TOP 5 para quem está começando:
 
@@ -308,7 +320,8 @@ Testamos dezenas de modelos. Essas são as TOP 5 para quem está começando:
 
 ---
 
-## 📊 Comparação Rápida
+
+<h2 id="comparação-rápida">📊 Comparação Rápida</h2>
 
 <div class="overflow-x-auto -mx-4 px-4">
 <table class="min-w-full text-xs">
@@ -333,7 +346,7 @@ Testamos dezenas de modelos. Essas são as TOP 5 para quem está começando:
 <td class="p-2">803</td>
 <td class="p-2">✅</td>
 <td class="p-2">✅</td>
-<td class="p-2">Elgin</td>
+<td class="p-2">Elgin Smart</td>
 <td class="p-2">A,G,SL,T</td>
 <td class="p-2">5</td>
 </tr>
@@ -344,7 +357,7 @@ Testamos dezenas de modelos. Essas são as TOP 5 para quem está começando:
 <td class="p-2">806</td>
 <td class="p-2">✅</td>
 <td class="p-2">✅</td>
-<td class="p-2">Izy</td>
+<td class="p-2">Izy Smart</td>
 <td class="p-2">A,G</td>
 <td class="p-2">4</td>
 </tr>
@@ -355,7 +368,7 @@ Testamos dezenas de modelos. Essas são as TOP 5 para quem está começando:
 <td class="p-2">2.600</td>
 <td class="p-2">✅</td>
 <td class="p-2">✅</td>
-<td class="p-2">Elgin</td>
+<td class="p-2">Elgin Smart</td>
 <td class="p-2">A,G</td>
 <td class="p-2">4</td>
 </tr>
@@ -366,7 +379,7 @@ Testamos dezenas de modelos. Essas são as TOP 5 para quem está começando:
 <td class="p-2">806</td>
 <td class="p-2">✅</td>
 <td class="p-2">✅</td>
-<td class="p-2">Tapo</td>
+<td class="p-2">TP-Link</td>
 <td class="p-2">A,G</td>
 <td class="p-2">4</td>
 </tr>
@@ -377,7 +390,7 @@ Testamos dezenas de modelos. Essas são as TOP 5 para quem está começando:
 <td class="p-2">~810</td>
 <td class="p-2">✅</td>
 <td class="p-2">✅</td>
-<td class="p-2">G-light</td>
+<td class="p-2">G-light Smart</td>
 <td class="p-2">A,G</td>
 <td class="p-2">3</td>
 </tr>
@@ -387,10 +400,9 @@ Testamos dezenas de modelos. Essas são as TOP 5 para quem está começando:
 
 <p class="text-xs mt-2">Legenda: A=Alexa, G=Google, SL=Smart Life, T=Tuya.</p>
 
-
 ---
 
-## 🎯 Conclusão
+<h2 id="conclusão">🎯 Conclusão</h2>
 
 Instalar lâmpadas inteligentes é **muito mais fácil** do que parece! Com este guia, você consegue fazer tudo em **menos de 10 minutos**.
 
@@ -402,7 +414,7 @@ Instalar lâmpadas inteligentes é **muito mais fácil** do que parece! Com este
 
 ---
 
-## 💬 Dúvidas Frequentes
+<h2 id="dúvidas-frequentes">💬 Dúvidas Frequentes</h2>
 
 **Preciso de hub?**
 Não! As lâmpadas recomendadas conectam direto no Wi-Fi.

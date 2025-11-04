@@ -32,6 +32,12 @@ customScript: |
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       const filtro = btn.dataset.filter;
+
+      // Tracking
+      if(typeof gtag !== 'undefined') { 
+        gtag('event', 'filtro_blog', {'categoria': filtro}); 
+      }
+
       const posts = document.querySelectorAll('.blog-post-card');
       
       posts.forEach(post => {
@@ -58,6 +64,12 @@ customScript: |
 
   function pesquisarBlog() {
     const termo = searchInput.value.toLowerCase();
+
+    // Tracking
+    if(typeof gtag !== 'undefined' && termo.length > 0) { 
+      gtag('event', 'pesquisa_blog', {'termo': termo}); 
+    }
+
     const posts = document.querySelectorAll('.blog-post-card');
     
     posts.forEach(post => {
@@ -77,6 +89,14 @@ customScript: |
     if (e.key === 'Enter') pesquisarBlog();
   });
 ---
+
+{# Filtra artigos publicados manualmente (excluindo rascunhos) #}
+{% set publishedPosts = [] %}
+{% for post in collections.blog %}
+  {% if not post.data.draft %}
+    {% set publishedPosts = (publishedPosts.push(post), publishedPosts) %}
+  {% endif %}
+{% endfor %}
 
 <!-- Hero Section -->
 <section class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-16">
@@ -128,8 +148,8 @@ customScript: |
     </div>
   </section>
 
-  <!-- Post em Destaque (primeiro post mais recente) -->
-  {% set featuredPost = collections.blog[0] %}
+  <!-- Post em Destaque (primeiro post publicado mais recente) -->
+  {% set featuredPost = publishedPosts[0] %}
   {% if featuredPost %}
   <section class="mb-12">
     <div class="bg-gradient-to-r from-purple-600 to-indigo-600 rounded-2xl overflow-hidden shadow-2xl">
@@ -176,7 +196,8 @@ customScript: |
           </div>
           
           <a href="{{ featuredPost.url }}" 
-             class="bg-white text-purple-600 px-8 py-3 rounded-lg hover:bg-purple-50 transition font-bold inline-flex items-center gap-2 w-fit shadow-lg hover:shadow-xl">
+            onclick="if(typeof gtag !== 'undefined') { gtag('event', 'click_post_destaque', {'titulo': '{{ featuredPost.data.title }}', 'categoria': '{{ featuredPost.data.categoriaBlog }}'}); }"
+            class="bg-white text-purple-600 px-8 py-3 rounded-lg hover:bg-purple-50 transition font-bold inline-flex items-center gap-2 w-fit shadow-lg hover:shadow-xl">
             Ler artigo completo
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
@@ -192,11 +213,11 @@ customScript: |
   <section>
     <div class="flex items-center justify-between mb-6">
       <h2 class="text-2xl font-bold text-gray-800">Todos os artigos</h2>
-      <p class="text-gray-600">{{ collections.blog.length }} artigo(s)</p>
+      <p class="text-gray-600">{{ publishedPosts.length }} artigo(s)</p>
     </div>
     
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {% for post in collections.blog %}
+      {% for post in publishedPosts %}
       
       <div class="blog-card blog-post-card bg-white rounded-xl shadow-lg overflow-hidden flex flex-col" 
            data-categoria="{{ post.data.categoriaBlog or 'geral' }}">
@@ -254,7 +275,8 @@ customScript: |
           
           <!-- Botão Ler Mais -->
           <a href="{{ post.url }}" 
-             class="bg-blue-500 text-white px-5 py-2.5 rounded-lg text-center hover:bg-blue-600 transition font-semibold flex items-center justify-center gap-2">
+            onclick="if(typeof gtag !== 'undefined') { gtag('event', 'click_post_grid', {'titulo': '{{ post.data.title }}', 'categoria': '{{ post.data.categoriaBlog }}'}); }"
+            class="bg-blue-500 text-white px-5 py-2.5 rounded-lg text-center hover:bg-blue-600 transition font-semibold flex items-center justify-center gap-2">
             Ler mais
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
@@ -265,7 +287,7 @@ customScript: |
       
       {% endfor %}
       
-      {% if collections.blog.length == 0 %}
+      {% if publishedPosts.length == 0 %}
       <div class="col-span-full text-center py-16 bg-white rounded-xl shadow-md">
         <div class="text-6xl mb-4">📝</div>
         <p class="text-gray-500 text-lg mb-2">Nenhum artigo publicado ainda.</p>
@@ -283,7 +305,9 @@ customScript: |
       <input type="email" 
              placeholder="Seu melhor email..." 
              class="flex-grow px-4 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-white">
-      <button class="bg-white text-green-600 px-6 py-3 rounded-lg hover:bg-green-50 transition font-bold shadow-lg">
+      <button 
+        onclick="if(typeof gtag !== 'undefined') { gtag('event', 'click_newsletter', {'origem': 'blog'}); }"
+        class="bg-white text-green-600 px-6 py-3 rounded-lg hover:bg-green-50 transition font-bold shadow-lg">
         Inscrever-se
       </button>
     </div>

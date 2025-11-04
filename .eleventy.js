@@ -70,7 +70,104 @@ module.exports = function(eleventyConfig) {
     const minutes = Math.ceil(words / 200);
     return `${minutes} min`;
   });
+
+// ========== SHORTCODE - OFERTAS DE PRODUTO ==========
+
+eleventyConfig.addShortcode("produtoOfertas", function(produtoUrl) {
+  // Busca todos os produtos da collection
+  const produtos = this.ctx.collections.produto || [];
   
+  // Encontra o produto pela URL
+  const produto = produtos.find(p => 
+    p.url === produtoUrl || 
+    p.url === produtoUrl + '/' || 
+    p.url + '/' === produtoUrl
+  );
+  
+  // Se não encontrou, mostra erro
+  if (!produto) {
+    return `<p class="text-red-500 text-sm">Produto não encontrado: ${produtoUrl}</p>`;
+  }
+  
+  // Organiza ofertas por preço (menor primeiro)
+  const ofertas = (produto.data.ofertas || []).sort((a, b) => 
+    parseFloat(a.preco) - parseFloat(b.preco)
+  );
+  
+  // Constrói o HTML do acordeom
+  let html = `
+    <details class="my-4" id="ofertas-${produto.slug || 'produto'}">
+      <summary class="cursor-pointer font-bold text-blue-600 hover:text-blue-800 select-none">
+        Melhores Ofertas (${ofertas.length} disponíveis)
+      </summary>
+      <div class="mt-2 ml-4 text-sm space-y-1">
+  `;
+  
+  // Adiciona cada oferta
+  ofertas.forEach((oferta) => {
+    const freteGratis = oferta.freteGratis ? ' <span class="text-green-600">Frete grátis</span>' : '';
+    
+    html += `
+      <div>
+        <a href="${oferta.link}" 
+           target="_blank" 
+           rel="noopener noreferrer nofollow sponsored"
+           class="text-blue-600 hover:underline"
+           onclick="if(typeof gtag !== 'undefined') { gtag('event', 'click_oferta', {'marketplace': '${oferta.marketplace}', 'preco': '${oferta.preco}'}); }">
+          ${oferta.marketplace} - R$ ${String(oferta.preco).replace('.', ',')}
+        </a>${freteGratis}
+      </div>
+    `;
+  });
+  
+  html += `
+      </div>
+    </details>
+    <p class="my-2">
+      <a href="${produto.url}" 
+         target="_blank"
+         rel="noopener noreferrer"
+         class="text-blue-600 hover:underline font-semibold inline-flex items-center gap-1"
+         onclick="if(typeof gtag !== 'undefined') { gtag('event', 'click_detalhes_produto', {'produto': '${produto.data.produtoNome}'}); }">
+        Página do produto
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+        </svg>
+      </a>
+    </p>
+  `;
+  
+  return html;
+});
+
+  // ========== SHORTCODE - MENOR PREÇO ==========
+
+  eleventyConfig.addShortcode("precoMinimo", function(produtoUrl) {
+    // Busca todos os produtos da collection
+    const produtos = this.ctx.collections.produto || [];
+    
+    // Encontra o produto pela URL
+    const produto = produtos.find(p => 
+      p.url === produtoUrl || 
+      p.url === produtoUrl + '/' || 
+      p.url + '/' === produtoUrl
+    );
+    
+    // Se não encontrou ou não tem ofertas
+    if (!produto || !produto.data.ofertas || produto.data.ofertas.length === 0) {
+      return "N/A";
+    }
+    
+    // Encontra o menor preço
+    const precos = produto.data.ofertas.map(o => parseFloat(o.preco));
+    const menorPreco = Math.min(...precos);
+    
+    // Retorna formatado com vírgula
+    return menorPreco.toFixed(2).replace('.', ',');
+  });
+
+
+
   // ========== COLLECTIONS - PRODUTOS ==========
   
   eleventyConfig.addCollection("produtosCasa", function(collection) {

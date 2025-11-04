@@ -15,12 +15,12 @@
     "@type": "Organization",
     "name": "Smart Life Brasil",
     "url": "https://smartlifebrasil.netlify.app/",
-    "logo": "https://smartlifebrasil.netlify.app/assets/img/mascote.png"
+    "logo": "https://smartlifebrasil.netlify.app/assets/img/mascote.webp"
   }
   </script>
 
   <meta name="description" content="{{ description or 'Produtos inteligentes para sua casa, negócio e vida' }}">  
-  <link rel="icon" type="image/png" href="/assets/img/mascote.png">
+  <link rel="icon" type="image/png" href="/assets/img/mascote.webp">
   
   {% set dominio = "https://smartlifebrasil.netlify.app" %}
   
@@ -29,14 +29,14 @@
   <meta property="og:site_name" content="Smart Life Brasil">
   <meta property="og:title" content="{{ title or 'Smart Life Brasil' }}">
   <meta property="og:description" content="{{ description or 'Produtos inteligentes para sua casa, negócio e vida' }}">
-  <meta property="og:image" content="{{ dominio + (imagem or '/assets/img/mascote.png') | url }}">
+  <meta property="og:image" content="{{ dominio + (imagem or '/assets/img/mascote.webp') | url }}">
   <meta property="og:url" content="{{ dominio + page.url | url }}">
   <meta property="og:type" content="{% if 'produto' in (tags | default([])) %}product{% elif 'post' in (tags | default([])) %}article{% else %}website{% endif %}">
   
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{{ title or 'Smart Life Brasil' }}">
   <meta name="twitter:description" content="{{ description or 'Produtos inteligentes para sua casa, negócio e vida' }}">
-  <meta name="twitter:image" content="{{ dominio + (imagem or '/assets/img/mascote.png') | url }}">
+  <meta name="twitter:image" content="{{ dominio + (imagem or '/assets/img/mascote.webp') | url }}">
   
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -64,6 +64,9 @@
 
     gtag('config', 'G-7WNMFW0P24');
   </script>
+  
+  <meta name="verification" content="293a77b5938e06695373653e2d4e1b39" />
+  <meta name="lomadee" content="2324685" />
   
 </head>
 

@@ -1,7 +1,9 @@
 <header class="bg-white shadow-md px-4 flex justify-between items-center h-16">
   <div class="flex items-center space-x-3 h-full">
-    <a href="/" class="flex items-center space-x-3 h-full">
-      <img src="/assets/img/mascote.png" 
+    <a href="/" 
+      onclick="if(typeof gtag !== 'undefined') { gtag('event', 'click_logo', {'origem': 'header'}); }"
+      class="flex items-center space-x-3 h-full">
+      <img src="/assets/img/mascote.webp" 
            alt="Mascote Smart Life Brasil" 
            class="max-h-full w-auto object-contain hover:scale-105 transition-transform duration-300">
 
@@ -14,22 +16,41 @@
 
   <nav>
     <ul class="hidden md:flex space-x-6">
-      <li><a href="/" class="text-gray-700 hover:text-blue-500 transition">Início</a></li>
-      <li><a href="/blog/" class="text-gray-700 hover:text-blue-500 transition font-semibold">Blog</a></li>
-      <li><a href="/sobre/" class="text-gray-700 hover:text-blue-500 transition">Sobre</a></li>
-      <li><a href="/contato/" class="text-gray-700 hover:text-blue-500 transition">Contato</a></li>
+      <li><a href="/" 
+        onclick="if(typeof gtag !== 'undefined') { gtag('event', 'click_menu', {'item': 'inicio', 'tipo': 'desktop'}); }"
+        class="text-gray-700 hover:text-blue-500 transition">Início</a></li>
+      <li><a href="/blog/" 
+        onclick="if(typeof gtag !== 'undefined') { gtag('event', 'click_menu', {'item': 'blog', 'tipo': 'desktop'}); }"
+        class="text-gray-700 hover:text-blue-500 transition font-semibold">Blog</a></li>
+      <li><a href="/sobre/" 
+        onclick="if(typeof gtag !== 'undefined') { gtag('event', 'click_menu', {'item': 'sobre', 'tipo': 'desktop'}); }"
+        class="text-gray-700 hover:text-blue-500 transition">Sobre</a></li>
+      <li><a href="/contato/" 
+        onclick="if(typeof gtag !== 'undefined') { gtag('event', 'click_menu', {'item': 'contato', 'tipo': 'desktop'}); }"
+        class="text-gray-700 hover:text-blue-500 transition">Contato</a></li>
     </ul>
-    <button class="md:hidden text-gray-700 focus:outline-none text-2xl" id="menu-btn">☰</button>
+    <button 
+      class="md:hidden text-gray-700 focus:outline-none text-2xl" 
+      id="menu-btn"
+      onclick="if(typeof gtag !== 'undefined') { gtag('event', 'click_menu_mobile', {'acao': 'abrir'}); }">☰</button>
   </nav>
 </header>
 
 <!-- Menu Mobile -->
 <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
   <ul class="flex flex-col p-4 space-y-3">
-    <li><a href="/" class="block text-gray-700 hover:text-blue-500 hover:bg-gray-50 px-4 py-2 rounded transition">Início</a></li>
-    <li><a href="/blog/" class="block text-gray-700 hover:text-blue-500 hover:bg-gray-50 px-4 py-2 rounded transition font-semibold">Blog</a></li>
-    <li><a href="/sobre/" class="block text-gray-700 hover:text-blue-500 hover:bg-gray-50 px-4 py-2 rounded transition">Sobre</a></li>
-    <li><a href="/contato/" class="block text-gray-700 hover:text-blue-500 hover:bg-gray-50 px-4 py-2 rounded transition">Contato</a></li>
+    <li><a href="/" 
+      onclick="if(typeof gtag !== 'undefined') { gtag('event', 'click_menu', {'item': 'inicio', 'tipo': 'mobile'}); }"
+      class="block text-gray-700 hover:text-blue-500 hover:bg-gray-50 px-4 py-2 rounded transition">Início</a></li>
+    <li><a href="/blog/" 
+      onclick="if(typeof gtag !== 'undefined') { gtag('event', 'click_menu', {'item': 'blog', 'tipo': 'mobile'}); }"
+      class="block text-gray-700 hover:text-blue-500 hover:bg-gray-50 px-4 py-2 rounded transition font-semibold">Blog</a></li>
+    <li><a href="/sobre/" 
+      onclick="if(typeof gtag !== 'undefined') { gtag('event', 'click_menu', {'item': 'sobre', 'tipo': 'mobile'}); }"
+      class="block text-gray-700 hover:text-blue-500 hover:bg-gray-50 px-4 py-2 rounded transition">Sobre</a></li>
+    <li><a href="/contato/" 
+      onclick="if(typeof gtag !== 'undefined') { gtag('event', 'click_menu', {'item': 'contato', 'tipo': 'mobile'}); }"
+      class="block text-gray-700 hover:text-blue-500 hover:bg-gray-50 px-4 py-2 rounded transition">Contato</a></li>
   </ul>
 </div>
 
