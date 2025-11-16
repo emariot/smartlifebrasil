@@ -1,5 +1,5 @@
 // ===================================
-// 1. CARROSSEL DE IMAGENS MELHORADO
+// 1. CARROSSEL DE IMAGENS MELHORADO (PÁGINA PRODUTO)
 // ===================================
 const carousel = document.getElementById('carousel');
 if (carousel && carousel.children.length > 1) {
@@ -116,6 +116,260 @@ if (carousel && carousel.children.length > 1) {
 }
 
 // ===================================
+// 1.5. CARROSSÉIS DE PRODUTOS NA HOME (COMPLETO)
+// ===================================
+document.querySelectorAll('.produtos-carousel-container').forEach(container => {
+    const carousel = container.querySelector('.produtos-carousel');
+    const prevBtn = container.querySelector('.carousel-nav-prev');
+    const nextBtn = container.querySelector('.carousel-nav-next');
+    const playPauseBtn = container.querySelector('.carousel-play-pause');
+    const indicators = container.querySelectorAll('.carousel-indicator');
+    const progressBar = container.querySelector('.carousel-progress-bar');
+    const collapseHeader = container.closest('.subcategoria-section')?.querySelector('.collapse-header');
+    
+    if (!carousel) return;
+    
+    const cards = carousel.querySelectorAll('.produto-carousel-card');
+    const cardWidth = 280 + 16; // largura do card + gap
+    const autoplayEnabled = container.dataset.autoplay === 'true';
+    
+    let autoplayInterval = null;
+    let autoplayProgress = 0;
+    let isPlaying = autoplayEnabled;
+    let currentIndex = 0;
+    
+    // ===== LAZY LOADING INTELIGENTE =====
+    function lazyLoadNearby(index) {
+        const toLoad = [
+            Math.max(0, index - 1),
+            index,
+            Math.min(cards.length - 1, index + 1),
+            Math.min(cards.length - 1, index + 2)
+        ];
+        
+        toLoad.forEach(i => {
+            const img = cards[i]?.querySelector('img[loading="lazy"]');
+            if (img && img.dataset.src && !img.src) {
+                img.src = img.dataset.src;
+            }
+        });
+    }
+    
+    // ===== ATUALIZAR INDICADORES =====
+    function updateIndicators() {
+        const scrollLeft = carousel.scrollLeft;
+        const newIndex = Math.round(scrollLeft / cardWidth);
+        
+        if (newIndex !== currentIndex) {
+            currentIndex = newIndex;
+            lazyLoadNearby(currentIndex);
+        }
+        
+        indicators.forEach((indicator, i) => {
+            if (i === currentIndex) {
+                indicator.classList.add('active');
+            } else {
+                indicator.classList.remove('active');
+            }
+        });
+    }
+    
+    // ===== NAVEGAÇÃO =====
+    function scrollToIndex(index) {
+        const targetScroll = index * cardWidth;
+        carousel.scrollTo({
+            left: targetScroll,
+            behavior: 'smooth'
+        });
+    }
+    
+    function scrollCarousel(direction) {
+        const currentScroll = carousel.scrollLeft;
+        const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+        
+        let targetIndex;
+        if (direction === 'next') {
+            targetIndex = Math.min(currentIndex + 1, cards.length - 1);
+            if (currentScroll >= maxScroll - 10) {
+                targetIndex = 0; // Volta pro início
+            }
+        } else {
+            targetIndex = Math.max(currentIndex - 1, 0);
+        }
+        
+        scrollToIndex(targetIndex);
+        stopAutoplay();
+    }
+    
+    // ===== AUTOPLAY =====
+    function startAutoplay() {
+        if (!autoplayEnabled || autoplayInterval) return;
+        
+        isPlaying = true;
+        updatePlayPauseButton();
+        
+        autoplayInterval = setInterval(() => {
+            autoplayProgress += 1;
+            
+            if (progressBar) {
+                const progress = (autoplayProgress / 50) * 100; // 5 segundos = 50 * 100ms
+                progressBar.style.width = `${progress}%`;
+            }
+            
+            if (autoplayProgress >= 50) {
+                autoplayProgress = 0;
+                const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+                
+                if (carousel.scrollLeft >= maxScroll - 10) {
+                    scrollToIndex(0); // Volta pro início
+                } else {
+                    scrollCarousel('next');
+                }
+            }
+        }, 100);
+    }
+    
+    function stopAutoplay() {
+        if (autoplayInterval) {
+            clearInterval(autoplayInterval);
+            autoplayInterval = null;
+        }
+        isPlaying = false;
+        autoplayProgress = 0;
+        if (progressBar) progressBar.style.width = '0%';
+        updatePlayPauseButton();
+    }
+    
+    function toggleAutoplay() {
+        if (isPlaying) {
+            stopAutoplay();
+        } else {
+            startAutoplay();
+        }
+    }
+    
+    function updatePlayPauseButton() {
+        if (!playPauseBtn) return;
+        const playIcon = playPauseBtn.querySelector('.play-icon');
+        const pauseIcon = playPauseBtn.querySelector('.pause-icon');
+        
+        if (isPlaying) {
+            playIcon.classList.add('hidden');
+            pauseIcon.classList.remove('hidden');
+        } else {
+            playIcon.classList.remove('hidden');
+            pauseIcon.classList.add('hidden');
+        }
+    }
+    
+    // ===== EVENT LISTENERS =====
+    
+    // Botões de navegação
+    if (prevBtn) prevBtn.addEventListener('click', () => scrollCarousel('prev'));
+    if (nextBtn) nextBtn.addEventListener('click', () => scrollCarousel('next'));
+    if (playPauseBtn) playPauseBtn.addEventListener('click', toggleAutoplay);
+    
+    // Indicadores
+    indicators.forEach((indicator, i) => {
+        indicator.addEventListener('click', () => {
+            scrollToIndex(i);
+            stopAutoplay();
+        });
+    });
+    
+    // Scroll listener
+    carousel.addEventListener('scroll', updateIndicators);
+    
+    // Pause on hover/focus
+    carousel.addEventListener('mouseenter', stopAutoplay);
+    carousel.addEventListener('mouseleave', () => {
+        if (autoplayEnabled) setTimeout(startAutoplay, 1000);
+    });
+    
+    // ===== KEYBOARD NAVIGATION =====
+    carousel.addEventListener('keydown', (e) => {
+        switch(e.key) {
+            case 'ArrowLeft':
+                e.preventDefault();
+                scrollCarousel('prev');
+                break;
+            case 'ArrowRight':
+                e.preventDefault();
+                scrollCarousel('next');
+                break;
+            case ' ':
+                e.preventDefault();
+                toggleAutoplay();
+                break;
+            case 'Home':
+                e.preventDefault();
+                scrollToIndex(0);
+                stopAutoplay();
+                break;
+            case 'End':
+                e.preventDefault();
+                scrollToIndex(cards.length - 1);
+                stopAutoplay();
+                break;
+        }
+    });
+    
+    // ===== DRAG & DROP =====
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+    
+    carousel.addEventListener('mousedown', (e) => {
+        isDown = true;
+        carousel.style.cursor = 'grabbing';
+        startX = e.pageX - carousel.offsetLeft;
+        scrollLeft = carousel.scrollLeft;
+        stopAutoplay();
+    });
+    
+    carousel.addEventListener('mouseleave', () => {
+        isDown = false;
+        carousel.style.cursor = 'grab';
+    });
+    
+    carousel.addEventListener('mouseup', () => {
+        isDown = false;
+        carousel.style.cursor = 'grab';
+    });
+    
+    carousel.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - carousel.offsetLeft;
+        const walk = (x - startX) * 2;
+        carousel.scrollLeft = scrollLeft - walk;
+    });
+    
+    // ===== SEÇÕES COLAPSÁVEIS =====
+    if (collapseHeader) {
+        const collapseContent = container.closest('.subcategoria-section')?.querySelector('.collapse-content');
+        
+        collapseHeader.addEventListener('click', (e) => {
+            // Não colapsa se clicar no link "Ver Todos"
+            if (e.target.closest('a')) return;
+            
+            collapseHeader.classList.toggle('collapsed');
+            collapseContent?.classList.toggle('collapsed');
+            
+            if (collapseContent?.classList.contains('collapsed')) {
+                stopAutoplay();
+            }
+        });
+    }
+    
+    // Inicialização
+    carousel.style.cursor = 'grab';
+    lazyLoadNearby(0);
+    updateIndicators();
+    if (autoplayEnabled) startAutoplay();
+});
+
+// ===================================
 // 2. FUNÇÕES QUE PRECISAM DO DOM PRONTO
 // ===================================
 document.addEventListener('DOMContentLoaded', () => {
@@ -150,7 +404,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ===================== OVERLAY DE OFERTAS =====================
     document.querySelectorAll('.toggle-ofertas').forEach(btn => {
-        btn.addEventListener('click', e => { e.stopPropagation(); e.preventDefault(); const overlay = btn.closest('.product-card')?.querySelector('.ofertas-overlay'); if (overlay) overlay.classList.add('show'); });
+        btn.addEventListener('click', e => { 
+            e.stopPropagation(); 
+            e.preventDefault(); 
+            const overlay = btn.closest('.produto-carousel-card')?.querySelector('.ofertas-overlay') || btn.closest('.product-card')?.querySelector('.ofertas-overlay'); 
+            if (overlay) overlay.classList.add('show'); 
+        });
     });
     document.querySelectorAll('.close-ofertas').forEach(btn => {
         btn.addEventListener('click', e => { e.stopPropagation(); const overlay = btn.closest('.ofertas-overlay'); if (overlay) overlay.classList.remove('show'); });

@@ -1,9 +1,10 @@
 /* Customizações extras */
-body { font-family: 'Poppins', sans-serif'
-  }
+body { 
+  font-family: 'Poppins', sans-serif;
+}
 
 a.btn {
-    transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 /* Line clamp */
@@ -15,15 +16,99 @@ a.btn {
   overflow: hidden;
 }
 
+/* ========================================
+   CARROSSÉIS DE PRODUTOS NA HOME
+   ======================================== */
+
+/* Barra de rolagem personalizada */
+.produtos-carousel::-webkit-scrollbar {
+  height: 8px;
+}
+
+.produtos-carousel::-webkit-scrollbar-track {
+  background: #E5E7EB;
+  border-radius: 4px;
+}
+
+.produtos-carousel::-webkit-scrollbar-thumb {
+  background: #3B82F6;
+  border-radius: 4px;
+}
+
+.produtos-carousel::-webkit-scrollbar-thumb:hover {
+  background: #2563EB;
+}
+
+/* Firefox */
+.produtos-carousel {
+  scrollbar-width: thin;
+  scrollbar-color: #3B82F6 #E5E7EB;
+}
+
+/* Snap scroll suave */
+.produtos-carousel {
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.produto-carousel-card {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+/* Animação suave dos cards no carrossel */
+.produto-carousel-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.produto-carousel-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Container do carrossel */
+.produtos-carousel-container {
+  position: relative;
+  padding: 0 40px;
+}
+
+@media (max-width: 768px) {
+  .produtos-carousel-container {
+    padding: 0 10px;
+  }
+}
+
+/* Botões de navegação do carrossel */
+.carousel-nav-prev,
+.carousel-nav-next {
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.produtos-carousel-container:hover .carousel-nav-prev,
+.produtos-carousel-container:hover .carousel-nav-next {
+  opacity: 1;
+}
+
+/* ========================================
+   CARDS DE PRODUTO (GRID ANTIGO - COMPATIBILIDADE)
+   ======================================== */
+
 /* Cards com hover suave */
 .product-card {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
 }
+
 .product-card:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
+
+/* ========================================
+   OVERLAY DE OFERTAS
+   ======================================== */
 
 /* Overlay de ofertas - cobre todo o card */
 .ofertas-overlay {
@@ -62,17 +147,17 @@ a.btn {
 }
 
 /* ========================================
-   MELHORIAS DO CARROSSEL
+   CARROSSEL DE IMAGENS (PÁGINA PRODUTO)
    ======================================== */
 
-/* 2. GPU acceleration + transição suave */
+/* GPU acceleration + transição suave */
 #carousel {
   will-change: transform;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
 }
 
-/* 4. Fade nas bordas quando há mais imagens */
+/* Fade nas bordas quando há mais imagens */
 .carousel-container::before,
 .carousel-container::after {
   content: '';
@@ -98,12 +183,12 @@ a.btn {
   opacity: 1;
 }
 
-/* 5. Animação suave dos indicadores */
+/* Animação suave dos indicadores */
 .carousel-indicator {
   transition: all 0.3s ease;
 }
 
-/* 6. Loading skeleton */
+/* Loading skeleton */
 .carousel-skeleton {
   background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
   background-size: 200% 100%;
@@ -129,7 +214,7 @@ a.btn {
   opacity: 1;
 }
 
-/* 3. Screen reader only - oculta visualmente mas mantém para leitores */
+/* Screen reader only - oculta visualmente mas mantém para leitores */
 .sr-only {
   position: absolute;
   width: 1px;
@@ -141,3 +226,5 @@ a.btn {
   white-space: nowrap;
   border-width: 0;
 }
+
+

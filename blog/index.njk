@@ -26,6 +26,8 @@ customCSS: |
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   }
 
+    
+
 customScript: |
   // Filtros de categoria
   const filterBtns = document.querySelectorAll('.filter-btn');
@@ -156,9 +158,13 @@ customScript: |
       <div class="flex flex-col lg:flex-row">
         <!-- Imagem -->
         <div class="lg:w-1/2">
-          <img src="{{ featuredPost.data.imagem or '/assets/img/blog-default.jpg' }}" 
-               alt="{{ featuredPost.data.title }}"
-               class="w-full h-64 lg:h-full object-cover">
+          <div class="w-full h-full min-h-[300px] lg:min-h-[100%] overflow-hidden">
+            <img 
+              src="{{ featuredPost.data.imagem or '/assets/img/blog-default.jpg' }}" 
+              alt="{{ featuredPost.data.title }}"
+              class="w-full h-full object-contain bg-black"
+            >
+          </div>
         </div>
         
         <!-- Conteúdo -->
@@ -223,11 +229,12 @@ customScript: |
            data-categoria="{{ post.data.categoriaBlog or 'geral' }}">
         
         <!-- Imagem -->
-        <div class="relative h-48 bg-gradient-to-br from-blue-100 to-purple-100">
-          <img src="{{ post.data.imagem or '/assets/img/blog-default.jpg' }}" 
-               alt="{{ post.data.title }}"
-               class="w-full h-full object-cover">
-          
+        <div class="relative aspect-video bg-gradient-to-br from-blue-100 to-purple-100 overflow-hidden">
+          <img 
+            src="{{ post.data.imagem or '/assets/img/blog-default.jpg' }}" 
+            alt="{{ post.data.title }}"
+            class="absolute inset-0 w-full h-full object-cover object-center"
+          >
           <!-- Badge de Categoria -->
           <div class="absolute top-3 left-3">
             {% set categoryColor = 'bg-blue-500' %}
