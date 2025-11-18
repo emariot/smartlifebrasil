@@ -116,57 +116,79 @@ if (carousel && carousel.children.length > 1) {
 }
 
 // ===================================
-// 1.5. CARROSSÉIS DE PRODUTOS NA HOME (COMPLETO)
+// 1.5. CARROSSÉIS DE PRODUTOS NA HOME (COM TOUCH)
 // ===================================
 document.querySelectorAll('.produtos-carousel-container').forEach(container => {
     const carousel = container.querySelector('.produtos-carousel');
     const prevBtn = container.querySelector('.carousel-nav-prev');
     const nextBtn = container.querySelector('.carousel-nav-next');
-    const playPauseBtn = container.querySelector('.carousel-play-pause');
-    const indicators = container.querySelectorAll('.carousel-indicator');
-    const progressBar = container.querySelector('.carousel-progress-bar');
-    const collapseHeader = container.closest('.subcategoria-section')?.querySelector('.collapse-header');
+    const indicatorsContainer = container.querySelector('.carousel-indicators');
     
     if (!carousel) return;
     
     const cards = carousel.querySelectorAll('.produto-carousel-card');
-    const cardWidth = 280 + 16; // largura do card + gap
-    const autoplayEnabled = container.dataset.autoplay === 'true';
+    if (cards.length === 0) return;
     
-    let autoplayInterval = null;
-    let autoplayProgress = 0;
-    let isPlaying = autoplayEnabled;
-    let currentIndex = 0;
+    const cardWidth = 280 + 16; // largura do card + gap
+    let currentPage = 0;
+    let cardsPerPage = 1;
+    let totalPages = 1;
+    
+    // ===== CALCULAR PÁGINAS =====
+    function calculatePages() {
+        const containerWidth = carousel.offsetWidth;
+        cardsPerPage = Math.floor(containerWidth / cardWidth);
+        if (cardsPerPage < 1) cardsPerPage = 1;
+        totalPages = Math.ceil(cards.length / cardsPerPage);
+        
+        // Criar indicadores dinamicamente
+        createIndicators();
+    }
+    
+    // ===== CRIAR INDICADORES =====
+    function createIndicators() {
+        if (!indicatorsContainer) return;
+        indicatorsContainer.innerHTML = '';
+        
+        for (let i = 0; i < totalPages; i++) {
+            const indicator = document.createElement('button');
+            indicator.className = 'carousel-indicator w-2 h-2 rounded-full bg-blue-400 hover:bg-blue-500 transition-all';
+            indicator.setAttribute('data-page', i);
+            indicator.setAttribute('aria-label', `Ir para página ${i + 1}`);
+            indicator.addEventListener('click', () => goToPage(i));
+            indicatorsContainer.appendChild(indicator);
+        }
+        
+        updateIndicators();
+    }
     
     // ===== LAZY LOADING INTELIGENTE =====
-    function lazyLoadNearby(index) {
-        const toLoad = [
-            Math.max(0, index - 1),
-            index,
-            Math.min(cards.length - 1, index + 1),
-            Math.min(cards.length - 1, index + 2)
-        ];
+    function lazyLoadNearby(page) {
+        const startIndex = page * cardsPerPage;
+        const endIndex = Math.min(startIndex + cardsPerPage + 2, cards.length);
         
-        toLoad.forEach(i => {
+        for (let i = Math.max(0, startIndex - 1); i < endIndex; i++) {
             const img = cards[i]?.querySelector('img[loading="lazy"]');
             if (img && img.dataset.src && !img.src) {
                 img.src = img.dataset.src;
             }
-        });
+        }
     }
     
     // ===== ATUALIZAR INDICADORES =====
     function updateIndicators() {
         const scrollLeft = carousel.scrollLeft;
-        const newIndex = Math.round(scrollLeft / cardWidth);
+        const pageWidth = cardsPerPage * cardWidth;
+        const newPage = Math.round(scrollLeft / pageWidth);
         
-        if (newIndex !== currentIndex) {
-            currentIndex = newIndex;
-            lazyLoadNearby(currentIndex);
+        if (newPage !== currentPage && newPage >= 0 && newPage < totalPages) {
+            currentPage = newPage;
+            lazyLoadNearby(currentPage);
         }
         
-        indicators.forEach((indicator, i) => {
-            if (i === currentIndex) {
+        const indicators = indicatorsContainer?.querySelectorAll('.carousel-indicator');
+        indicators?.forEach((indicator, i) => {
+            if (i === currentPage) {
                 indicator.classList.add('active');
             } else {
                 indicator.classList.remove('active');
@@ -175,91 +197,27 @@ document.querySelectorAll('.produtos-carousel-container').forEach(container => {
     }
     
     // ===== NAVEGAÇÃO =====
-    function scrollToIndex(index) {
-        const targetScroll = index * cardWidth;
+    function goToPage(page) {
+        if (page < 0 || page >= totalPages) return;
+        
+        const targetScroll = page * cardsPerPage * cardWidth;
         carousel.scrollTo({
             left: targetScroll,
             behavior: 'smooth'
         });
+        currentPage = page;
     }
     
     function scrollCarousel(direction) {
-        const currentScroll = carousel.scrollLeft;
-        const maxScroll = carousel.scrollWidth - carousel.clientWidth;
-        
-        let targetIndex;
+        let targetPage;
         if (direction === 'next') {
-            targetIndex = Math.min(currentIndex + 1, cards.length - 1);
-            if (currentScroll >= maxScroll - 10) {
-                targetIndex = 0; // Volta pro início
-            }
+            targetPage = currentPage + 1;
+            if (targetPage >= totalPages) targetPage = 0; // Loop
         } else {
-            targetIndex = Math.max(currentIndex - 1, 0);
+            targetPage = currentPage - 1;
+            if (targetPage < 0) targetPage = totalPages - 1; // Loop reverso
         }
-        
-        scrollToIndex(targetIndex);
-        stopAutoplay();
-    }
-    
-    // ===== AUTOPLAY =====
-    function startAutoplay() {
-        if (!autoplayEnabled || autoplayInterval) return;
-        
-        isPlaying = true;
-        updatePlayPauseButton();
-        
-        autoplayInterval = setInterval(() => {
-            autoplayProgress += 1;
-            
-            if (progressBar) {
-                const progress = (autoplayProgress / 50) * 100; // 5 segundos = 50 * 100ms
-                progressBar.style.width = `${progress}%`;
-            }
-            
-            if (autoplayProgress >= 50) {
-                autoplayProgress = 0;
-                const maxScroll = carousel.scrollWidth - carousel.clientWidth;
-                
-                if (carousel.scrollLeft >= maxScroll - 10) {
-                    scrollToIndex(0); // Volta pro início
-                } else {
-                    scrollCarousel('next');
-                }
-            }
-        }, 100);
-    }
-    
-    function stopAutoplay() {
-        if (autoplayInterval) {
-            clearInterval(autoplayInterval);
-            autoplayInterval = null;
-        }
-        isPlaying = false;
-        autoplayProgress = 0;
-        if (progressBar) progressBar.style.width = '0%';
-        updatePlayPauseButton();
-    }
-    
-    function toggleAutoplay() {
-        if (isPlaying) {
-            stopAutoplay();
-        } else {
-            startAutoplay();
-        }
-    }
-    
-    function updatePlayPauseButton() {
-        if (!playPauseBtn) return;
-        const playIcon = playPauseBtn.querySelector('.play-icon');
-        const pauseIcon = playPauseBtn.querySelector('.pause-icon');
-        
-        if (isPlaying) {
-            playIcon.classList.add('hidden');
-            pauseIcon.classList.remove('hidden');
-        } else {
-            playIcon.classList.remove('hidden');
-            pauseIcon.classList.add('hidden');
-        }
+        goToPage(targetPage);
     }
     
     // ===== EVENT LISTENERS =====
@@ -267,27 +225,50 @@ document.querySelectorAll('.produtos-carousel-container').forEach(container => {
     // Botões de navegação
     if (prevBtn) prevBtn.addEventListener('click', () => scrollCarousel('prev'));
     if (nextBtn) nextBtn.addEventListener('click', () => scrollCarousel('next'));
-    if (playPauseBtn) playPauseBtn.addEventListener('click', toggleAutoplay);
-    
-    // Indicadores
-    indicators.forEach((indicator, i) => {
-        indicator.addEventListener('click', () => {
-            scrollToIndex(i);
-            stopAutoplay();
-        });
-    });
     
     // Scroll listener
     carousel.addEventListener('scroll', updateIndicators);
     
-    // Pause on hover/focus
-    carousel.addEventListener('mouseenter', stopAutoplay);
-    carousel.addEventListener('mouseleave', () => {
-        if (autoplayEnabled) setTimeout(startAutoplay, 1000);
+    // ===== TOUCH SUPPORT (Mobile/Tablet) =====
+    let touchStartX = 0;
+    let touchEndX = 0;
+    let scrollStartLeft = 0;
+    
+    carousel.addEventListener('touchstart', (e) => {
+        touchStartX = e.touches[0].clientX;
+        scrollStartLeft = carousel.scrollLeft;
+    }, { passive: true });
+    
+    carousel.addEventListener('touchmove', (e) => {
+        // O scroll nativo do navegador já cuida do movimento
+        // Este listener é apenas para rastrear
+    }, { passive: true });
+    
+    carousel.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].clientX;
+        const swipeDistance = touchStartX - touchEndX;
+        
+        // Se deslizou mais de 50px, considera como swipe
+        if (Math.abs(swipeDistance) > 50) {
+            // Atualiza o indicador baseado na posição final
+            setTimeout(updateIndicators, 100);
+        }
+    }, { passive: true });
+    
+    // Resize listener - recalcular páginas
+    window.addEventListener('resize', () => {
+        calculatePages();
+        goToPage(currentPage); // Reposiciona
     });
     
     // ===== KEYBOARD NAVIGATION =====
-    carousel.addEventListener('keydown', (e) => {
+    document.addEventListener('keydown', (e) => {
+        // Só funciona se o carrossel estiver visível na tela
+        const rect = carousel.getBoundingClientRect();
+        const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+        
+        if (!isVisible) return;
+        
         switch(e.key) {
             case 'ArrowLeft':
                 e.preventDefault();
@@ -297,76 +278,13 @@ document.querySelectorAll('.produtos-carousel-container').forEach(container => {
                 e.preventDefault();
                 scrollCarousel('next');
                 break;
-            case ' ':
-                e.preventDefault();
-                toggleAutoplay();
-                break;
-            case 'Home':
-                e.preventDefault();
-                scrollToIndex(0);
-                stopAutoplay();
-                break;
-            case 'End':
-                e.preventDefault();
-                scrollToIndex(cards.length - 1);
-                stopAutoplay();
-                break;
         }
     });
     
-    // ===== DRAG & DROP =====
-    let isDown = false;
-    let startX;
-    let scrollLeft;
-    
-    carousel.addEventListener('mousedown', (e) => {
-        isDown = true;
-        carousel.style.cursor = 'grabbing';
-        startX = e.pageX - carousel.offsetLeft;
-        scrollLeft = carousel.scrollLeft;
-        stopAutoplay();
-    });
-    
-    carousel.addEventListener('mouseleave', () => {
-        isDown = false;
-        carousel.style.cursor = 'grab';
-    });
-    
-    carousel.addEventListener('mouseup', () => {
-        isDown = false;
-        carousel.style.cursor = 'grab';
-    });
-    
-    carousel.addEventListener('mousemove', (e) => {
-        if (!isDown) return;
-        e.preventDefault();
-        const x = e.pageX - carousel.offsetLeft;
-        const walk = (x - startX) * 2;
-        carousel.scrollLeft = scrollLeft - walk;
-    });
-    
-    // ===== SEÇÕES COLAPSÁVEIS =====
-    if (collapseHeader) {
-        const collapseContent = container.closest('.subcategoria-section')?.querySelector('.collapse-content');
-        
-        collapseHeader.addEventListener('click', (e) => {
-            // Não colapsa se clicar no link "Ver Todos"
-            if (e.target.closest('a')) return;
-            
-            collapseHeader.classList.toggle('collapsed');
-            collapseContent?.classList.toggle('collapsed');
-            
-            if (collapseContent?.classList.contains('collapsed')) {
-                stopAutoplay();
-            }
-        });
-    }
-    
     // Inicialização
-    carousel.style.cursor = 'grab';
+    calculatePages();
     lazyLoadNearby(0);
     updateIndicators();
-    if (autoplayEnabled) startAutoplay();
 });
 
 // ===================================

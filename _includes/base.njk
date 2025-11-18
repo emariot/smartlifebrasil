@@ -5,8 +5,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="google-site-verification" content="IY1SA4_5ifg63QmeFKa5B68RwXu8Gobi8wn3HGJpvLQ" />
-
   <title>{{ title or "Smart Life Brasil" }}</title>
 
   <script type="application/ld+json">
@@ -14,15 +12,15 @@
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Smart Life Brasil",
-    "url": "https://smartlifebrasil.netlify.app/",
-    "logo": "https://smartlifebrasil.netlify.app/assets/img/mascote.webp"
+    "url": "https://smartlifebr.com.br",
+    "logo": "https://smartlifebr.com.br/assets/img/mascote.webp"
   }
   </script>
 
   <meta name="description" content="{{ description or 'Produtos inteligentes para sua casa, negócio e vida' }}">  
   <link rel="icon" type="image/png" href="/assets/img/mascote.webp">
   
-  {% set dominio = "https://smartlifebrasil.netlify.app" %}
+  {% set dominio = "https://smartlifebr.com.br" %}
   
   <link rel="canonical" href="{{ dominio + page.url | url }}">
 
@@ -48,7 +46,6 @@
 
   <!-- CSS customizado -->
   <link rel="stylesheet" href="/assets/css/styles.css">
-  <link rel="stylesheet" href="/assets/css/carousel.css">
   
   {% if customCSS %}
   <style>

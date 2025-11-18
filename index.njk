@@ -33,7 +33,16 @@ layout: base.njk
     
     <div class="space-y-12">
       
-      {# Agrupa produtos por subcategoria usando lógica do template #}
+      {# ORDEM DAS SUBCATEGORIAS - EDITE AQUI #}
+      {# Adicione as subcategorias na ordem desejada #}
+      {# Subcategorias não listadas aparecem depois, em ordem alfabética #}
+      {% set ordemSubcategorias = [
+        'internet-roteadores',
+        'caixas-de-som-inteligentes',
+        'lampadas-inteligentes'
+      ] %}
+      
+      {# Agrupa produtos por subcategoria #}
       {% set subcategorias = [] %}
       {% for produto in collections.produto %}
         {% set subcat = produto.data.subcategoria or 'outros' %}
@@ -42,7 +51,24 @@ layout: base.njk
         {% endif %}
       {% endfor %}
       
-      {% for subcategoria in subcategorias %}
+      {# Ordena subcategorias conforme ordem definida #}
+      {% set subcategoriasOrdenadas = [] %}
+      
+      {# Primeiro, adiciona as que estão na ordem personalizada #}
+      {% for subcatOrdem in ordemSubcategorias %}
+        {% if subcatOrdem in subcategorias %}
+          {% set subcategoriasOrdenadas = (subcategoriasOrdenadas.push(subcatOrdem), subcategoriasOrdenadas) %}
+        {% endif %}
+      {% endfor %}
+      
+      {# Depois, adiciona as restantes em ordem alfabética #}
+      {% for subcat in subcategorias %}
+        {% if subcat not in subcategoriasOrdenadas %}
+          {% set subcategoriasOrdenadas = (subcategoriasOrdenadas.push(subcat), subcategoriasOrdenadas) %}
+        {% endif %}
+      {% endfor %}
+      
+      {% for subcategoria in subcategoriasOrdenadas %}
       
       {# Filtra produtos desta subcategoria #}
       {% set produtosDaSubcat = [] %}
@@ -55,24 +81,17 @@ layout: base.njk
       {% if produtosDaSubcat.length > 0 %}
       
       <!-- Seção da Subcategoria -->
-      <div class="subcategoria-section border border-gray-200 rounded-xl overflow-hidden bg-white shadow-sm">
-        <!-- Cabeçalho Colapsável -->
-        <div class="flex items-center justify-between p-4 cursor-pointer hover:bg-gray-50 transition collapse-header"
-             data-subcategoria="{{ subcategoria }}">
+      <div class="subcategoria-section">
+        <!-- Título da Subcategoria -->
+        <div class="flex items-center justify-between mb-4">
           <div class="flex items-center gap-3">
-            <button class="collapse-toggle text-gray-500 hover:text-gray-700 transition transform">
-              <svg class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-              </svg>
-            </button>
             <h3 class="text-xl font-bold text-gray-800 capitalize">
               {{ subcategoria | replace("-", " ") }}
             </h3>
             <span class="text-sm text-gray-500 bg-gray-100 px-2 py-1 rounded-full">{{ produtosDaSubcat.length }}</span>
           </div>
           <a href="/produtos/casa/{{ subcategoria }}" 
-             class="text-sm text-blue-600 hover:text-blue-800 font-semibold flex items-center gap-1 hover:gap-2 transition-all"
-             onclick="event.stopPropagation();">
+             class="text-sm text-blue-600 hover:text-blue-800 font-semibold flex items-center gap-1 hover:gap-2 transition-all">
             Ver Todos
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
@@ -80,15 +99,14 @@ layout: base.njk
           </a>
         </div>
         
-        <!-- Conteúdo Colapsável -->
-        <div class="collapse-content">
-          <div class="p-4 pt-0">
-        
         <!-- Carrossel -->
         <div class="produtos-carousel-container relative">
+          
           <div class="produtos-carousel flex gap-4 overflow-x-auto scroll-smooth pb-4" 
-               style="scrollbar-width: none; -ms-overflow-style: none;"
-               data-subcategoria="{{ subcategoria }}">
+               style="scrollbar-width: thin; scrollbar-color: #3B82F6 #E5E7EB;"
+               data-subcategoria="{{ subcategoria }}"
+               role="region"
+               aria-label="Carrossel de produtos de {{ subcategoria }}">
             
             {% for produto in produtosDaSubcat %}
             {% set ofertas = produto.data.ofertas | sort(attribute='preco') %}
@@ -215,18 +233,21 @@ layout: base.njk
           
           <!-- Botões de Navegação -->
           {% if produtosDaSubcat.length > 1 %}
-          <button class="carousel-nav-prev absolute left-0 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white p-3 rounded-full shadow-lg transition hover:scale-110 z-10 hidden md:block"
+          <button class="carousel-nav-prev absolute left-2 top-1/2 -translate-y-1/2 bg-white/95 hover:bg-white p-3 rounded-full shadow-lg transition hover:scale-110 z-10"
                   aria-label="Ver produtos anteriores">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
             </svg>
           </button>
-          <button class="carousel-nav-next absolute right-0 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white p-3 rounded-full shadow-lg transition hover:scale-110 z-10 hidden md:block"
+          <button class="carousel-nav-next absolute right-2 top-1/2 -translate-y-1/2 bg-white/95 hover:bg-white p-3 rounded-full shadow-lg transition hover:scale-110 z-10"
                   aria-label="Ver próximos produtos">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
             </svg>
           </button>
+          
+          <!-- Indicadores (Bolinhas) - Abaixo do scroll -->
+          <div class="carousel-indicators absolute -bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-10"></div>
           {% endif %}
           
         </div>
