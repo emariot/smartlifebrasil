@@ -168,7 +168,7 @@ customCSS: |
   "headline": "{{ title }}",
   "description": "{{ description | replace('\n', ' ') | safe }}",
   {% if imagem %}
-  "image": "https://smartlifebrasil.netlify.app{{ imagem }}",
+  "image": "https://smartlifebr.com.br{{ imagem }}",
   {% endif %}
   "author": {
     "@type": "Person",
@@ -179,12 +179,12 @@ customCSS: |
     "name": "Smart Life Brasil",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://smartlifebrasil.netlify.app/assets/img/mascote.webp"
+      "url": "https://smartlifebr.com.br/assets/img/mascote.webp"
     }
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://SEU_DOMINIO.com{{ page.url }}"
+    "@id": "https://smartlifebr.com.br{{ page.url }}"
   },
   "datePublished": "{{ date | dateToISO }}",
   "dateModified": "{{ date | dateToISO }}"

@@ -14,7 +14,7 @@ layout: base.njk
   "name": "{{ produtoNome }}",
   "description": "{{ produtoDescricao | replace('\n', ' ') | safe }}",
   {% if imagens and imagens.length > 0 %}
-  "image": "https://smartlifebrasil.netlify.app{{ imagens[0].src }}",
+  "image": "https://smartlifebr.com.br{{ imagens[0].src }}",
   {% endif %}
   {% if marca %}
   "brand": {

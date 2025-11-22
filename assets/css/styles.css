@@ -17,6 +17,31 @@ a.btn {
 }
 
 /* ========================================
+   BANNER PRINCIPAL (Mobile Grande)
+   ======================================== */
+
+.banner-img {
+  width: 100%;
+  /* No Desktop, mantém o limite original elegante */
+  height: auto; 
+  max-height: 400px;
+  min-height: 300px; /* Garante que não fique muito fino em monitores wide */
+}
+
+@media (max-width: 768px) {
+  .banner-img {
+    /* No Mobile, forçamos uma altura maior */
+    height: 340px !important; 
+    max-height: none !important;
+    
+    /* Centraliza o recorte da imagem (foco no meio) */
+    object-position: center center; 
+  }
+  
+  /* Opcional: Se quiser que o banner encoste nas bordas da tela no mobile */
+  /* Localize a <section> pai no HTML e adicione uma classe para remover padding se desejar */
+}
+/* ========================================
    CARROSSÉIS DE PRODUTOS NA HOME
    ======================================== */
 
@@ -43,40 +68,60 @@ a.btn {
 .produtos-carousel {
   scrollbar-width: thin;
   scrollbar-color: #3B82F6 #E5E7EB;
-}
-
-/* Snap scroll suave */
-.produtos-carousel {
+  
+  /* Snap scroll suave */
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
 }
 
+/* ========================================
+   ESTILO DOS CARDS (Carrossel e Grid) - NOVO HOVER SUAVE
+   ======================================== */
+
+/* Regras comuns para ambos os tipos de card */
+.produto-carousel-card,
+.product-card {
+  position: relative;
+  
+  /* Animação Suave (Cubic Bezier) */
+  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), 
+              box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+              
+  will-change: transform, box-shadow;
+  backface-visibility: hidden;
+}
+
+
+/* Regras específicas apenas para o carrossel (Snap) */
 .produto-carousel-card {
   scroll-snap-align: start;
   scroll-snap-stop: always;
 }
 
-/* Animação suave dos cards no carrossel */
-.produto-carousel-card {
-  transition: transform 0.5s ease-out, box-shadow 0.5s ease-out;
-  position: relative;
+/* Efeito Hover Unificado (Mais elegante) */
+.produto-carousel-card:hover,
+.product-card:hover {
+  /* Sobe menos (-5px) para não dar "pulo" brusco */
+  transform: translateY(-5px);
+  
+  /* Sombra difusa em camadas */
+  box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.1), 
+              0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
-.produto-carousel-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
-}
+/* ========================================
+   CONTAINER E NAVEGAÇÃO (Desktop)
+   ======================================== */
 
 /* Container do carrossel */
 .produtos-carousel-container {
   position: relative;
-  padding: 0 50px;
+  padding: 0 50px; /* Espaço para as setas no desktop */
 }
 
-@media (max-width: 768px) {
-  .produtos-carousel-container {
-    padding: 0 40px;
-  }
+/* Classe utilitária para largura do card responsiva */
+.card-width-responsive {
+  width: 280px; /* Padrão Desktop */
 }
 
 /* Indicadores (bolinhas azuis por página) */
@@ -95,6 +140,7 @@ a.btn {
 .carousel-nav-prev,
 .carousel-nav-next {
   transition: transform 0.3s ease;
+  display: block; /* Garante que apareçam no desktop */
 }
 
 .carousel-nav-prev:active,
@@ -102,41 +148,63 @@ a.btn {
   transform: scale(0.95);
 }
 
-/* Botões de navegação - sempre visíveis em mobile */
+/* ========================================
+   MEDIA QUERY: MOBILE (Telas menores que 768px)
+   ======================================== */
 @media (max-width: 768px) {
+  
+  /* 1. Ajuste do Container para aproveitar 100% da largura */
+  .produtos-carousel-container {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    width: 100% !important;
+  }
+
+  /* 2. Padding interno no carrossel para o primeiro item ter margem */
+  .produtos-carousel {
+    padding: 0 24px !important; /* Margem de 24px nas laterais da tela */
+    
+    /* Remove scrollbar nativa visualmente */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .produtos-carousel::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* 3. O CARD "CHEIO" (Full Width com respiro) */
+  .card-width-responsive {
+    /* A mágica acontece aqui: 
+       100vw (largura total) - 48px (24px margem esq + 24px margem dir) 
+       O -16px extra é para compensar o 'gap-4' (16px) do flexbox se necessário,
+       mas calc(100vw - 64px) costuma ser o "sweet spot" para não cortar a sombra.
+    */
+    width: calc(100vw - 64px) !important; 
+    
+    max-width: 400px; /* Trava para celulares muito grandes */
+  }
+
+  /* 4. Centralização perfeita (Snap) */
+  .produto-carousel-card {
+    scroll-snap-align: center; /* O card sempre vai parar no meio da tela */
+  }
+
+  /* 5. Esconde setas no mobile (Touch Only) */
   .carousel-nav-prev,
   .carousel-nav-next {
-    display: block;
-    padding: 0.5rem;
+    display: none !important;
   }
   
-  .carousel-nav-prev svg,
-  .carousel-nav-next svg {
-    width: 1rem;
-    height: 1rem;
+  /* 6. Ajusta indicadores para não ficarem muito longe */
+  .carousel-indicators {
+    bottom: -20px !important;
   }
-}
-
-/* ========================================
-   CARDS DE PRODUTO (GRID ANTIGO - COMPATIBILIDADE)
-   ======================================== */
-
-/* Cards com hover suave */
-.product-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  position: relative;
-}
-
-.product-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
 /* ========================================
    OVERLAY DE OFERTAS
    ======================================== */
 
-/* Overlay de ofertas - cobre todo o card */
 .ofertas-overlay {
   position: absolute;
   inset: 0;
@@ -162,28 +230,20 @@ a.btn {
 }
 
 @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* ========================================
    CARROSSEL DE IMAGENS (PÁGINA PRODUTO)
    ======================================== */
 
-/* GPU acceleration + transição suave */
 #carousel {
   will-change: transform;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
 }
 
-/* Fade nas bordas quando há mais imagens */
 .carousel-container::before,
 .carousel-container::after {
   content: '';
@@ -209,12 +269,6 @@ a.btn {
   opacity: 1;
 }
 
-/* Animação suave dos indicadores */
-.carousel-indicator {
-  transition: all 0.3s ease;
-}
-
-/* Loading skeleton */
 .carousel-skeleton {
   background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
   background-size: 200% 100%;
@@ -226,29 +280,12 @@ a.btn {
   100% { background-position: -200% 0; }
 }
 
-.carousel-skeleton.loaded {
-  display: none;
-}
+.carousel-skeleton.loaded { display: none; }
+.carousel-image { opacity: 0; transition: opacity 0.3s ease; }
+.carousel-image.loaded { opacity: 1; }
 
-/* Imagens lazy carregando */
-.carousel-image {
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.carousel-image.loaded {
-  opacity: 1;
-}
-
-/* Screen reader only - oculta visualmente mas mantém para leitores */
 .sr-only {
   position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border-width: 0;
+  width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border-width: 0;
 }

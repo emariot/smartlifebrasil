@@ -4,8 +4,14 @@ layout: base.njk
 ---
 
 <!-- Banner / slogan -->
-<section class="text-center py-6 bg-gray-100">
-  <h2 class="text-2xl font-bold">Produtos inteligentes para sua casa, seu negócio e sua vida!</h2>
+<section class="relative w-full my-6 px-4">
+  <div class="max-w-7xl mx-auto overflow-hidden rounded-2xl shadow-lg">
+    <img 
+      src="/assets/img/banners/banner-principal.webp" 
+      alt="Os melhores produtos inteligentes para sua casa, seu negócio e sua vida" 
+      class="w-full h-auto object-cover"
+      style="max-height: 400px;">
+  </div>
 </section>
 
 <!-- Main -->
@@ -113,8 +119,7 @@ layout: base.njk
             {% set melhorOferta = ofertas[0] if ofertas else null %}
             
             <!-- Card do Produto no Carrossel -->
-            <div class="produto-carousel-card flex-shrink-0 bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow"
-                 style="width: 280px;"
+            <div class="produto-carousel-card card-width-responsive flex-shrink-0 bg-white rounded-lg shadow-md overflow-hidden"
                  data-categoria="{{ produto.data.categoria or 'geral' }}">
               
               <!-- Imagem -->

@@ -11,7 +11,6 @@ if (carousel && carousel.children.length > 1) {
     let autoplay;
     let isUserInteracting = false;
 
-    // Carrega imagens adjacentes (lazy load inteligente)
     function lazyLoadAdjacent(currentIndex) {
         const toLoad = [
             currentIndex - 1 < 0 ? total - 1 : currentIndex - 1,
@@ -30,15 +29,12 @@ if (carousel && carousel.children.length > 1) {
         });
     }
 
-    // Atualiza posição do carrossel e indicadores
     function updateCarousel(newIndex) {
         index = newIndex;
         carousel.style.transform = `translateX(-${index * 100}%)`;
 
-        // Atualiza ARIA para screen readers
         if (statusElement) statusElement.textContent = `Imagem ${index + 1} de ${total}`;
 
-        // Atualiza indicadores (bolinhas)
         document.querySelectorAll('.carousel-indicator').forEach((dot, i) => {
             if (i === index) {
                 dot.classList.remove('bg-white/50');
@@ -51,7 +47,6 @@ if (carousel && carousel.children.length > 1) {
             }
         });
 
-        // Atualiza thumbnails
         document.querySelectorAll('.thumbnail').forEach((thumb, i) => {
             if (i === index) thumb.classList.add('ring-2', 'ring-blue-500');
             else thumb.classList.remove('ring-2', 'ring-blue-500');
@@ -60,7 +55,6 @@ if (carousel && carousel.children.length > 1) {
         lazyLoadAdjacent(index);
     }
 
-    // Pausa autoplay
     function pauseAutoplay() {
         if (autoplay) {
             clearInterval(autoplay);
@@ -69,13 +63,11 @@ if (carousel && carousel.children.length > 1) {
         isUserInteracting = true;
     }
 
-    // Retoma autoplay
     function resumeAutoplay() {
         isUserInteracting = false;
         if (!autoplay) startAutoplay();
     }
 
-    // Inicia autoplay
     function startAutoplay() {
         if (!isUserInteracting) {
             autoplay = setInterval(() => {
@@ -84,7 +76,6 @@ if (carousel && carousel.children.length > 1) {
         }
     }
 
-    // Botões Next/Prev
     const nextBtn = document.getElementById('next');
     const prevBtn = document.getElementById('prev');
     const carouselContainer = carousel.parentElement;
@@ -92,7 +83,6 @@ if (carousel && carousel.children.length > 1) {
     if (nextBtn) nextBtn.onclick = () => { pauseAutoplay(); updateCarousel((index + 1) % total); setTimeout(resumeAutoplay, 3000); };
     if (prevBtn) prevBtn.onclick = () => { pauseAutoplay(); updateCarousel((index - 1 + total) % total); setTimeout(resumeAutoplay, 3000); };
 
-    // Indicadores e thumbnails clicáveis
     document.querySelectorAll('.carousel-indicator').forEach((dot, i) => {
         dot.onclick = () => { pauseAutoplay(); updateCarousel(i); setTimeout(resumeAutoplay, 3000); };
     });
@@ -100,7 +90,6 @@ if (carousel && carousel.children.length > 1) {
         thumb.onclick = () => { pauseAutoplay(); updateCarousel(i); setTimeout(resumeAutoplay, 3000); };
     });
 
-    // Pause on hover/focus
     if (carouselContainer) {
         carouselContainer.addEventListener('mouseenter', pauseAutoplay);
         carouselContainer.addEventListener('mouseleave', () => { setTimeout(() => { if (!isUserInteracting) resumeAutoplay(); }, 500); });
@@ -108,7 +97,6 @@ if (carousel && carousel.children.length > 1) {
         carouselContainer.addEventListener('focusout', () => { setTimeout(() => { if (!isUserInteracting) resumeAutoplay(); }, 500); });
     }
 
-    // Inicialização
     lazyLoadAdjacent(0);
     updateCarousel(0);
     startAutoplay();
@@ -116,7 +104,7 @@ if (carousel && carousel.children.length > 1) {
 }
 
 // ===================================
-// 1.5. CARROSSÉIS DE PRODUTOS NA HOME (COM TOUCH)
+// 1.5. CARROSSEL HOME (LARGURA DINÂMICA + TOUCH)
 // ===================================
 document.querySelectorAll('.produtos-carousel-container').forEach(container => {
     const carousel = container.querySelector('.produtos-carousel');
@@ -129,19 +117,31 @@ document.querySelectorAll('.produtos-carousel-container').forEach(container => {
     const cards = carousel.querySelectorAll('.produto-carousel-card');
     if (cards.length === 0) return;
     
-    const cardWidth = 280 + 16; // largura do card + gap
     let currentPage = 0;
     let cardsPerPage = 1;
     let totalPages = 1;
+    let cardWidth = 0;
     
-    // ===== CALCULAR PÁGINAS =====
-    function calculatePages() {
+    // ===== ATUALIZA MÉTRICAS (Largura Real do Card) =====
+    function updateMetrics() {
+        const firstCard = cards[0];
+        // Pega largura real + gap do grid (gap-4 = 16px)
+        if (firstCard) {
+            cardWidth = firstCard.offsetWidth + 16;
+        }
+        
         const containerWidth = carousel.offsetWidth;
         cardsPerPage = Math.floor(containerWidth / cardWidth);
-        if (cardsPerPage < 1) cardsPerPage = 1;
-        totalPages = Math.ceil(cards.length / cardsPerPage);
         
-        // Criar indicadores dinamicamente
+        // No mobile (85vw), o cálculo pode dar 0 ou quase 1. Forçamos 1.
+        if (cardsPerPage < 1) cardsPerPage = 1;
+        
+        totalPages = Math.ceil(cards.length / cardsPerPage);
+    }
+
+    // ===== CALCULAR PÁGINAS =====
+    function calculatePages() {
+        updateMetrics();
         createIndicators();
     }
     
@@ -150,6 +150,9 @@ document.querySelectorAll('.produtos-carousel-container').forEach(container => {
         if (!indicatorsContainer) return;
         indicatorsContainer.innerHTML = '';
         
+        // Se só tiver 1 página, esconde
+        if (totalPages <= 1) return;
+
         for (let i = 0; i < totalPages; i++) {
             const indicator = document.createElement('button');
             indicator.className = 'carousel-indicator w-2 h-2 rounded-full bg-blue-400 hover:bg-blue-500 transition-all';
@@ -162,7 +165,7 @@ document.querySelectorAll('.produtos-carousel-container').forEach(container => {
         updateIndicators();
     }
     
-    // ===== LAZY LOADING INTELIGENTE =====
+    // ===== LAZY LOADING =====
     function lazyLoadNearby(page) {
         const startIndex = page * cardsPerPage;
         const endIndex = Math.min(startIndex + cardsPerPage + 2, cards.length);
@@ -177,11 +180,13 @@ document.querySelectorAll('.produtos-carousel-container').forEach(container => {
     
     // ===== ATUALIZAR INDICADORES =====
     function updateIndicators() {
-        const scrollLeft = carousel.scrollLeft;
-        const pageWidth = cardsPerPage * cardWidth;
-        const newPage = Math.round(scrollLeft / pageWidth);
+        updateMetrics(); // Garante medida atualizada
         
-        if (newPage !== currentPage && newPage >= 0 && newPage < totalPages) {
+        const scrollLeft = carousel.scrollLeft;
+        // Calcula página atual baseado no scroll
+        const newPage = Math.round(scrollLeft / (cardsPerPage * cardWidth));
+        
+        if (newPage !== currentPage) {
             currentPage = newPage;
             lazyLoadNearby(currentPage);
         }
@@ -198,7 +203,9 @@ document.querySelectorAll('.produtos-carousel-container').forEach(container => {
     
     // ===== NAVEGAÇÃO =====
     function goToPage(page) {
-        if (page < 0 || page >= totalPages) return;
+        updateMetrics();
+        if (page < 0) page = 0;
+        if (page >= totalPages) page = totalPages - 1;
         
         const targetScroll = page * cardsPerPage * cardWidth;
         carousel.scrollTo({
@@ -209,90 +216,66 @@ document.querySelectorAll('.produtos-carousel-container').forEach(container => {
     }
     
     function scrollCarousel(direction) {
+        updateMetrics();
         let targetPage;
         if (direction === 'next') {
             targetPage = currentPage + 1;
-            if (targetPage >= totalPages) targetPage = 0; // Loop
+            if (targetPage >= totalPages) targetPage = 0;
         } else {
             targetPage = currentPage - 1;
-            if (targetPage < 0) targetPage = totalPages - 1; // Loop reverso
+            if (targetPage < 0) targetPage = totalPages - 1;
         }
         goToPage(targetPage);
     }
     
     // ===== EVENT LISTENERS =====
-    
-    // Botões de navegação
     if (prevBtn) prevBtn.addEventListener('click', () => scrollCarousel('prev'));
     if (nextBtn) nextBtn.addEventListener('click', () => scrollCarousel('next'));
     
-    // Scroll listener
-    carousel.addEventListener('scroll', updateIndicators);
+    let scrollTimeout;
+    carousel.addEventListener('scroll', () => {
+        if (scrollTimeout) clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(updateIndicators, 50);
+    }, { passive: true });
     
-    // ===== TOUCH SUPPORT (Mobile/Tablet) =====
+    // Touch logic
     let touchStartX = 0;
-    let touchEndX = 0;
-    let scrollStartLeft = 0;
-    
-    carousel.addEventListener('touchstart', (e) => {
-        touchStartX = e.touches[0].clientX;
-        scrollStartLeft = carousel.scrollLeft;
-    }, { passive: true });
-    
-    carousel.addEventListener('touchmove', (e) => {
-        // O scroll nativo do navegador já cuida do movimento
-        // Este listener é apenas para rastrear
-    }, { passive: true });
-    
+    carousel.addEventListener('touchstart', (e) => { touchStartX = e.touches[0].clientX; }, { passive: true });
     carousel.addEventListener('touchend', (e) => {
-        touchEndX = e.changedTouches[0].clientX;
-        const swipeDistance = touchStartX - touchEndX;
-        
-        // Se deslizou mais de 50px, considera como swipe
-        if (Math.abs(swipeDistance) > 50) {
-            // Atualiza o indicador baseado na posição final
+        const touchEndX = e.changedTouches[0].clientX;
+        if (Math.abs(touchStartX - touchEndX) > 50) {
             setTimeout(updateIndicators, 100);
         }
     }, { passive: true });
     
-    // Resize listener - recalcular páginas
+    // Resize
     window.addEventListener('resize', () => {
         calculatePages();
-        goToPage(currentPage); // Reposiciona
+        goToPage(currentPage);
     });
     
-    // ===== KEYBOARD NAVIGATION =====
+    // Teclado
     document.addEventListener('keydown', (e) => {
-        // Só funciona se o carrossel estiver visível na tela
         const rect = carousel.getBoundingClientRect();
-        const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
-        
-        if (!isVisible) return;
-        
-        switch(e.key) {
-            case 'ArrowLeft':
-                e.preventDefault();
-                scrollCarousel('prev');
-                break;
-            case 'ArrowRight':
-                e.preventDefault();
-                scrollCarousel('next');
-                break;
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+            if(e.key === 'ArrowLeft') scrollCarousel('prev');
+            if(e.key === 'ArrowRight') scrollCarousel('next');
         }
     });
     
     // Inicialização
-    calculatePages();
-    lazyLoadNearby(0);
-    updateIndicators();
+    setTimeout(() => {
+        calculatePages();
+        lazyLoadNearby(0);
+        updateIndicators();
+    }, 100);
 });
 
 // ===================================
-// 2. FUNÇÕES QUE PRECISAM DO DOM PRONTO
+// 2. FUNÇÕES GERAIS (DOM READY)
 // ===================================
 document.addEventListener('DOMContentLoaded', () => {
-
-    // ===================== MENU MOBILE =====================
+    // Menu Mobile
     const menuBtn = document.getElementById('menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
     if (menuBtn && mobileMenu) {
@@ -305,7 +288,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ===================== SISTEMA DE TABS =====================
+    // Tabs
     const tabButtons = document.querySelectorAll('.tab-button');
     const tabContents = document.querySelectorAll('.tab-content');
     tabButtons.forEach(button => {
@@ -320,7 +303,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // ===================== OVERLAY DE OFERTAS =====================
+    // Ofertas Overlay
     document.querySelectorAll('.toggle-ofertas').forEach(btn => {
         btn.addEventListener('click', e => { 
             e.stopPropagation(); 
@@ -336,7 +319,7 @@ document.addEventListener('DOMContentLoaded', () => {
         overlay.addEventListener('click', e => { if (e.target === overlay) overlay.classList.remove('show'); });
     });
 
-    // ===================== FILTROS =====================
+    // Filtros
     const filterBtns = document.querySelectorAll('.filter-btn');
     filterBtns.forEach(btn => {
         btn.addEventListener('click', () => {
@@ -348,7 +331,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // ===================== PESQUISA =====================
+    // Pesquisa
     const searchInput = document.getElementById('search-input');
     const searchBtn = document.getElementById('search-btn');
     if (searchInput && searchBtn) {
@@ -363,7 +346,7 @@ document.addEventListener('DOMContentLoaded', () => {
         searchInput.addEventListener('keyup', e => { if (e.key === 'Enter') pesquisar(); });
     }
 
-    // ===================== SHARE BUTTONS =====================
+    // Share Buttons
     window.shareOnTwitter = () => { const url = window.location.href; const title = document.querySelector('h1')?.textContent || ''; window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(url)}`, '_blank'); };
     window.shareOnFacebook = () => { const url = window.location.href; window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`, '_blank'); };
     window.shareOnWhatsApp = () => { const url = window.location.href; const title = document.querySelector('h1')?.textContent || ''; window.open(`https://wa.me/?text=${encodeURIComponent(title + ' ' + url)}`, '_blank'); };
@@ -376,7 +359,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-    // ===================== PROGRESS BAR DE LEITURA =====================
+    // Progress Bar
     const progressBar = document.getElementById('progress-bar');
     if (progressBar) {
         window.addEventListener('scroll', () => {
@@ -387,7 +370,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ===================== SMOOTH SCROLL =====================
+    // Smooth Scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             const target = document.querySelector(this.getAttribute('href'));
@@ -395,7 +378,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // ===================== LINKS EXTERNOS =====================
+    // Links Externos
     document.querySelectorAll('.post-content a').forEach(link => {
         const href = link.getAttribute('href');
         if (href && (href.startsWith('http://') || href.startsWith('https://')) && !href.includes(window.location.hostname)) {
@@ -403,5 +386,4 @@ document.addEventListener('DOMContentLoaded', () => {
             link.setAttribute('rel', 'noopener noreferrer');
         }
     });
-
 });
