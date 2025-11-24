@@ -1,2 +1,2 @@
-# Regra para forçar todo o tráfego para o domínio .com.br
-/* https://smartlifebr.com.br/:splat  301!
+# Redireciona do domínio Netlify para o domínio principal
+https://seu-site.netlify.app/* https://smartlifebr.com.br/:splat 301!
