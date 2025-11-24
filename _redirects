@@ -1,1 +1,2 @@
-https://smartlifebrasil.netlify.app/* https://smartlifebr.com.br/:splat 301!
+# Regra para forçar todo o tráfego para o domínio .com.br
+/* https://smartlifebr.com.br/:splat  301!

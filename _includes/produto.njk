@@ -13,25 +13,20 @@ layout: base.njk
   "@type": "Product",
   "name": "{{ produtoNome }}",
   "description": "{{ produtoDescricao | replace('\n', ' ') | safe }}",
+  
+  {% if gtin %}"gtin": "{{ gtin }}",{% endif %} 
+
   {% if imagens and imagens.length > 0 %}
   "image": "https://smartlifebr.com.br{{ imagens[0].src }}",
   {% endif %}
+
   {% if marca %}
   "brand": {
     "@type": "Brand",
     "name": "{{ marca }}"
   },
   {% endif %}
-  {% if resumoIA %}
-  "review": {
-    "@type": "Review",
-    "reviewBody": "{{ resumoIA | replace('\n', ' ') | safe }}",
-    "author": {
-      "@type": "Organization",
-      "name": "Inteligência Artificial (Resumo de Opiniões)"
-    }
-  },
-  {% endif %}
+
   {% if ofertas and ofertas.length > 0 %}
   "offers": {
     "@type": "AggregateOffer",
@@ -45,6 +40,7 @@ layout: base.njk
         "url": "{{ oferta.link }}",
         "priceCurrency": "BRL",
         "price": "{{ oferta.preco }}",
+        "priceValidUntil": "2030-12-31",
         "seller": {
           "@type": "Organization",
           "name": "{{ oferta.marketplace }}"
@@ -55,6 +51,43 @@ layout: base.njk
     ]
   }
   {% endif %}
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Início",
+      "item": "https://smartlifebr.com.br/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Produtos",
+      "item": "https://smartlifebr.com.br/produtos/"
+    }
+    {% if categoria %}
+    ,{
+      "@type": "ListItem",
+      "position": 3,
+      "name": "{{ categoria | capitalize }}",
+      "item": "https://smartlifebr.com.br/produtos/{{ categoria }}/"
+    }
+    {% endif %}
+    {% if subcategoria %}
+    ,{
+      "@type": "ListItem",
+      "position": 4,
+      "name": "{{ subcategoria | replace('-', ' ') | capitalize }}",
+      "item": "https://smartlifebr.com.br/produtos/{{ categoria }}/{{ subcategoria }}/"
+    }
+    {% endif %}
+  ]
 }
 </script>
 
