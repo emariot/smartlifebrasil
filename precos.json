@@ -1,0 +1,385 @@
+{
+  "lastUpdated": "2026-02-13T22:51:02.857Z",
+  "products": [
+    {
+      "id": "echo-dot-5-geracao",
+      "nome": "Caixa de som inteligente Echo Dot Amazon 5ª Geração",
+      "ofertas": [
+        {
+          "marketplace": "Amazon",
+          "preco": 429,
+          "link": "https://amzn.to/3L8sCHH",
+          "freteGratis": true,
+          "posicao": 4
+        },
+        {
+          "marketplace": "Mercado Livre",
+          "preco": 395,
+          "link": "https://mercadolivre.com/sec/2DafRRj",
+          "freteGratis": true,
+          "posicao": 2
+        },
+        {
+          "marketplace": "Magazine Luiza",
+          "preco": 296.67,
+          "link": "https://divulgador.magalu.com/AdRiz01B",
+          "freteGratis": true,
+          "posicao": 1
+        },
+        {
+          "marketplace": "Shopee",
+          "preco": 437.9,
+          "link": "https://s.shopee.com.br/gIRtrJZ7g",
+          "freteGratis": true,
+          "posicao": 3
+        }
+      ]
+    },
+    {
+      "id": "echo-dot-max",
+      "nome": "Caixa de som inteligente Echo Dot Max Amazon",
+      "ofertas": [
+        {
+          "marketplace": "Amazon",
+          "preco": 849,
+          "link": "https://amzn.to/3Jv9W4q",
+          "freteGratis": true,
+          "posicao": 4
+        },
+        {
+          "marketplace": "Mercado Livre",
+          "preco": 764,
+          "link": "https://mercadolivre.com/sec/1yeQrD5",
+          "freteGratis": true,
+          "posicao": 2
+        },
+        {
+          "marketplace": "Magazine Luiza",
+          "preco": 747.57,
+          "link": "https://divulgador.magalu.com/2PLqkpgJ",
+          "freteGratis": false,
+          "posicao": 1
+        }
+      ]
+    },
+    {
+      "id": "echo-pop",
+      "nome": "Caixa de som inteligente Echo Pop Amazon",
+      "ofertas": [
+        {
+          "marketplace": "Amazon",
+          "preco": 379,
+          "link": "https://amzn.to/43xZkbK",
+          "freteGratis": true,
+          "posicao": 4
+        },
+        {
+          "marketplace": "Mercado Livre",
+          "preco": 305,
+          "link": "https://mercadolivre.com/sec/18u5bFj",
+          "freteGratis": true,
+          "posicao": 2
+        },
+        {
+          "marketplace": "Magazine Luiza",
+          "preco": 246.05,
+          "link": "https://divulgador.magalu.com/mzgCRuE4",
+          "freteGratis": false,
+          "posicao": 1
+        },
+        {
+          "marketplace": "Shopee",
+          "preco": 247.43,
+          "link": "https://s.shopee.com.br/1qUPIhoYDo",
+          "freteGratis": true,
+          "posicao": 3
+        }
+      ]
+    },
+    {
+      "id": "nest-mini-2",
+      "nome": "Caixa de som inteligente Nest Mini 2ª Geração",
+      "ofertas": [
+        {
+          "marketplace": "Mercado Livre",
+          "preco": 781,
+          "link": "https://mercadolivre.com/sec/13hE5Pp",
+          "freteGratis": true,
+          "posicao": 1
+        },
+        {
+          "marketplace": "Shopee",
+          "preco": 909.18,
+          "link": "https://s.shopee.com.br/4VUhZuMaHY",
+          "freteGratis": false,
+          "posicao": 2
+        }
+      ]
+    },
+    {
+      "id": "izy-speak-ISS-102A",
+      "nome": "Caixa de som inteligente IZY Speak ISS 102A da Intelbras",
+      "ofertas": [
+        {
+          "marketplace": "Amazon",
+          "preco": 439.98,
+          "link": "https://amzn.to/4qvfqwR",
+          "freteGratis": true,
+          "posicao": 4
+        },
+        {
+          "marketplace": "Mercado Livre",
+          "preco": 479.9,
+          "link": "https://mercadolivre.com/sec/1BpaS2v",
+          "freteGratis": true,
+          "posicao": 2
+        },
+        {
+          "marketplace": "Magazine Luiza",
+          "preco": 558,
+          "link": "https://divulgador.magalu.com/FWzxmNvZ",
+          "freteGratis": false,
+          "posicao": 1
+        },
+        {
+          "marketplace": "Shopee",
+          "preco": 759.9,
+          "link": "https://s.shopee.com.br/9AH02XVLUG",
+          "freteGratis": true,
+          "posicao": 3
+        }
+      ]
+    },
+    {
+      "id": "mi-smart-speaker",
+      "nome": "Caixa de som inteligente Mi Smart Speaker 12W",
+      "ofertas": [
+        {
+          "marketplace": "Mercado Livre",
+          "preco": 389.99,
+          "link": "https://mercadolivre.com/sec/1Zf8oXm",
+          "freteGratis": true,
+          "posicao": 1
+        },
+        {
+          "marketplace": "Magazine Luiza",
+          "preco": 489.2,
+          "link": "https://divulgador.magalu.com/sKaIFpkL",
+          "freteGratis": false,
+          "posicao": 2
+        },
+        {
+          "marketplace": "Shopee",
+          "preco": 615.5,
+          "link": "https://s.shopee.com.br/10vKzNVFQe",
+          "freteGratis": true,
+          "posicao": 2
+        }
+      ]
+    },
+    {
+      "id": "mini-antena-starlink",
+      "nome": "Antena de internet via satélite Starlink Mini",
+      "ofertas": [
+        {
+          "marketplace": "Amazon",
+          "preco": 998.66,
+          "link": "https://amzn.to/48dxfYY",
+          "freteGratis": false,
+          "posicao": 4
+        },
+        {
+          "marketplace": "Mercado Livre",
+          "preco": 1.099,
+          "link": "https://mercadolivre.com/sec/12RYcfM",
+          "freteGratis": true,
+          "posicao": 3
+        },
+        {
+          "marketplace": "Magazine Luiza",
+          "preco": 999.9,
+          "link": "https://divulgador.magalu.com/85jb9Njk",
+          "freteGratis": false,
+          "posicao": 2
+        },
+        {
+          "marketplace": "Shopee",
+          "preco": 780,
+          "link": "https://s.shopee.com.br/9UtHBaGtKj",
+          "freteGratis": true,
+          "posicao": 1
+        }
+      ]
+    },
+    {
+      "id": "led-smart-30W",
+      "nome": "Lâmpada Inteligente Led Smart maior potência 30W",
+      "ofertas": [
+        {
+          "marketplace": "Amazon",
+          "preco": 69.99,
+          "link": "https://amzn.to/3JlXaF8",
+          "freteGratis": true,
+          "posicao": 4
+        },
+        {
+          "marketplace": "Mercado Livre",
+          "preco": 72.15,
+          "link": "https://mercadolivre.com/sec/1HhRqgf",
+          "freteGratis": true,
+          "posicao": 2
+        },
+        {
+          "marketplace": "Magazine Luiza",
+          "preco": 64.61,
+          "link": "https://divulgador.magalu.com/sHgDeYpP",
+          "freteGratis": false,
+          "posicao": 1
+        },
+        {
+          "marketplace": "Shopee",
+          "preco": 89.9,
+          "link": "https://s.shopee.com.br/9zpIwpoojS",
+          "freteGratis": true,
+          "posicao": 3
+        }
+      ]
+    },
+    {
+      "id": "smart-color-led-A60",
+      "nome": "Lâmpada Inteligente Smart Color Led A60",
+      "ofertas": [
+        {
+          "marketplace": "Amazon",
+          "preco": 28.59,
+          "link": "https://amzn.to/4oBIj94",
+          "freteGratis": true,
+          "posicao": 2
+        },
+        {
+          "marketplace": "Mercado Livre",
+          "preco": 37.57,
+          "link": "https://mercadolivre.com/sec/2nANHEh",
+          "freteGratis": true,
+          "posicao": 1
+        },
+        {
+          "marketplace": "Magazine Luiza",
+          "preco": 58.62,
+          "link": "https://divulgador.magalu.com/KuOhmGIM",
+          "freteGratis": false,
+          "posicao": 4
+        },
+        {
+          "marketplace": "Shopee",
+          "preco": 44.7,
+          "link": "https://s.shopee.com.br/BLgpby6bq",
+          "freteGratis": true,
+          "posicao": 3
+        }
+      ]
+    },
+    {
+      "id": "smart-led-A60",
+      "nome": "Lâmpada Inteligente Smart G-light A60 RGBW",
+      "ofertas": [
+        {
+          "marketplace": "Amazon",
+          "preco": 29.9,
+          "link": "https://amzn.to/3JcOPUo",
+          "freteGratis": false,
+          "posicao": 3
+        },
+        {
+          "marketplace": "Mercado Livre",
+          "preco": 29.9,
+          "link": "https://mercadolivre.com/sec/2ht7isB",
+          "freteGratis": true,
+          "posicao": 2
+        },
+        {
+          "marketplace": "Magazine Luiza",
+          "preco": 59.9,
+          "link": "https://divulgador.magalu.com/=Rc-pMco",
+          "freteGratis": false,
+          "posicao": 4
+        },
+        {
+          "marketplace": "Shopee",
+          "preco": 29.9,
+          "link": "https://s.shopee.com.br/LepSttLmM",
+          "freteGratis": true,
+          "posicao": 1
+        }
+      ]
+    },
+    {
+      "id": "led-smart-EWS410",
+      "nome": "Lâmpada Inteligente Led Smart EWS410",
+      "ofertas": [
+        {
+          "marketplace": "Amazon",
+          "preco": 70.9,
+          "link": "https://amzn.to/4ngerNW",
+          "freteGratis": false,
+          "posicao": 4
+        },
+        {
+          "marketplace": "Mercado Livre",
+          "preco": 55,
+          "link": "https://mercadolivre.com/sec/24euRM9",
+          "freteGratis": true,
+          "posicao": 1
+        },
+        {
+          "marketplace": "Magazine Luiza",
+          "preco": 49.99,
+          "link": "https://divulgador.magalu.com/9WOJjnr=",
+          "freteGratis": false,
+          "posicao": 3
+        },
+        {
+          "marketplace": "Shopee",
+          "preco": 52.9,
+          "link": "https://s.shopee.com.br/5VNJhIv6TH",
+          "freteGratis": true,
+          "posicao": 2
+        }
+      ]
+    },
+    {
+      "id": "multicolor-tapo-L530E",
+      "nome": "Lâmpada Inteligente Tapo L530E Multicolor TP-Link",
+      "ofertas": [
+        {
+          "marketplace": "Amazon",
+          "preco": 44.6,
+          "link": "https://amzn.to/3WAJh9i",
+          "freteGratis": true,
+          "posicao": 2
+        },
+        {
+          "marketplace": "Mercado Livre",
+          "preco": 49.79,
+          "link": "https://mercadolivre.com/sec/2KAX3CW",
+          "freteGratis": true,
+          "posicao": 1
+        },
+        {
+          "marketplace": "Magazine Luiza",
+          "preco": 42.99,
+          "link": "https://divulgador.magalu.com/m=ze0Njm",
+          "freteGratis": false,
+          "posicao": 4
+        },
+        {
+          "marketplace": "Shopee",
+          "preco": 69.99,
+          "link": "https://s.shopee.com.br/AA8klVvSJl",
+          "freteGratis": true,
+          "posicao": 3
+        }
+      ]
+    }
+  ]
+}
