@@ -1,0 +1,44 @@
+name: Atualizar Preços
+
+on:
+  schedule:
+    # Roda a cada 12 horas (às 00:00 e 12:00 UTC)
+    - cron: '0 0,12 * * *'
+  
+  workflow_dispatch:  # Permite executar manualmente
+
+jobs:
+  scraper:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Instalar dependências do scraper
+        working-directory: ./scraper
+        run: npm install
+      
+      - name: Instalar navegadores Playwright
+        working-directory: ./scraper
+        run: npx playwright install --with-deps chromium
+      
+      - name: Executar scraper
+        working-directory: ./scraper
+        run: node scraper.js
+        env:
+          # Token Telegram (vamos adicionar como secret)
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+      
+      - name: Commit e Push dos arquivos atualizados
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add precos.json relatorio-erros.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "🤖 Atualiza preços - $(date -u +"%Y-%m-%d %H:%M UTC")" && git push)
