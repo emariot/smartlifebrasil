@@ -8,6 +8,8 @@ on:
 jobs:
   scraper:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     
     steps:
       - name: Checkout do código
@@ -20,7 +22,7 @@ jobs:
       
       - name: Instalar dependências
         working-directory: ./scraper
-        run: npm ci
+        run: npm install
       
       - name: Instalar navegador Chromium
         working-directory: ./scraper
@@ -39,4 +41,10 @@ jobs:
           git config --local user.name "github-actions[bot]"
           git add precos.json
           git add relatorio-erros.json || true
-          git diff --quiet && git diff --staged --quiet || (git commit -m "🤖 Atualiza preços - $(date -u +"%Y-%m-%d %H:%M UTC")" && git push)
+          
+          if ! git diff --staged --quiet; then
+            git commit -m "🤖 Atualiza preços - $(date -u +"%Y-%m-%d %H:%M UTC") [skip ci]"
+            git push
+          else
+            echo "✅ Nenhuma mudança nos preços"
+          fi
