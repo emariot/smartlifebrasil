@@ -176,6 +176,7 @@ async function buscarPreco(linkAfiliado, seletor, marketplace, produtoNome) {
         return null;
       }
 
+
     } else if (marketplace === 'Amazon') {
       try {
         const wholeElement = elemento.locator('.a-price-whole').first();

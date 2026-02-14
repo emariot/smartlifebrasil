@@ -28,3 +28,7 @@ Thumbs.db
 *.bak
 assets/layout.js.old
 assets/script.js.old
+
+# arquivos gerados no gith
+precos.json
+relatorio-erros.json
