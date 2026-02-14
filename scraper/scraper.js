@@ -90,8 +90,11 @@ async function buscarPreco(linkAfiliado, seletor, marketplace, produtoNome) {
       waitUntil: 'domcontentloaded'
     });
     
-    // Verifica status HTTP
+    // Verifica status HTTP da resposta FINAL (após redirecionamentos)
     const status = response.status();
+    const urlFinal = page.url();
+    
+    // Detecta páginas de erro comuns
     if (status === 404) {
       registrarErro(produtoNome, marketplace, 'LINK_MORTO', `HTTP 404 - Página não encontrada`);
       await browser.close();
@@ -100,6 +103,22 @@ async function buscarPreco(linkAfiliado, seletor, marketplace, produtoNome) {
     
     if (status >= 500) {
       registrarErro(produtoNome, marketplace, 'ERRO_SERVIDOR', `HTTP ${status} - Erro no servidor`);
+      await browser.close();
+      return null;
+    }
+    
+    // Verifica se a URL final indica erro (comum em marketplaces)
+    const urlsErro = [
+      '/produto-nao-encontrado',
+      '/pagina-nao-encontrada',
+      '/error',
+      '/404',
+      'error=',
+      'not-found'
+    ];
+    
+    if (urlsErro.some(erro => urlFinal.toLowerCase().includes(erro))) {
+      registrarErro(produtoNome, marketplace, 'LINK_MORTO', `URL final indica erro: ${urlFinal}`);
       await browser.close();
       return null;
     }
@@ -125,20 +144,34 @@ async function buscarPreco(linkAfiliado, seletor, marketplace, produtoNome) {
     // MERCADO LIVRE: Pega inteiro + centavos separadamente
     if (marketplace === 'Mercado Livre') {
       try {
-        const fraction = await elemento
+        const fractionRaw = await elemento
           .locator('.andes-money-amount__fraction')
           .textContent();
-        
-        const cents = await elemento
+
+        const centsRaw = await elemento
           .locator('.andes-money-amount__cents')
           .textContent()
-          .catch(() => '00'); // Se não tiver centavos, assume 00
-        
+          .catch(() => '00');
+
+        // Remove ponto de milhar e qualquer caractere não numérico
+        const fraction = (fractionRaw || '')
+          .replace(/\./g, '')
+          .replace(/\D/g, '');
+
+        const cents = (centsRaw || '00')
+          .replace(/\D/g, '');
+
         preco = parseFloat(`${fraction}.${cents}`);
+
         console.log(`    ✅ R$ ${preco.toFixed(2)} (${fraction},${cents})`);
-        
+
       } catch (erro) {
-        registrarErro(produtoNome, marketplace, 'ERRO_EXTRACAO_ML', `Não conseguiu extrair preço do Mercado Livre: ${erro.message}`);
+        registrarErro(
+          produtoNome,
+          marketplace,
+          'ERRO_EXTRACAO_ML',
+          `Não conseguiu extrair preço do Mercado Livre: ${erro.message}`
+        );
         await browser.close();
         return null;
       }
@@ -300,22 +333,28 @@ async function atualizarPrecos() {
       const seletor = seletores[oferta.marketplace];
       
       if (!seletor) {
-        console.log(`  ⚠️  ${oferta.marketplace}: sem scraping (mantém preço manual)`);
-        ofertasAtualizadas.push(oferta);
-        continue;
+        console.log(`  ⚠️  ${oferta.marketplace}: sem seletor configurado - pulando`);
+        continue; // Simplesmente pula, não adiciona ao JSON
       }
       
+      // Busca o preço atual!
       const precoNovo = await buscarPreco(
         oferta.link, 
         seletor, 
         oferta.marketplace,
         dados.produtoNome
       );
-      
-      ofertasAtualizadas.push({
-        ...oferta,
-        preco: precoNovo !== null ? precoNovo : oferta.preco
-      });
+
+      // SÓ ADICIONA SE CONSEGUIU BUSCAR O PREÇO
+      if (precoNovo !== null) {
+        ofertasAtualizadas.push({
+          ...oferta,
+          preco: precoNovo
+        });
+        console.log(`    ✅ Oferta adicionada ao JSON`);
+      } else {
+        console.log(`    🚫 Oferta REMOVIDA do JSON (erro ao buscar preço)`);
+      }
       
       await new Promise(r => setTimeout(r, 3000 + Math.random() * 2000));
     }

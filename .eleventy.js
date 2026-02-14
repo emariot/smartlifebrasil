@@ -1,4 +1,3 @@
-
 module.exports = function(eleventyConfig) {
 
 
@@ -73,9 +72,43 @@ module.exports = function(eleventyConfig) {
     return `${minutes} min`;
   });
 
+  // Filtro para buscar preços do JSON
+  eleventyConfig.addFilter("precosDoJSON", function(produtoId) {
+    try {
+      const fs = require('fs');
+      const path = require('path');
+      const caminhoJSON = path.join(__dirname, 'precos.json');
+      
+      // Se o arquivo não existir, retorna null (produto novo)
+      if (!fs.existsSync(caminhoJSON)) {
+        return null;
+      }
+      
+      const dados = JSON.parse(fs.readFileSync(caminhoJSON, 'utf8'));
+      
+      // Procura o produto pelo ID
+      const produto = dados.products.find(p => p.id === produtoId);
+      
+      // Se produto NÃO existe no JSON, retorna null (produto novo)
+      if (!produto) {
+        return null;
+      }
+      
+      // Se produto existe mas sem ofertas, retorna array vazio (todas falharam)
+      return produto.ofertas || [];
+      
+    } catch (erro) {
+      console.warn(`Aviso: Não conseguiu ler preços do JSON para ${produtoId}:`, erro.message);
+      return null;
+    }
+  });
+
 // ========== SHORTCODE - OFERTAS DE PRODUTO ==========
 
 eleventyConfig.addShortcode("produtoOfertas", function(produtoUrl) {
+  const fs = require('fs');
+  const path = require('path');
+  
   // Busca todos os produtos da collection
   const produtos = this.ctx.collections.produto || [];
   
@@ -91,8 +124,32 @@ eleventyConfig.addShortcode("produtoOfertas", function(produtoUrl) {
     return `<p class="text-red-500 text-sm">Produto não encontrado: ${produtoUrl}</p>`;
   }
   
+  // Busca ofertas do JSON (com preços atualizados do scraper)
+  let ofertas = [];
+  
+  try {
+    const caminhoJSON = path.join(__dirname, 'precos.json');
+    
+    if (fs.existsSync(caminhoJSON)) {
+      const dados = JSON.parse(fs.readFileSync(caminhoJSON, 'utf8'));
+      const produtoJSON = dados.products.find(p => p.id === produto.fileSlug);
+      
+      if (produtoJSON && produtoJSON.ofertas) {
+        // Usa ofertas do JSON (apenas as que o scraper conseguiu buscar)
+        ofertas = produtoJSON.ofertas;
+      }
+    }
+  } catch (erro) {
+    console.warn('Aviso: Não conseguiu ler preços do JSON:', erro.message);
+  }
+  
+  // Se não há ofertas disponíveis no JSON, não exibe nada
+  if (ofertas.length === 0) {
+    return `<p class="text-gray-500 text-sm italic">Nenhuma oferta disponível no momento.</p>`;
+  }
+  
   // Organiza ofertas por preço (menor primeiro)
-  const ofertas = (produto.data.ofertas || []).sort((a, b) => 
+  ofertas = ofertas.sort((a, b) => 
     parseFloat(a.preco) - parseFloat(b.preco)
   );
   
@@ -145,6 +202,9 @@ eleventyConfig.addShortcode("produtoOfertas", function(produtoUrl) {
   // ========== SHORTCODE - MENOR PREÇO ==========
 
   eleventyConfig.addShortcode("precoMinimo", function(produtoUrl) {
+    const fs = require('fs');
+    const path = require('path');
+    
     // Busca todos os produtos da collection
     const produtos = this.ctx.collections.produto || [];
     
@@ -155,13 +215,36 @@ eleventyConfig.addShortcode("produtoOfertas", function(produtoUrl) {
       p.url + '/' === produtoUrl
     );
     
-    // Se não encontrou ou não tem ofertas
-    if (!produto || !produto.data.ofertas || produto.data.ofertas.length === 0) {
+    // Se não encontrou o produto
+    if (!produto) {
+      return "N/A";
+    }
+    
+    // Busca ofertas do JSON
+    let ofertas = [];
+    
+    try {
+      const caminhoJSON = path.join(__dirname, 'precos.json');
+      
+      if (fs.existsSync(caminhoJSON)) {
+        const dados = JSON.parse(fs.readFileSync(caminhoJSON, 'utf8'));
+        const produtoJSON = dados.products.find(p => p.id === produto.fileSlug);
+        
+        if (produtoJSON && produtoJSON.ofertas) {
+          ofertas = produtoJSON.ofertas;
+        }
+      }
+    } catch (erro) {
+      console.warn('Aviso: Não conseguiu ler preços do JSON:', erro.message);
+    }
+    
+    // Se não há ofertas disponíveis
+    if (ofertas.length === 0) {
       return "N/A";
     }
     
     // Encontra o menor preço
-    const precos = produto.data.ofertas.map(o => parseFloat(o.preco));
+    const precos = ofertas.map(o => parseFloat(o.preco));
     const menorPreco = Math.min(...precos);
     
     // Retorna formatado com vírgula

@@ -115,7 +115,17 @@ layout: base.njk
                aria-label="Carrossel de produtos de {{ subcategoria }}">
             
             {% for produto in produtosDaSubcat %}
-            {% set ofertas = produto.data.ofertas | sort(attribute='preco') %}
+            {# Lógica de fallback inteligente #}
+            {% set ofertasJSON = produto.fileSlug | precosDoJSON %}
+
+            {% if ofertasJSON === null %}
+              {# Produto novo, usa do .njk #}
+              {% set ofertas = produto.data.ofertas | sort(attribute='preco') %}
+            {% else %}
+              {# Produto existe no JSON, usa só dele #}
+              {% set ofertas = ofertasJSON | sort(attribute='preco') %}
+            {% endif %}
+
             {% set melhorOferta = ofertas[0] if ofertas else null %}
             
             <!-- Card do Produto no Carrossel -->
@@ -271,3 +281,4 @@ layout: base.njk
     </div>
   </section>
 </main>
+<script src="/assets/js/atualiza-precos-cards.js"></script>

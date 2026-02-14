@@ -7,6 +7,15 @@ layout: base.njk
 <link rel="preload" as="image" href="{{ imagens[0].src }}">
 {% endif %}
 
+{# ========== DEFINE ofertasFinais PRIMEIRO ========== #}
+{% set ofertasJSON = page.fileSlug | precosDoJSON %}
+
+{% if ofertasJSON === null %}
+  {% set ofertasFinais = ofertas %}
+{% else %}
+  {% set ofertasFinais = ofertasJSON %}
+{% endif %}
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -27,14 +36,14 @@ layout: base.njk
   },
   {% endif %}
 
-  {% if ofertas and ofertas.length > 0 %}
+  {% if ofertasFinais and ofertasFinais.length > 0 %}
   "offers": {
     "@type": "AggregateOffer",
     "priceCurrency": "BRL",
-    "lowPrice": "{{ ofertas | sort(attribute='preco') | first | attr('preco') }}",
-    "offerCount": {{ ofertas | length }},
+    "lowPrice": "{{ ofertasFinais | sort(attribute='preco') | first | attr('preco') }}",
+    "offerCount": {{ ofertasFinais | length }},
     "offers": [
-      {% for oferta in ofertas %}
+      {% for oferta in ofertasFinais %}
       {
         "@type": "Offer",
         "url": "{{ oferta.link }}",
@@ -229,7 +238,9 @@ layout: base.njk
       <p class="text-gray-700 leading-relaxed">{{ produtoDescricao }}</p>
 
       <!-- OFERTAS -->
-      {% if ofertas and ofertas.length > 0 %}
+
+      {# ========== EXIBE OFERTAS (se existirem) ========== #}
+      {% if ofertasFinais and ofertasFinais.length > 0 %}
       <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-5 border border-blue-100 shadow-sm mt-2">
         <div class="flex items-center gap-2 mb-4">
           <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -239,7 +250,7 @@ layout: base.njk
         </div>
         
         <div class="space-y-3">
-          {% set ofertasOrdenadas = ofertas | sort(attribute='preco') %}
+          {% set ofertasOrdenadas = ofertasFinais | sort(attribute='preco') %}
           {% for oferta in ofertasOrdenadas %}
           {% set posicaoAtual = loop.index %}
           <div class="bg-white rounded-lg p-4 {% if posicaoAtual == 1 %}border-2 border-yellow-400 shadow-md{% else %}border border-gray-200{% endif %} hover:shadow-lg transition">
@@ -268,10 +279,10 @@ layout: base.njk
                 {% set btnColor = 'bg-orange-500 hover:bg-orange-600 text-white' %}
               {% endif %}
               <a href="{{ oferta.link }}" 
-                 target="_blank" 
-                 rel="noopener noreferrer nofollow"
-                 onclick="if(typeof gtag !== 'undefined') { gtag('event', 'click_oferta_produto', {'marketplace': '{{ oferta.marketplace }}', 'produto': '{{ produtoNome }}', 'preco': '{{ oferta.preco }}', 'posicao': '{{ posicaoAtual }}'}); }"
-                 class="{{ btnColor }} px-5 py-2.5 rounded-lg font-semibold transition shadow-sm hover:shadow-md flex items-center gap-2">
+                target="_blank" 
+                rel="noopener noreferrer nofollow"
+                onclick="if(typeof gtag !== 'undefined') { gtag('event', 'click_oferta_produto', {'marketplace': '{{ oferta.marketplace }}', 'produto': '{{ produtoNome }}', 'preco': '{{ oferta.preco }}', 'posicao': '{{ posicaoAtual }}'}); }"
+                class="{{ btnColor }} px-5 py-2.5 rounded-lg font-semibold transition shadow-sm hover:shadow-md flex items-center gap-2">
                 Comprar
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
@@ -305,10 +316,26 @@ layout: base.njk
         </div>
       </div>
       {% endif %}
+
+      {# ========== MENSAGEM QUANDO TODAS OFERTAS FALHARAM ========== #}
+      {% if ofertasJSON !== null and ofertasJSON.length === 0 %}
+      <div class="bg-yellow-50 border border-yellow-200 rounded-xl p-6 mt-2">
+        <div class="flex items-center gap-3 mb-2">
+          <svg class="w-6 h-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+          </svg>
+          <h3 class="text-lg font-bold text-yellow-800">Ofertas Temporariamente Indisponíveis</h3>
+        </div>
+        <p class="text-yellow-700">
+          Todas as ofertas deste produto estão com problemas temporários (links quebrados ou indisponíveis). 
+          Estamos trabalhando para corrigir. Tente novamente em breve!
+        </p>
+      </div>
+      {% endif %}
     </div>
   </div>
 
-
+      
   <!-- VÍDEOS + TABS -->
   <div class="mt-12 flex flex-col lg:flex-row gap-8">
     
