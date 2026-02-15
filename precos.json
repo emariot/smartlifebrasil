@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-14T13:07:56.100Z",
+  "lastUpdated": "2026-02-15T03:15:28.655Z",
   "products": [
     {
       "id": "echo-dot-5-geracao",
@@ -7,7 +7,7 @@
       "ofertas": [
         {
           "marketplace": "Mercado Livre",
-          "preco": 413,
+          "preco": 395,
           "link": "https://mercadolivre.com/sec/2DafRRj",
           "freteGratis": true,
           "posicao": 2
@@ -17,15 +17,7 @@
     {
       "id": "echo-dot-max",
       "nome": "Caixa de som inteligente Echo Dot Max Amazon",
-      "ofertas": [
-        {
-          "marketplace": "Amazon",
-          "preco": 849,
-          "link": "https://amzn.to/3Jv9W4q",
-          "freteGratis": true,
-          "posicao": 4
-        }
-      ]
+      "ofertas": []
     },
     {
       "id": "echo-pop",
@@ -33,7 +25,7 @@
       "ofertas": [
         {
           "marketplace": "Mercado Livre",
-          "preco": 305,
+          "preco": 296.5,
           "link": "https://mercadolivre.com/sec/18u5bFj",
           "freteGratis": true,
           "posicao": 2
@@ -72,7 +64,7 @@
       "ofertas": [
         {
           "marketplace": "Mercado Livre",
-          "preco": 389.99,
+          "preco": 349.33,
           "link": "https://mercadolivre.com/sec/1Zf8oXm",
           "freteGratis": true,
           "posicao": 1
@@ -105,7 +97,7 @@
       "ofertas": [
         {
           "marketplace": "Mercado Livre",
-          "preco": 73.63,
+          "preco": 65.17,
           "link": "https://mercadolivre.com/sec/1HhRqgf",
           "freteGratis": true,
           "posicao": 2
@@ -130,13 +122,6 @@
       "nome": "Lâmpada Inteligente Smart G-light A60 RGBW",
       "ofertas": [
         {
-          "marketplace": "Amazon",
-          "preco": 29.9,
-          "link": "https://amzn.to/3JcOPUo",
-          "freteGratis": false,
-          "posicao": 3
-        },
-        {
           "marketplace": "Mercado Livre",
           "preco": 29.9,
           "link": "https://mercadolivre.com/sec/2ht7isB",
@@ -158,7 +143,7 @@
       "ofertas": [
         {
           "marketplace": "Mercado Livre",
-          "preco": 59.9,
+          "preco": 51.4,
           "link": "https://mercadolivre.com/sec/24euRM9",
           "freteGratis": true,
           "posicao": 1
