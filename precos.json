@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-16T02:54:47.118Z",
+  "lastUpdated": "2026-02-16T13:23:18.473Z",
   "products": [
     {
       "id": "echo-dot-5-geracao",
@@ -14,7 +14,7 @@
         },
         {
           "marketplace": "Mercado Livre",
-          "preco": 420,
+          "preco": 459.9,
           "link": "https://mercadolivre.com/sec/2DafRRj",
           "freteGratis": true,
           "posicao": 2
@@ -24,7 +24,15 @@
     {
       "id": "echo-dot-max",
       "nome": "Caixa de som inteligente Echo Dot Max Amazon",
-      "ofertas": []
+      "ofertas": [
+        {
+          "marketplace": "Amazon",
+          "preco": 849,
+          "link": "https://amzn.to/3Jv9W4q",
+          "freteGratis": true,
+          "posicao": 4
+        }
+      ]
     },
     {
       "id": "echo-pop",
@@ -32,7 +40,7 @@
       "ofertas": [
         {
           "marketplace": "Mercado Livre",
-          "preco": 282,
+          "preco": 307.9,
           "link": "https://mercadolivre.com/sec/18u5bFj",
           "freteGratis": true,
           "posicao": 2
@@ -111,7 +119,7 @@
       "ofertas": [
         {
           "marketplace": "Mercado Livre",
-          "preco": 73.96,
+          "preco": 73.26,
           "link": "https://mercadolivre.com/sec/1HhRqgf",
           "freteGratis": true,
           "posicao": 2
@@ -136,13 +144,6 @@
       "nome": "Lâmpada Inteligente Smart G-light A60 RGBW",
       "ofertas": [
         {
-          "marketplace": "Amazon",
-          "preco": 29.9,
-          "link": "https://amzn.to/3JcOPUo",
-          "freteGratis": false,
-          "posicao": 3
-        },
-        {
           "marketplace": "Mercado Livre",
           "preco": 29.9,
           "link": "https://mercadolivre.com/sec/2ht7isB",
@@ -164,7 +165,7 @@
       "ofertas": [
         {
           "marketplace": "Mercado Livre",
-          "preco": 51.4,
+          "preco": 55,
           "link": "https://mercadolivre.com/sec/24euRM9",
           "freteGratis": true,
           "posicao": 1
