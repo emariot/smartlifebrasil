@@ -9,7 +9,7 @@
    */
   async function carregarPrecos() {
     try {
-      const response = await fetch('/precos.json');
+      const response = await fetch('https://raw.githubusercontent.com/emariot/smartlifebrasil/dados/precos.json');
       
       if (!response.ok) {
         console.warn('⚠️ precos.json não encontrado');

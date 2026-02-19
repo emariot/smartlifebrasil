@@ -12,39 +12,55 @@ jobs:
       contents: write
     
     steps:
-      - name: Checkout do código
+      - name: Checkout do código (main)
         uses: actions/checkout@v4
-      
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-      
+
       - name: Instalar dependências
         working-directory: ./scraper
         run: npm install
-      
+
       - name: Instalar navegador Chromium
         working-directory: ./scraper
         run: npx playwright install --with-deps chromium
-      
+
       - name: Executar scraper
         working-directory: ./scraper
         run: node scraper.js
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-      
-      - name: Commit e Push
+
+      - name: Publicar JSONs na branch dados
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
+
+          # Guarda os JSONs gerados na raiz do projeto em local temporário
+          # O scraper.js salva em ../ relativo à pasta scraper, ou seja, na raiz
+          cp ./precos.json /tmp/precos.json
+          cp ./relatorio-erros.json /tmp/relatorio-erros.json 2>/dev/null || true
+
+          # Baixa e troca para a branch dados
+          git fetch origin dados
+          git checkout dados
+
+          # Copia os JSONs para a raiz da branch dados
+          cp /tmp/precos.json ./precos.json
+          cp /tmp/relatorio-erros.json ./relatorio-erros.json 2>/dev/null || true
+
+          # Commit e push apenas se houver mudança
           git add precos.json
           git add relatorio-erros.json || true
-          
+
           if ! git diff --staged --quiet; then
             git commit -m "🤖 Atualiza preços - $(date -u +"%Y-%m-%d %H:%M UTC") [skip ci]"
-            git push
+            git push origin dados
+            echo "✅ Preços atualizados na branch dados"
           else
             echo "✅ Nenhuma mudança nos preços"
           fi

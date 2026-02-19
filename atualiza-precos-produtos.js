@@ -11,7 +11,7 @@
    */
   async function carregarPrecos() {
     try {
-      const response = await fetch('/precos.json?t=' + Date.now());
+      const response = await fetch('https://raw.githubusercontent.com/emariot/smartlifebrasil/dados/precos.json?t=' + Date.now());
       
       if (!response.ok) {
         console.warn('⚠️ precos.json não encontrado');
