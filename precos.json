@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-18T13:25:41.070Z",
+  "lastUpdated": "2026-02-19T02:53:19.404Z",
   "products": [
     {
       "id": "echo-dot-5-geracao",
@@ -7,7 +7,7 @@
       "ofertas": [
         {
           "marketplace": "Mercado Livre",
-          "preco": 435,
+          "preco": 409,
           "link": "https://mercadolivre.com/sec/2DafRRj",
           "freteGratis": true,
           "posicao": 2
@@ -24,8 +24,15 @@
       "nome": "Caixa de som inteligente Echo Pop Amazon",
       "ofertas": [
         {
+          "marketplace": "Amazon",
+          "preco": 379,
+          "link": "https://amzn.to/43xZkbK",
+          "freteGratis": true,
+          "posicao": 4
+        },
+        {
           "marketplace": "Mercado Livre",
-          "preco": 309,
+          "preco": 303,
           "link": "https://mercadolivre.com/sec/18u5bFj",
           "freteGratis": true,
           "posicao": 2
@@ -50,6 +57,13 @@
       "nome": "Caixa de som inteligente IZY Speak ISS 102A da Intelbras",
       "ofertas": [
         {
+          "marketplace": "Amazon",
+          "preco": 439.98,
+          "link": "https://amzn.to/4qvfqwR",
+          "freteGratis": true,
+          "posicao": 4
+        },
+        {
           "marketplace": "Mercado Livre",
           "preco": 479.9,
           "link": "https://mercadolivre.com/sec/1BpaS2v",
@@ -64,7 +78,7 @@
       "ofertas": [
         {
           "marketplace": "Mercado Livre",
-          "preco": 389.99,
+          "preco": 349.33,
           "link": "https://mercadolivre.com/sec/1Zf8oXm",
           "freteGratis": true,
           "posicao": 1
@@ -75,6 +89,13 @@
       "id": "mini-antena-starlink",
       "nome": "Antena de internet via satélite Starlink Mini",
       "ofertas": [
+        {
+          "marketplace": "Amazon",
+          "preco": 966,
+          "link": "https://amzn.to/48dxfYY",
+          "freteGratis": false,
+          "posicao": 4
+        },
         {
           "marketplace": "Mercado Livre",
           "preco": 1099,
@@ -96,8 +117,15 @@
       "nome": "Lâmpada Inteligente Led Smart maior potência 30W",
       "ofertas": [
         {
+          "marketplace": "Amazon",
+          "preco": 72.15,
+          "link": "https://amzn.to/3JlXaF8",
+          "freteGratis": true,
+          "posicao": 4
+        },
+        {
           "marketplace": "Mercado Livre",
-          "preco": 70.7,
+          "preco": 71.42,
           "link": "https://mercadolivre.com/sec/1HhRqgf",
           "freteGratis": true,
           "posicao": 2
@@ -110,7 +138,7 @@
       "ofertas": [
         {
           "marketplace": "Mercado Livre",
-          "preco": 37.57,
+          "preco": 39.28,
           "link": "https://mercadolivre.com/sec/2nANHEh",
           "freteGratis": true,
           "posicao": 1
@@ -141,13 +169,6 @@
       "id": "led-smart-EWS410",
       "nome": "Lâmpada Inteligente Led Smart EWS410",
       "ofertas": [
-        {
-          "marketplace": "Amazon",
-          "preco": 70.9,
-          "link": "https://amzn.to/4ngerNW",
-          "freteGratis": false,
-          "posicao": 4
-        },
         {
           "marketplace": "Mercado Livre",
           "preco": 51.4,
