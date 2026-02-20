@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-20T02:48:29.809Z",
+  "lastUpdated": "2026-02-20T13:18:04.325Z",
   "products": [
     {
       "id": "echo-dot-5-geracao",
@@ -7,7 +7,7 @@
       "ofertas": [
         {
           "marketplace": "Mercado Livre",
-          "preco": 378,
+          "preco": 419.9,
           "link": "https://mercadolivre.com/sec/2DafRRj",
           "freteGratis": true,
           "posicao": 2
@@ -24,8 +24,15 @@
       "nome": "Caixa de som inteligente Echo Pop Amazon",
       "ofertas": [
         {
+          "marketplace": "Amazon",
+          "preco": 379,
+          "link": "https://amzn.to/43xZkbK",
+          "freteGratis": true,
+          "posicao": 4
+        },
+        {
           "marketplace": "Mercado Livre",
-          "preco": 335.9,
+          "preco": 309,
           "link": "https://mercadolivre.com/sec/18u5bFj",
           "freteGratis": true,
           "posicao": 2
@@ -77,7 +84,7 @@
       "ofertas": [
         {
           "marketplace": "Mercado Livre",
-          "preco": 1099,
+          "preco": 1140,
           "link": "https://mercadolivre.com/sec/12RYcfM",
           "freteGratis": true,
           "posicao": 3
@@ -97,14 +104,14 @@
       "ofertas": [
         {
           "marketplace": "Amazon",
-          "preco": 70.7,
+          "preco": 69.99,
           "link": "https://amzn.to/3JlXaF8",
           "freteGratis": true,
           "posicao": 4
         },
         {
           "marketplace": "Mercado Livre",
-          "preco": 71.42,
+          "preco": 69.99,
           "link": "https://mercadolivre.com/sec/1HhRqgf",
           "freteGratis": true,
           "posicao": 2
@@ -128,6 +135,13 @@
       "id": "smart-led-A60",
       "nome": "Lâmpada Inteligente Smart G-light A60 RGBW",
       "ofertas": [
+        {
+          "marketplace": "Amazon",
+          "preco": 29.9,
+          "link": "https://amzn.to/3JcOPUo",
+          "freteGratis": false,
+          "posicao": 3
+        },
         {
           "marketplace": "Mercado Livre",
           "preco": 29.9,

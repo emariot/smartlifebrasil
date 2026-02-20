@@ -1,142 +1,128 @@
 {
-  "timestamp": "2026-02-20T02:54:23.265Z",
-  "totalErros": 20,
+  "timestamp": "2026-02-20T13:24:04.967Z",
+  "totalErros": 18,
   "erros": [
     {
-      "timestamp": "2026-02-20T02:48:35.508Z",
+      "timestamp": "2026-02-20T13:18:09.931Z",
       "produto": "Caixa de som inteligente Echo Dot Amazon 5ª Geração",
       "marketplace": "Amazon",
       "tipo": "SELETOR_NAO_ENCONTRADO",
       "detalhes": "Seletor \"#corePriceDisplay_desktop_feature_div .a-price\" não existe na página"
     },
     {
-      "timestamp": "2026-02-20T02:49:21.140Z",
+      "timestamp": "2026-02-20T13:18:28.569Z",
       "produto": "Caixa de som inteligente Echo Dot Amazon 5ª Geração",
       "marketplace": "Magazine Luiza",
       "tipo": "LINK_MORTO",
       "detalhes": "HTTP 404 - Página não encontrada"
     },
     {
-      "timestamp": "2026-02-20T02:49:31.306Z",
+      "timestamp": "2026-02-20T13:18:38.759Z",
       "produto": "Caixa de som inteligente Echo Dot Max Amazon",
       "marketplace": "Amazon",
       "tipo": "SELETOR_NAO_ENCONTRADO",
       "detalhes": "Seletor \"#corePriceDisplay_desktop_feature_div .a-price\" não existe na página"
     },
     {
-      "timestamp": "2026-02-20T02:49:41.159Z",
+      "timestamp": "2026-02-20T13:18:47.968Z",
       "produto": "Caixa de som inteligente Echo Dot Max Amazon",
       "marketplace": "Mercado Livre",
       "tipo": "SELETOR_NAO_ENCONTRADO",
       "detalhes": "Seletor \"[data-andes-money-amount=\"true\"][data-andes-money-amount-size=\"24\"]\" não existe na página"
     },
     {
-      "timestamp": "2026-02-20T02:49:47.952Z",
+      "timestamp": "2026-02-20T13:18:54.277Z",
       "produto": "Caixa de som inteligente Echo Dot Max Amazon",
       "marketplace": "Magazine Luiza",
       "tipo": "LINK_MORTO",
       "detalhes": "HTTP 404 - Página não encontrada"
     },
     {
-      "timestamp": "2026-02-20T02:49:57.260Z",
-      "produto": "Caixa de som inteligente Echo Pop Amazon",
-      "marketplace": "Amazon",
-      "tipo": "SELETOR_NAO_ENCONTRADO",
-      "detalhes": "Seletor \"#corePriceDisplay_desktop_feature_div .a-price\" não existe na página"
-    },
-    {
-      "timestamp": "2026-02-20T02:50:13.424Z",
+      "timestamp": "2026-02-20T13:19:51.278Z",
       "produto": "Caixa de som inteligente Echo Pop Amazon",
       "marketplace": "Magazine Luiza",
       "tipo": "LINK_MORTO",
       "detalhes": "HTTP 404 - Página não encontrada"
     },
     {
-      "timestamp": "2026-02-20T02:50:31.177Z",
+      "timestamp": "2026-02-20T13:20:10.470Z",
       "produto": "Caixa de som inteligente IZY Speak ISS 102A da Intelbras",
       "marketplace": "Amazon",
       "tipo": "SELETOR_NAO_ENCONTRADO",
       "detalhes": "Seletor \"#corePriceDisplay_desktop_feature_div .a-price\" não existe na página"
     },
     {
-      "timestamp": "2026-02-20T02:50:47.217Z",
+      "timestamp": "2026-02-20T13:20:25.760Z",
       "produto": "Caixa de som inteligente IZY Speak ISS 102A da Intelbras",
       "marketplace": "Magazine Luiza",
       "tipo": "LINK_MORTO",
       "detalhes": "HTTP 404 - Página não encontrada"
     },
     {
-      "timestamp": "2026-02-20T02:51:03.524Z",
+      "timestamp": "2026-02-20T13:20:42.558Z",
       "produto": "Caixa de som inteligente Mi Smart Speaker 12W",
       "marketplace": "Magazine Luiza",
       "tipo": "LINK_MORTO",
       "detalhes": "HTTP 404 - Página não encontrada"
     },
     {
-      "timestamp": "2026-02-20T02:51:12.715Z",
+      "timestamp": "2026-02-20T13:20:52.795Z",
       "produto": "Antena de internet via satélite Starlink Mini",
       "marketplace": "Amazon",
       "tipo": "SELETOR_NAO_ENCONTRADO",
       "detalhes": "Seletor \"#corePriceDisplay_desktop_feature_div .a-price\" não existe na página"
     },
     {
-      "timestamp": "2026-02-20T02:52:32.091Z",
+      "timestamp": "2026-02-20T13:22:10.526Z",
       "produto": "Lâmpada Inteligente Led Smart maior potência 30W",
       "marketplace": "Magazine Luiza",
       "tipo": "LINK_MORTO",
       "detalhes": "HTTP 404 - Página não encontrada"
     },
     {
-      "timestamp": "2026-02-20T02:52:41.581Z",
+      "timestamp": "2026-02-20T13:22:20.535Z",
       "produto": "Lâmpada Inteligente Smart Color Led A60",
       "marketplace": "Amazon",
       "tipo": "SELETOR_NAO_ENCONTRADO",
       "detalhes": "Seletor \"#corePriceDisplay_desktop_feature_div .a-price\" não existe na página"
     },
     {
-      "timestamp": "2026-02-20T02:52:58.076Z",
+      "timestamp": "2026-02-20T13:22:35.522Z",
       "produto": "Lâmpada Inteligente Smart Color Led A60",
       "marketplace": "Magazine Luiza",
       "tipo": "LINK_MORTO",
       "detalhes": "HTTP 404 - Página não encontrada"
     },
     {
-      "timestamp": "2026-02-20T02:53:08.048Z",
-      "produto": "Lâmpada Inteligente Smart G-light A60 RGBW",
-      "marketplace": "Amazon",
-      "tipo": "SELETOR_NAO_ENCONTRADO",
-      "detalhes": "Seletor \"#corePriceDisplay_desktop_feature_div .a-price\" não existe na página"
-    },
-    {
-      "timestamp": "2026-02-20T02:53:36.896Z",
+      "timestamp": "2026-02-20T13:23:18.468Z",
       "produto": "Lâmpada Inteligente Led Smart EWS410",
       "marketplace": "Amazon",
       "tipo": "SELETOR_NAO_ENCONTRADO",
       "detalhes": "Seletor \"#corePriceDisplay_desktop_feature_div .a-price\" não existe na página"
     },
     {
-      "timestamp": "2026-02-20T02:53:53.142Z",
+      "timestamp": "2026-02-20T13:23:35.140Z",
       "produto": "Lâmpada Inteligente Led Smart EWS410",
       "marketplace": "Magazine Luiza",
       "tipo": "LINK_MORTO",
       "detalhes": "HTTP 404 - Página não encontrada"
     },
     {
-      "timestamp": "2026-02-20T02:54:03.152Z",
+      "timestamp": "2026-02-20T13:23:44.864Z",
       "produto": "Lâmpada Inteligente Tapo L530E Multicolor TP-Link",
       "marketplace": "Amazon",
       "tipo": "SELETOR_NAO_ENCONTRADO",
       "detalhes": "Seletor \"#corePriceDisplay_desktop_feature_div .a-price\" não existe na página"
     },
     {
-      "timestamp": "2026-02-20T02:54:13.436Z",
+      "timestamp": "2026-02-20T13:23:54.416Z",
       "produto": "Lâmpada Inteligente Tapo L530E Multicolor TP-Link",
       "marketplace": "Mercado Livre",
       "tipo": "SELETOR_NAO_ENCONTRADO",
       "detalhes": "Seletor \"[data-andes-money-amount=\"true\"][data-andes-money-amount-size=\"24\"]\" não existe na página"
     },
     {
-      "timestamp": "2026-02-20T02:54:18.792Z",
+      "timestamp": "2026-02-20T13:24:00.373Z",
       "produto": "Lâmpada Inteligente Tapo L530E Multicolor TP-Link",
       "marketplace": "Magazine Luiza",
       "tipo": "LINK_MORTO",
@@ -144,7 +130,7 @@
     }
   ],
   "resumo": {
-    "SELETOR_NAO_ENCONTRADO": 11,
+    "SELETOR_NAO_ENCONTRADO": 9,
     "LINK_MORTO": 9
   }
 }
