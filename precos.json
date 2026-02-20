@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-19T23:10:45.244Z",
+  "lastUpdated": "2026-02-20T02:48:29.809Z",
   "products": [
     {
       "id": "echo-dot-5-geracao",
@@ -7,7 +7,7 @@
       "ofertas": [
         {
           "marketplace": "Mercado Livre",
-          "preco": 435,
+          "preco": 378,
           "link": "https://mercadolivre.com/sec/2DafRRj",
           "freteGratis": true,
           "posicao": 2
@@ -97,7 +97,7 @@
       "ofertas": [
         {
           "marketplace": "Amazon",
-          "preco": 69.99,
+          "preco": 70.7,
           "link": "https://amzn.to/3JlXaF8",
           "freteGratis": true,
           "posicao": 4
@@ -128,13 +128,6 @@
       "id": "smart-led-A60",
       "nome": "Lâmpada Inteligente Smart G-light A60 RGBW",
       "ofertas": [
-        {
-          "marketplace": "Amazon",
-          "preco": 29.9,
-          "link": "https://amzn.to/3JcOPUo",
-          "freteGratis": false,
-          "posicao": 3
-        },
         {
           "marketplace": "Mercado Livre",
           "preco": 29.9,
