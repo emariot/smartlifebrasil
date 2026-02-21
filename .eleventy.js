@@ -7,7 +7,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("robots.txt");
   eleventyConfig.addPassthroughCopy("_redirects");
   eleventyConfig.addPassthroughCopy("atualiza-precos-produtos.js"); 
-  eleventyConfig.addPassthroughCopy("precos.json"); 
+ 
   // Ignora arquivos desnecessários
   eleventyConfig.ignores.add("README.md");
    

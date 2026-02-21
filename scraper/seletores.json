@@ -1,5 +1,5 @@
 {
-  "Amazon": "#corePriceDisplay_desktop_feature_div .a-price",
+  "Amazon": ".a-price",
   "Magazine Luiza": "[data-testid=\"price-value\"]",
   "Mercado Livre": "[data-andes-money-amount=\"true\"][data-andes-money-amount-size=\"24\"]"
 
