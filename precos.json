@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-21T13:06:54.875Z",
+  "lastUpdated": "2026-02-21T20:50:13.280Z",
   "products": [
     {
       "id": "echo-dot-5-geracao",
@@ -17,27 +17,20 @@
     {
       "id": "echo-dot-max",
       "nome": "Caixa de som inteligente Echo Dot Max Amazon",
-      "ofertas": []
+      "ofertas": [
+        {
+          "marketplace": "Amazon",
+          "preco": 849,
+          "link": "https://amzn.to/3Jv9W4q",
+          "freteGratis": true,
+          "posicao": 4
+        }
+      ]
     },
     {
       "id": "echo-pop",
       "nome": "Caixa de som inteligente Echo Pop Amazon",
-      "ofertas": [
-        {
-          "marketplace": "Amazon",
-          "preco": 379,
-          "link": "https://amzn.to/43xZkbK",
-          "freteGratis": true,
-          "posicao": 4
-        },
-        {
-          "marketplace": "Mercado Livre",
-          "preco": 303,
-          "link": "https://mercadolivre.com/sec/18u5bFj",
-          "freteGratis": true,
-          "posicao": 2
-        }
-      ]
+      "ofertas": []
     },
     {
       "id": "nest-mini-2",
@@ -56,6 +49,13 @@
       "id": "izy-speak-ISS-102A",
       "nome": "Caixa de som inteligente IZY Speak ISS 102A da Intelbras",
       "ofertas": [
+        {
+          "marketplace": "Amazon",
+          "preco": 439.98,
+          "link": "https://amzn.to/4qvfqwR",
+          "freteGratis": true,
+          "posicao": 4
+        },
         {
           "marketplace": "Mercado Livre",
           "preco": 479.9,
@@ -104,7 +104,7 @@
       "ofertas": [
         {
           "marketplace": "Mercado Livre",
-          "preco": 64.7,
+          "preco": 72.31,
           "link": "https://mercadolivre.com/sec/1HhRqgf",
           "freteGratis": true,
           "posicao": 2
@@ -156,8 +156,15 @@
       "nome": "Lâmpada Inteligente Led Smart EWS410",
       "ofertas": [
         {
+          "marketplace": "Amazon",
+          "preco": 70.9,
+          "link": "https://amzn.to/4ngerNW",
+          "freteGratis": false,
+          "posicao": 4
+        },
+        {
           "marketplace": "Mercado Livre",
-          "preco": 59.29,
+          "preco": 59.9,
           "link": "https://mercadolivre.com/sec/24euRM9",
           "freteGratis": true,
           "posicao": 1
