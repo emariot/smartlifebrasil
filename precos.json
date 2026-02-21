@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-21T02:42:10.689Z",
+  "lastUpdated": "2026-02-21T13:06:54.875Z",
   "products": [
     {
       "id": "echo-dot-5-geracao",
@@ -7,7 +7,7 @@
       "ofertas": [
         {
           "marketplace": "Mercado Livre",
-          "preco": 440,
+          "preco": 435,
           "link": "https://mercadolivre.com/sec/2DafRRj",
           "freteGratis": true,
           "posicao": 2
@@ -24,8 +24,15 @@
       "nome": "Caixa de som inteligente Echo Pop Amazon",
       "ofertas": [
         {
+          "marketplace": "Amazon",
+          "preco": 379,
+          "link": "https://amzn.to/43xZkbK",
+          "freteGratis": true,
+          "posicao": 4
+        },
+        {
           "marketplace": "Mercado Livre",
-          "preco": 336.9,
+          "preco": 303,
           "link": "https://mercadolivre.com/sec/18u5bFj",
           "freteGratis": true,
           "posicao": 2
@@ -76,13 +83,6 @@
       "nome": "Antena de internet via satélite Starlink Mini",
       "ofertas": [
         {
-          "marketplace": "Amazon",
-          "preco": 964.66,
-          "link": "https://amzn.to/48dxfYY",
-          "freteGratis": false,
-          "posicao": 4
-        },
-        {
           "marketplace": "Mercado Livre",
           "preco": 1099,
           "link": "https://mercadolivre.com/sec/12RYcfM",
@@ -104,7 +104,7 @@
       "ofertas": [
         {
           "marketplace": "Mercado Livre",
-          "preco": 78.28,
+          "preco": 64.7,
           "link": "https://mercadolivre.com/sec/1HhRqgf",
           "freteGratis": true,
           "posicao": 2
@@ -128,6 +128,13 @@
       "id": "smart-led-A60",
       "nome": "Lâmpada Inteligente Smart G-light A60 RGBW",
       "ofertas": [
+        {
+          "marketplace": "Amazon",
+          "preco": 29.9,
+          "link": "https://amzn.to/3JcOPUo",
+          "freteGratis": false,
+          "posicao": 3
+        },
         {
           "marketplace": "Mercado Livre",
           "preco": 29.9,
@@ -160,15 +167,7 @@
     {
       "id": "multicolor-tapo-L530E",
       "nome": "Lâmpada Inteligente Tapo L530E Multicolor TP-Link",
-      "ofertas": [
-        {
-          "marketplace": "Amazon",
-          "preco": 44.6,
-          "link": "https://amzn.to/3WAJh9i",
-          "freteGratis": true,
-          "posicao": 2
-        }
-      ]
+      "ofertas": []
     }
   ]
 }
