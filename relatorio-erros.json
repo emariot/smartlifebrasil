@@ -1,100 +1,86 @@
 {
-  "timestamp": "2026-02-22T02:32:53.036Z",
-  "totalErros": 14,
+  "timestamp": "2026-02-22T02:53:25.058Z",
+  "totalErros": 12,
   "erros": [
     {
-      "timestamp": "2026-02-22T02:27:44.462Z",
-      "produto": "Caixa de som inteligente Echo Pop Amazon",
+      "timestamp": "2026-02-22T02:47:55.009Z",
+      "produto": "Caixa de som inteligente Echo Dot Max Amazon",
       "marketplace": "Amazon",
       "tipo": "SELETOR_NAO_ENCONTRADO",
-      "detalhes": "Seletor \".a-price\" não existe na página"
+      "detalhes": "Seletor \".a-price\" não existe. URL: https://www.amazon.com.br/Novo-Echo-Dot-Max-Preto/dp/B0DKLQT9XR?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.kuXitnEQod8zI0E1Csywh4EvvZeb1JENHSyk1XoXDFvS2U5bXxZiCJ4r-mCqO6lN9cdEJPE6M6Bej6kRhl3_wvRdW-wDodncKQN5VkJ6uDBBRLGZ27Deo0PfY16cef0AFwt_uCsNcGhe7vyI_zAO_L0awHt_DxwwtwvO6xUpoWRtmFLdRJPoBnMRkYT7ZyEHx8PN1FJZZunkBqk-ujpe0Z0evsSNWcirLVNDYo6113kypVJdCg75_7FSiRUq1mTfy2rEJTLzywuhY_iTJqbhnv9yFiKqyudq6R2g2Q7zT00.yn5gKe3yunPH_mlQKH9BFlQV-jlnKRK5OZ7obxxlQAI&dib_tag=se&keywords=Echo%2BDot%2BMax&qid=1761880613&sr=8-1&ufe=app_do:amzn1.fos.95de73c3-5dda-43a7-bd1f-63af03b14751&th=1&linkCode=sl1&tag=smartlifebras-20&linkId=beb3c761438b5989953c2bfc8650a03c&language=pt_BR&ref_=as_li_ss_tl | HTML: <!DOCTYPE html><html class=\"a-no-js\" lang=\"pt-br\"><!--<![endif]--><head>\n<meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\">\n<meta charset=\"utf-8\">\n<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge,chrome=1\">\n<title dir=\"ltr\">Amazon.com.br</title>\n<meta name=\"viewport\" content=\"width=device-width\">\n<link rel=\"stylesheet\" href=\"https://images-na.ssl-images-amazon.com/images/G/01/AUIClients/AmazonUI-3c913031596ca78a3768f4e934b1cc02ce238101.secure.min._V1_.css\">\n<script>\n\nif (true === true) {\n    var ue_t0 = (+ new Date()),\n        ue_csm = window,\n        ue = { t0: ue_t0, d: function() { return (+new Date() - ue_t0); } },\n        ue_furl = \"fls-na.amazon.com\",\n        ue_mid = \"ATVPDKIKX0DER\",\n        ue_sid = (document.cookie.match(/session-id=([0-9-]+)/) || [])[1],\n        ue_sn = \"opfcaptcha.amazon.com\",\n        ue_id = 'B3P07SRQDC7ZPEVJQQS0';\n}\n</script>\n<script src=\"https://images-na.ssl-images-amazon.com/images/G/01/csminstrumentation/csm-captcha-instrumentation.min.js\"></script><script src=\"https://images-na.ssl-images-amazon.com/images/G/01/csminstrumentation/rd-script-6d68177fa6061598e9509dc4b5bdd08d.js\"></script><script src=\"https://images-na.ssl-images-amazon.com/images/G/01/csminstrumentation/ue-base-1c399ad9886cab69575e1e5ee15c61a1._V313498596_.js\"></script><script src=\"https://images-na.ssl-images-amazon.com/images/G/01/AUIClients/ClientSideMetricsAUIJavascript-51171fbdd28e1a7a61e922e8f0272af8bc74d37b.secure.variant-desktop-session-snapshot-keyp"
     },
     {
-      "timestamp": "2026-02-22T02:28:32.782Z",
+      "timestamp": "2026-02-22T02:49:13.577Z",
       "produto": "Caixa de som inteligente Echo Pop Amazon",
       "marketplace": "Magazine Luiza",
       "tipo": "LINK_MORTO",
       "detalhes": "HTTP 404 - Página não encontrada"
     },
     {
-      "timestamp": "2026-02-22T02:28:51.789Z",
+      "timestamp": "2026-02-22T02:49:33.462Z",
       "produto": "Caixa de som inteligente IZY Speak ISS 102A da Intelbras",
       "marketplace": "Amazon",
       "tipo": "SELETOR_NAO_ENCONTRADO",
-      "detalhes": "Seletor \".a-price\" não existe na página"
+      "detalhes": "Seletor \".a-price\" não existe. URL: https://www.amazon.com.br/falante-Inteligente-Smart-Intelbras-Compat%C3%ADvel/dp/B09LNX2YF6?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.0s8Vvta6FulmyK-NYPkJscC3iUXMk7P4IE9TJHmda4CHCmkSL5AGTcdnpZ-ZvxESFcJxgUAfNujCqPSajl6r6us53V_hGXvEg6soTw8EDHf5XSUoD6gJ6PenlzTwGc0uR-BQeqctC0-k4kpvigDsfokUCFIThHK1IC0rdxHxDl0.yhdd1SCJgJfjvLu4eJ35X0R_-Rej0Q6Tar7Kuc-RdJs&dib_tag=se&keywords=Izy+Speak+Intelbras&qid=1761793620&sr=8-5&ufe=app_do:amzn1.fos.4bddec23-2dcf-4403-8597-e1a02442043d&linkCode=sl1&tag=smartlifebras-20&linkId=ffa48d7d83fd0657813eb25cea0b647c&language=pt_BR&ref_=as_li_ss_tl | HTML: <!DOCTYPE html><html class=\"a-no-js\" lang=\"pt-br\"><!--<![endif]--><head>\n<meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\">\n<meta charset=\"utf-8\">\n<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge,chrome=1\">\n<title dir=\"ltr\">Amazon.com.br</title>\n<meta name=\"viewport\" content=\"width=device-width\">\n<link rel=\"stylesheet\" href=\"https://images-na.ssl-images-amazon.com/images/G/01/AUIClients/AmazonUI-3c913031596ca78a3768f4e934b1cc02ce238101.secure.min._V1_.css\">\n<script>\n\nif (true === true) {\n    var ue_t0 = (+ new Date()),\n        ue_csm = window,\n        ue = { t0: ue_t0, d: function() { return (+new Date() - ue_t0); } },\n        ue_furl = \"fls-na.amazon.com\",\n        ue_mid = \"ATVPDKIKX0DER\",\n        ue_sid = (document.cookie.match(/session-id=([0-9-]+)/) || [])[1],\n        ue_sn = \"opfcaptcha.amazon.com\",\n        ue_id = 'H1P0H2QZ9DXB7R3KHR4D';\n}\n</script>\n<script src=\"https://images-na.ssl-images-amazon.com/images/G/01/csminstrumentation/csm-captcha-instrumentation.min.js\"></script><script src=\"https://images-na.ssl-images-amazon.com/images/G/01/csminstrumentation/rd-script-6d68177fa6061598e9509dc4b5bdd08d.js\"></script><script src=\"https://images-na.ssl-images-amazon.com/images/G/01/csminstrumentation/ue-base-1c399ad9886cab69575e1e5ee15c61a1._V313498596_.js\"></script><script src=\"https://images-na.ssl-images-amazon.com/images/G/01/AUIClients/ClientSideMetricsAUIJavascript-51171fbdd28e1a7a61e922e8f0272af8bc74d37b.secure.variant-desktop-session-snapshot-keyp"
     },
     {
-      "timestamp": "2026-02-22T02:29:09.185Z",
+      "timestamp": "2026-02-22T02:49:48.706Z",
       "produto": "Caixa de som inteligente IZY Speak ISS 102A da Intelbras",
       "marketplace": "Magazine Luiza",
       "tipo": "LINK_MORTO",
       "detalhes": "HTTP 404 - Página não encontrada"
     },
     {
-      "timestamp": "2026-02-22T02:29:25.875Z",
+      "timestamp": "2026-02-22T02:50:03.068Z",
       "produto": "Caixa de som inteligente Mi Smart Speaker 12W",
       "marketplace": "Magazine Luiza",
       "tipo": "LINK_MORTO",
       "detalhes": "HTTP 404 - Página não encontrada"
     },
     {
-      "timestamp": "2026-02-22T02:30:38.074Z",
-      "produto": "Lâmpada Inteligente Led Smart maior potência 30W",
-      "marketplace": "Amazon",
-      "tipo": "SELETOR_NAO_ENCONTRADO",
-      "detalhes": "Seletor \".a-price\" não existe na página"
-    },
-    {
-      "timestamp": "2026-02-22T02:30:57.825Z",
+      "timestamp": "2026-02-22T02:51:29.964Z",
       "produto": "Lâmpada Inteligente Led Smart maior potência 30W",
       "marketplace": "Magazine Luiza",
       "tipo": "LINK_MORTO",
       "detalhes": "HTTP 404 - Página não encontrada"
     },
     {
-      "timestamp": "2026-02-22T02:31:07.248Z",
+      "timestamp": "2026-02-22T02:51:40.195Z",
       "produto": "Lâmpada Inteligente Smart Color Led A60",
       "marketplace": "Amazon",
       "tipo": "SELETOR_NAO_ENCONTRADO",
-      "detalhes": "Seletor \".a-price\" não existe na página"
+      "detalhes": "Seletor \".a-price\" não existe. URL: https://www.amazon.com.br/L%C3%A2mpada-Inteligente-Elgin-compat%C3%ADvel-Google/dp/B088C4QZV2?dib=eyJ2IjoiMSJ9.CxStdwNKPvcc6k6zA4_wbgI5gnYZCcBc3TKJBSn8ClKi9Dq9lwx2YR5PI2iTbZvFmhxCGx5xHcENgXCfQeqKzrDlzIw-vArumG1MpYx_7j0.ZNT5tTQZaCy4hePVJAtwT1vtm0thlt1KhseacgSicg0&dib_tag=se&m=A1MXI1FG34R7K6&marketplaceID=A2Q3Y263D00KWC&qid=1763271825&s=merchant-items&sr=1-1&th=1&linkCode=sl1&tag=smartlifebras-20&linkId=f01e88c8718d936313d0357b86a6e7f6&language=pt_BR&ref_=as_li_ss_tl | HTML: <!DOCTYPE html><html class=\"a-no-js\" lang=\"pt-br\"><!--<![endif]--><head>\n<meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\">\n<meta charset=\"utf-8\">\n<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge,chrome=1\">\n<title dir=\"ltr\">Amazon.com.br</title>\n<meta name=\"viewport\" content=\"width=device-width\">\n<link rel=\"stylesheet\" href=\"https://images-na.ssl-images-amazon.com/images/G/01/AUIClients/AmazonUI-3c913031596ca78a3768f4e934b1cc02ce238101.secure.min._V1_.css\">\n<script>\n\nif (true === true) {\n    var ue_t0 = (+ new Date()),\n        ue_csm = window,\n        ue = { t0: ue_t0, d: function() { return (+new Date() - ue_t0); } },\n        ue_furl = \"fls-na.amazon.com\",\n        ue_mid = \"ATVPDKIKX0DER\",\n        ue_sid = (document.cookie.match(/session-id=([0-9-]+)/) || [])[1],\n        ue_sn = \"opfcaptcha.amazon.com\",\n        ue_id = '61GAWYJ907P6V1DXPV0K';\n}\n</script>\n<script src=\"https://images-na.ssl-images-amazon.com/images/G/01/csminstrumentation/csm-captcha-instrumentation.min.js\"></script><script src=\"https://images-na.ssl-images-amazon.com/images/G/01/csminstrumentation/rd-script-6d68177fa6061598e9509dc4b5bdd08d.js\"></script><script src=\"https://images-na.ssl-images-amazon.com/images/G/01/csminstrumentation/ue-base-1c399ad9886cab69575e1e5ee15c61a1._V313498596_.js\"></script><script src=\"https://images-na.ssl-images-amazon.com/images/G/01/AUIClients/ClientSideMetricsAUIJavascript-51171fbdd28e1a7a61e922e8f0272af8bc74d37b.secure.variant-desktop-session-snapshot-keyp"
     },
     {
-      "timestamp": "2026-02-22T02:31:23.926Z",
+      "timestamp": "2026-02-22T02:51:57.219Z",
       "produto": "Lâmpada Inteligente Smart Color Led A60",
       "marketplace": "Magazine Luiza",
       "tipo": "LINK_MORTO",
       "detalhes": "HTTP 404 - Página não encontrada"
     },
     {
-      "timestamp": "2026-02-22T02:32:05.825Z",
+      "timestamp": "2026-02-22T02:52:40.644Z",
       "produto": "Lâmpada Inteligente Led Smart EWS410",
       "marketplace": "Amazon",
       "tipo": "SELETOR_NAO_ENCONTRADO",
-      "detalhes": "Seletor \".a-price\" não existe na página"
+      "detalhes": "Seletor \".a-price\" não existe. URL: https://www.amazon.com.br/EWS-410-Intelbras-intensidade-compat%C3%ADvel/dp/B08MTJ79JP?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=1WXU8LYJBCN01&dib=eyJ2IjoiMSJ9.NQ0Y2wlcLGAI_h8cVuf5LHSTN9Ch5qXgQCjTZi7Lwh72o3irCeI-X2y3qCi_Muo47JBonaVEoHzmz3wOXorQI9sGRhaGocP-yRYrfFbwMVBAxz0bpt3F86uIcWK_29xqwAclnRP_jdl125Z2ElCurjPrwIuMvQEqBVjjcIoZA_A3cyn2T_yD0xOmFK2PS50mhu3uiabEYLeL4469qe5E-BNjVGkS0CgWpoy6cbfOBjFs8EZ0R9rctk34ZYbytRwM.udlmWCyiZz_0TrgNFCypVNMkNgyrB9M2KuUBwFreAPs&dib_tag=se&keywords=EWS+410&qid=1761109254&sprefix=ews+410,aps,371&sr=8-1&ufe=app_do:amzn1.fos.6d798eae-cadf-45de-946a-f477d47705b9&linkCode=sl1&tag=smartlifebras-20&linkId=f79e60047a12070b336c0b3f25598640&language=pt_BR&ref_=as_li_ss_tl | HTML: <!DOCTYPE html><html class=\"a-no-js\" lang=\"pt-br\"><!--<![endif]--><head>\n<meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\">\n<meta charset=\"utf-8\">\n<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge,chrome=1\">\n<title dir=\"ltr\">Amazon.com.br</title>\n<meta name=\"viewport\" content=\"width=device-width\">\n<link rel=\"stylesheet\" href=\"https://images-na.ssl-images-amazon.com/images/G/01/AUIClients/AmazonUI-3c913031596ca78a3768f4e934b1cc02ce238101.secure.min._V1_.css\">\n<script>\n\nif (true === true) {\n    var ue_t0 = (+ new Date()),\n        ue_csm = window,\n        ue = { t0: ue_t0, d: function() { return (+new Date() - ue_t0); } },\n        ue_furl = \"fls-na.amazon.com\",\n        ue_mid = \"ATVPDKIKX0DER\",\n        ue_sid = (document.cookie.match(/session-id=([0-9-]+)/) || [])[1],\n        ue_sn = \"opfcaptcha.amazon.com\",\n        ue_id = '4G3M1Z57X6P6ZRHN5CKH';\n}\n</script>\n<script src=\"https://images-na.ssl-images-amazon.com/images/G/01/csminstrumentation/csm-captcha-instrumentation.min.js\"></script><script src=\"https://images-na.ssl-images-amazon.com/images/G/01/csminstrumentation/rd-script-6d68177fa6061598e9509dc4b5bdd08d.js\"></script><script src=\"https://images-na.ssl-images-amazon.com/images/G/01/csminstrumentation/ue-base-1c399ad9886cab69575e1e5ee15c61a1._V313498596_.js\"></script><script src=\"https://images-na.ssl-images-amazon.com/images/G/01/AUIClients/ClientSideMetricsAUIJavascript-51171fbdd28e1a7a61e922e8f0272af8bc74d37b.secure.variant-desktop-session-snapshot-keyp"
     },
     {
-      "timestamp": "2026-02-22T02:32:23.120Z",
+      "timestamp": "2026-02-22T02:52:55.156Z",
       "produto": "Lâmpada Inteligente Led Smart EWS410",
       "marketplace": "Magazine Luiza",
       "tipo": "LINK_MORTO",
       "detalhes": "HTTP 404 - Página não encontrada"
     },
     {
-      "timestamp": "2026-02-22T02:32:32.790Z",
-      "produto": "Lâmpada Inteligente Tapo L530E Multicolor TP-Link",
-      "marketplace": "Amazon",
-      "tipo": "SELETOR_NAO_ENCONTRADO",
-      "detalhes": "Seletor \".a-price\" não existe na página"
-    },
-    {
-      "timestamp": "2026-02-22T02:32:42.930Z",
+      "timestamp": "2026-02-22T02:53:15.198Z",
       "produto": "Lâmpada Inteligente Tapo L530E Multicolor TP-Link",
       "marketplace": "Mercado Livre",
       "tipo": "SELETOR_NAO_ENCONTRADO",
-      "detalhes": "Seletor \"[data-andes-money-amount=\"true\"][data-andes-money-amount-size=\"24\"]\" não existe na página"
+      "detalhes": "Seletor \"[data-andes-money-amount=\"true\"][data-andes-money-amount-size=\"24\"]\" não existe. URL: https://www.mercadolivre.com.br/social/admir123/lists | HTML: <!DOCTYPE html><html lang=\"pt-BR\"><head><meta charset=\"utf-8\"><link rel=\"preconnect\" href=\"https://http2.mlstatic.com\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, maximum-scale=5.0\"><link rel=\"preload\" href=\"https://http2.mlstatic.com/ui/webfonts/v3.0.0/proxima-nova/proximanova-light.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"><link rel=\"preload\" href=\"https://http2.mlstatic.com/ui/webfonts/v3.0.0/proxima-nova/proximanova-regular.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"><link rel=\"preload\" href=\"https://http2.mlstatic.com/ui/webfonts/v3.0.0/proxima-nova/proximanova-semibold.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"><link rel=\"preload\" as=\"image\" href=\"https://http2.mlstatic.com/D_NQ_731637-MLA107017824109_022026-OO.webp\"><link rel=\"stylesheet\" href=\"https://http2.mlstatic.com/frontend-assets/affiliates-social-profile-view/profilepath-lists-index.desktop.ddab25f2.css\" data-precedence=\"n-style\" crossorigin=\"\" fetchpriority=\"high\"><style data-precedence=\"medium\" data-href=\"cookies-consent-banner-style-0\">.cookie-consent-banner-opt-out{align-items:center;bottom:0;display:flex;justify-content:center;left:0;position:fixed;right:0;z-index:2147483640;-webkit-font-smoothing:antialiased;background-color:#fff;border-radius:6px 6px 0 0;box-shadow:0 -8px 16px rgba(0,0,0,.1);color:rgba(0,0,0,.9);font-family:Proxima Nova,-apple-system,Roboto,Arial,sans-serif}.cookie-consent-banner-opt-out *{box-sizing:border-box}.cookie-consent-banner-opt-out"
     },
     {
-      "timestamp": "2026-02-22T02:32:49.859Z",
+      "timestamp": "2026-02-22T02:53:22.014Z",
       "produto": "Lâmpada Inteligente Tapo L530E Multicolor TP-Link",
       "marketplace": "Magazine Luiza",
       "tipo": "LINK_MORTO",
@@ -102,7 +88,7 @@
     }
   ],
   "resumo": {
-    "SELETOR_NAO_ENCONTRADO": 7,
+    "SELETOR_NAO_ENCONTRADO": 5,
     "LINK_MORTO": 7
   }
 }

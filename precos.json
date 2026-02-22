@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-22T02:26:04.933Z",
+  "lastUpdated": "2026-02-22T02:46:47.336Z",
   "products": [
     {
       "id": "echo-dot-5-geracao",
@@ -14,7 +14,7 @@
         },
         {
           "marketplace": "Mercado Livre",
-          "preco": 435,
+          "preco": 409,
           "link": "https://mercadolivre.com/sec/2DafRRj",
           "freteGratis": true,
           "posicao": 2
@@ -32,13 +32,6 @@
       "id": "echo-dot-max",
       "nome": "Caixa de som inteligente Echo Dot Max Amazon",
       "ofertas": [
-        {
-          "marketplace": "Amazon",
-          "preco": 849,
-          "link": "https://amzn.to/3Jv9W4q",
-          "freteGratis": true,
-          "posicao": 4
-        },
         {
           "marketplace": "Mercado Livre",
           "preco": 764.24,
@@ -59,6 +52,13 @@
       "id": "echo-pop",
       "nome": "Caixa de som inteligente Echo Pop Amazon",
       "ofertas": [
+        {
+          "marketplace": "Amazon",
+          "preco": 379,
+          "link": "https://amzn.to/43xZkbK",
+          "freteGratis": true,
+          "posicao": 4
+        },
         {
           "marketplace": "Mercado Livre",
           "preco": 303,
@@ -139,6 +139,13 @@
       "nome": "Lâmpada Inteligente Led Smart maior potência 30W",
       "ofertas": [
         {
+          "marketplace": "Amazon",
+          "preco": 64.7,
+          "link": "https://amzn.to/3JlXaF8",
+          "freteGratis": true,
+          "posicao": 4
+        },
+        {
           "marketplace": "Mercado Livre",
           "preco": 64.7,
           "link": "https://mercadolivre.com/sec/1HhRqgf",
@@ -203,7 +210,15 @@
     {
       "id": "multicolor-tapo-L530E",
       "nome": "Lâmpada Inteligente Tapo L530E Multicolor TP-Link",
-      "ofertas": []
+      "ofertas": [
+        {
+          "marketplace": "Amazon",
+          "preco": 44.9,
+          "link": "https://amzn.to/3WAJh9i",
+          "freteGratis": true,
+          "posicao": 2
+        }
+      ]
     }
   ]
 }
