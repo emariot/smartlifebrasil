@@ -1,16 +1,30 @@
 {
-  "lastUpdated": "2026-02-22T01:12:42.094Z",
+  "lastUpdated": "2026-02-22T01:29:20.325Z",
   "products": [
     {
       "id": "echo-dot-5-geracao",
       "nome": "Caixa de som inteligente Echo Dot Amazon 5ª Geração",
       "ofertas": [
         {
+          "marketplace": "Amazon",
+          "preco": 428.99,
+          "link": "https://amzn.to/3L8sCHH",
+          "freteGratis": true,
+          "posicao": 4
+        },
+        {
           "marketplace": "Mercado Livre",
           "preco": 435,
           "link": "https://mercadolivre.com/sec/2DafRRj",
           "freteGratis": true,
           "posicao": 2
+        },
+        {
+          "marketplace": "Magazine Luiza",
+          "preco": 597.67,
+          "link": "https://divulgador.magalu.com/2Wi_Iqvq",
+          "freteGratis": true,
+          "posicao": 1
         }
       ]
     },
@@ -23,13 +37,6 @@
       "id": "echo-pop",
       "nome": "Caixa de som inteligente Echo Pop Amazon",
       "ofertas": [
-        {
-          "marketplace": "Amazon",
-          "preco": 379,
-          "link": "https://amzn.to/43xZkbK",
-          "freteGratis": true,
-          "posicao": 4
-        },
         {
           "marketplace": "Mercado Livre",
           "preco": 303,
@@ -83,8 +90,15 @@
       "nome": "Antena de internet via satélite Starlink Mini",
       "ofertas": [
         {
+          "marketplace": "Amazon",
+          "preco": 964,
+          "link": "https://amzn.to/48dxfYY",
+          "freteGratis": false,
+          "posicao": 4
+        },
+        {
           "marketplace": "Mercado Livre",
-          "preco": 1099,
+          "preco": 1089,
           "link": "https://mercadolivre.com/sec/12RYcfM",
           "freteGratis": true,
           "posicao": 3
@@ -103,6 +117,13 @@
       "nome": "Lâmpada Inteligente Led Smart maior potência 30W",
       "ofertas": [
         {
+          "marketplace": "Amazon",
+          "preco": 64.7,
+          "link": "https://amzn.to/3JlXaF8",
+          "freteGratis": true,
+          "posicao": 4
+        },
+        {
           "marketplace": "Mercado Livre",
           "preco": 64.7,
           "link": "https://mercadolivre.com/sec/1HhRqgf",
@@ -116,13 +137,6 @@
       "nome": "Lâmpada Inteligente Smart Color Led A60",
       "ofertas": [
         {
-          "marketplace": "Amazon",
-          "preco": 99.9,
-          "link": "https://amzn.to/4oBIj94",
-          "freteGratis": true,
-          "posicao": 2
-        },
-        {
           "marketplace": "Mercado Livre",
           "preco": 37.57,
           "link": "https://mercadolivre.com/sec/2nANHEh",
@@ -135,6 +149,13 @@
       "id": "smart-led-A60",
       "nome": "Lâmpada Inteligente Smart G-light A60 RGBW",
       "ofertas": [
+        {
+          "marketplace": "Amazon",
+          "preco": 29.9,
+          "link": "https://amzn.to/3JcOPUo",
+          "freteGratis": false,
+          "posicao": 3
+        },
         {
           "marketplace": "Mercado Livre",
           "preco": 29.9,
