@@ -131,7 +131,10 @@ async function buscarPreco(linkAfiliado, seletor, marketplace, produtoNome) {
     const count = await elemento.count();
     
     if (count === 0) {
-      registrarErro(produtoNome, marketplace, 'SELETOR_NAO_ENCONTRADO', `Seletor "${seletor}" não existe na página`);
+      const urlFinalLog = page.url();
+      const htmlInicio = (await page.content()).substring(0, 1500);
+      registrarErro(produtoNome, marketplace, 'SELETOR_NAO_ENCONTRADO', 
+        `Seletor "${seletor}" não existe. URL: ${urlFinalLog} | HTML: ${htmlInicio}`);
       await browser.close();
       return null;
     }
