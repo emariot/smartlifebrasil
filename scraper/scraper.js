@@ -351,15 +351,21 @@ async function atualizarPrecos() {
 
       // SÓ ADICIONA SE CONSEGUIU BUSCAR O PREÇO
       if (precoNovo !== null) {
+  
+
         ofertasAtualizadas.push({
           ...oferta,
           preco: precoNovo
         });
         console.log(`    ✅ Oferta adicionada ao JSON`);
       } else {
-        console.log(`    🚫 Oferta REMOVIDA do JSON (erro ao buscar preço)`);
+        // Mantém a oferta com o preço original do frontmatter .njk
+        ofertasAtualizadas.push({
+          ...oferta
+          // preco já vem do frontmatter via spread
+        });
+        console.log(`    ⚠️ Usando preço do frontmatter: R$ ${oferta.preco}`);
       }
-      
       await new Promise(r => setTimeout(r, 3000 + Math.random() * 2000));
     }
     
