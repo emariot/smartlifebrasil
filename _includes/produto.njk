@@ -356,8 +356,8 @@ layout: base.njk
         </div>
         
         <!-- Carrossel de Vídeos -->
-        <div class="videos-carousel-container relative">
-          <div id="videos-carousel" class="flex gap-4 overflow-x-auto scroll-smooth pb-2" style="scrollbar-width: thin;">
+        <div class="videos-carousel-container relative overflow-hidden">
+          <div id="videos-carousel" class="flex gap-4 pb-2" style="scrollbar-width: thin; transition: transform 0.5s ease; will-change: transform;">  
             {% for videoItem in videos %}
             <div class="video-item flex-shrink-0 w-full">
               <div class="relative w-full rounded-lg overflow-hidden shadow-lg mb-2" style="padding-bottom: 56.25%;">

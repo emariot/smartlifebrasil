@@ -272,6 +272,53 @@ document.querySelectorAll('.produtos-carousel-container').forEach(container => {
 });
 
 // ===================================
+// 1.8. CARROSSEL DE VÍDEOS (PÁGINA PRODUTO)
+// ===================================
+const videosCarousel = document.getElementById('videos-carousel');
+if (videosCarousel) {
+    const videoItems = videosCarousel.querySelectorAll('.video-item');
+    const totalVideos = videoItems.length;
+
+    if (totalVideos > 1) {
+        const prevBtn = document.getElementById('videos-prev');
+        const nextBtn = document.getElementById('videos-next');
+        const indicators = document.querySelectorAll('.video-indicator');
+        let currentVideo = 0;
+
+        function goToVideo(index) {
+            if (index < 0) index = totalVideos - 1;
+            if (index >= totalVideos) index = 0;
+            currentVideo = index;
+
+            // Move o carrossel com transform (mais suave que scrollTo)
+            const itemWidth = videoItems[0].offsetWidth + 16; // largura + gap-4
+            videosCarousel.style.transform = `translateX(-${currentVideo * itemWidth}px)`;
+
+            // Atualiza indicadores
+            indicators.forEach((dot, i) => {
+                if (i === currentVideo) {
+                    dot.classList.add('bg-blue-500');
+                    dot.classList.remove('bg-gray-300');
+                } else {
+                    dot.classList.remove('bg-blue-500');
+                    dot.classList.add('bg-gray-300');
+                }
+            });
+        }
+
+        if (prevBtn) prevBtn.addEventListener('click', () => goToVideo(currentVideo - 1));
+        if (nextBtn) nextBtn.addEventListener('click', () => goToVideo(currentVideo + 1));
+
+        indicators.forEach((dot, i) => {
+            dot.addEventListener('click', () => goToVideo(i));
+        });
+
+        // Inicializa o primeiro indicador como ativo
+        goToVideo(0);
+    }
+}
+
+// ===================================
 // 2. FUNÇÕES GERAIS (DOM READY)
 // ===================================
 document.addEventListener('DOMContentLoaded', () => {
