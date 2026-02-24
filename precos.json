@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-23T13:25:04.187Z",
+  "lastUpdated": "2026-02-24T02:57:07.781Z",
   "products": [
     {
       "id": "echo-dot-5-geracao",
@@ -7,14 +7,14 @@
       "ofertas": [
         {
           "marketplace": "Amazon",
-          "preco": 428.99,
+          "preco": 429.01,
           "link": "https://amzn.to/3L8sCHH",
           "freteGratis": true,
           "posicao": 4
         },
         {
           "marketplace": "Mercado Livre",
-          "preco": 413,
+          "preco": 409,
           "link": "https://mercadolivre.com/sec/2DafRRj",
           "freteGratis": true,
           "posicao": 2
@@ -88,7 +88,7 @@
       "ofertas": [
         {
           "marketplace": "Mercado Livre",
-          "preco": 849.9,
+          "preco": 699,
           "link": "https://mercadolivre.com/sec/13hE5Pp",
           "freteGratis": true,
           "posicao": 1
@@ -141,7 +141,7 @@
       "ofertas": [
         {
           "marketplace": "Amazon",
-          "preco": 911.04,
+          "preco": 963,
           "link": "https://amzn.to/48dxfYY",
           "freteGratis": false,
           "posicao": 4
@@ -163,19 +163,46 @@
       ]
     },
     {
+      "id": "tp-link-deco-be65-wi-fi-7-tri-band",
+      "nome": "TP-Link Deco BE65 Wi-Fi 7 Tri-Band BE11000",
+      "ofertas": [
+        {
+          "marketplace": "Amazon",
+          "preco": 1514.01,
+          "link": "https://amzn.to/40vCWxC",
+          "freteGratis": true,
+          "posicao": 1
+        },
+        {
+          "marketplace": "Mercado Livre",
+          "preco": 1699,
+          "link": "https://meli.la/2vHfmQo",
+          "freteGratis": true,
+          "posicao": 2
+        },
+        {
+          "marketplace": "Magazine Luiza",
+          "preco": 1504.01,
+          "link": "https://divulgador.magalu.com/W4RTVbuD",
+          "freteGratis": true,
+          "posicao": 3
+        }
+      ]
+    },
+    {
       "id": "led-smart-30W",
       "nome": "Lâmpada Inteligente Led Smart maior potência 30W",
       "ofertas": [
         {
           "marketplace": "Amazon",
-          "preco": 69.99,
+          "preco": 71.42,
           "link": "https://amzn.to/3JlXaF8",
           "freteGratis": true,
           "posicao": 4
         },
         {
           "marketplace": "Mercado Livre",
-          "preco": 71.42,
+          "preco": 64.7,
           "link": "https://mercadolivre.com/sec/1HhRqgf",
           "freteGratis": true,
           "posicao": 2
@@ -249,14 +276,14 @@
       "ofertas": [
         {
           "marketplace": "Amazon",
-          "preco": 70.9,
+          "preco": 62.9,
           "link": "https://amzn.to/4ngerNW",
           "freteGratis": false,
           "posicao": 4
         },
         {
           "marketplace": "Mercado Livre",
-          "preco": 59.9,
+          "preco": 51.4,
           "link": "https://mercadolivre.com/sec/24euRM9",
           "freteGratis": true,
           "posicao": 1
