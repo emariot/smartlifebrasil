@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-24T13:26:36.288Z",
+  "lastUpdated": "2026-02-25T02:53:20.326Z",
   "products": [
     {
       "id": "echo-dot-5-geracao",
@@ -14,7 +14,7 @@
         },
         {
           "marketplace": "Mercado Livre",
-          "preco": 435,
+          "preco": 400.69,
           "link": "https://mercadolivre.com/sec/2DafRRj",
           "freteGratis": true,
           "posicao": 2
@@ -68,7 +68,7 @@
         },
         {
           "marketplace": "Mercado Livre",
-          "preco": 309,
+          "preco": 272,
           "link": "https://mercadolivre.com/sec/18u5bFj",
           "freteGratis": true,
           "posicao": 2
@@ -121,7 +121,7 @@
       "ofertas": [
         {
           "marketplace": "Mercado Livre",
-          "preco": 389.99,
+          "preco": 328.29,
           "link": "https://mercadolivre.com/sec/1Zf8oXm",
           "freteGratis": true,
           "posicao": 1
@@ -163,19 +163,46 @@
       ]
     },
     {
+      "id": "tp-link-br550-wifi7",
+      "nome": "TP-Link Acher BE550 Wi-Fi 7 Tri-Band BE9300 Router de 2.5G EasyMesh",
+      "ofertas": [
+        {
+          "marketplace": "Amazon",
+          "preco": 1519.9,
+          "link": "https://amzn.to/4rArvkb",
+          "freteGratis": true,
+          "posicao": 1
+        },
+        {
+          "marketplace": "Mercado Livre",
+          "preco": 1589,
+          "link": "https://meli.la/2nN9a8V",
+          "freteGratis": true,
+          "posicao": 2
+        },
+        {
+          "marketplace": "Magazine Luiza",
+          "preco": 1699.9,
+          "link": "https://divulgador.magalu.com/GdtpBDeM",
+          "freteGratis": false,
+          "posicao": 3
+        }
+      ]
+    },
+    {
       "id": "tp-link-deco-be65-wi-fi-7-tri-band",
       "nome": "TP-Link Deco BE65 Wi-Fi 7 Tri-Band BE11000",
       "ofertas": [
         {
           "marketplace": "Amazon",
-          "preco": 1514.01,
+          "preco": 1359.92,
           "link": "https://amzn.to/40vCWxC",
           "freteGratis": true,
           "posicao": 1
         },
         {
           "marketplace": "Mercado Livre",
-          "preco": 1699,
+          "preco": 1359,
           "link": "https://meli.la/2vHfmQo",
           "freteGratis": true,
           "posicao": 2
@@ -202,7 +229,7 @@
         },
         {
           "marketplace": "Mercado Livre",
-          "preco": 65.17,
+          "preco": 64.7,
           "link": "https://mercadolivre.com/sec/1HhRqgf",
           "freteGratis": true,
           "posicao": 2
