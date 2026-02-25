@@ -34,9 +34,15 @@
     console.log('📄 Produto atual:', produtoId);
     
     const produto = dados.products.find(p => p.id === produtoId);
-    
+
+    // Remove spinner sempre ao final
+    const spinner = document.getElementById('ofertas-spinner');
+    const ofertasContainer = document.getElementById('ofertas-container');
+
     if (!produto) {
       console.log('ℹ️ Produto não encontrado no JSON');
+      if (spinner) spinner.remove();
+      if (ofertasContainer) ofertasContainer.classList.remove('hidden');
       return;
     }
     
@@ -56,11 +62,10 @@
 
     // Se não há ofertas no JSON
     if (produto.ofertas.length === 0) {
+      if (spinner) spinner.remove();
       if (container) {
-        // Substitui o bloco de ofertas existente pela mensagem
         container.parentElement.outerHTML = mensagemIndisponivel();
       } else {
-        // Insere a mensagem após o título do produto
         const titulo = document.querySelector('h1');
         if (titulo) {
           const div = document.createElement('div');
@@ -74,10 +79,8 @@
 
     // Há ofertas no JSON
     if (container) {
-      // Container existe — reconstrói os cards dentro dele
       reconstruirCards(container, produto);
     } else {
-      // Container não existe — cria o bloco do zero após o título
       const titulo = document.querySelector('h1');
       if (titulo) {
         const blocoCompleto = document.createElement('div');
@@ -99,6 +102,10 @@
         reconstruirCards(container, produto);
       }
     }
+
+    // Remove spinner e exibe container
+    if (spinner) spinner.remove();
+    if (ofertasContainer) ofertasContainer.classList.remove('hidden');
 
     atualizarTimestamp(dados.lastUpdated);
     console.log('✅ Cards de ofertas reconstruídos com sucesso');
