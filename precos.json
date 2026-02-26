@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-25T13:35:37.736Z",
+  "lastUpdated": "2026-02-26T02:48:03.185Z",
   "products": [
     {
       "id": "echo-dot-5-geracao",
@@ -14,7 +14,7 @@
         },
         {
           "marketplace": "Mercado Livre",
-          "preco": 400.69,
+          "preco": 399,
           "link": "https://mercadolivre.com/sec/2DafRRj",
           "freteGratis": true,
           "posicao": 2
@@ -41,7 +41,7 @@
         },
         {
           "marketplace": "Mercado Livre",
-          "preco": 764.24,
+          "preco": 849.16,
           "link": "https://mercadolivre.com/sec/2YV86xB",
           "freteGratis": true,
           "posicao": 2
@@ -68,7 +68,7 @@
         },
         {
           "marketplace": "Mercado Livre",
-          "preco": 285,
+          "preco": 271,
           "link": "https://mercadolivre.com/sec/18u5bFj",
           "freteGratis": true,
           "posicao": 2
@@ -88,7 +88,7 @@
       "ofertas": [
         {
           "marketplace": "Mercado Livre",
-          "preco": 699,
+          "preco": 424.18,
           "link": "https://mercadolivre.com/sec/13hE5Pp",
           "freteGratis": true,
           "posicao": 1
@@ -141,7 +141,7 @@
       "ofertas": [
         {
           "marketplace": "Amazon",
-          "preco": 963,
+          "preco": 974.9,
           "link": "https://amzn.to/48dxfYY",
           "freteGratis": false,
           "posicao": 4
@@ -155,7 +155,7 @@
         },
         {
           "marketplace": "Magazine Luiza",
-          "preco": 1799.9,
+          "preco": 999.9,
           "link": "https://divulgador.magalu.com/85jb9Njk",
           "freteGratis": false,
           "posicao": 2
@@ -163,7 +163,34 @@
       ]
     },
     {
-      "id": "tp-link-br550-wifi7",
+      "id": "tp-link-be220",
+      "nome": "TP-Link BE3600 Dual-Band Wi-Fi 7 Router ache be 220",
+      "ofertas": [
+        {
+          "marketplace": "Amazon",
+          "preco": 474.9,
+          "link": "https://amzn.to/4kSKGDm",
+          "freteGratis": true,
+          "posicao": 1
+        },
+        {
+          "marketplace": "Mercado Livre",
+          "preco": 533.3,
+          "link": "https://meli.la/2Wtgurr",
+          "freteGratis": true,
+          "posicao": 2
+        },
+        {
+          "marketplace": "Magazine Luiza",
+          "preco": 546.75,
+          "link": "https://divulgador.magalu.com/MZvl4Fpw",
+          "freteGratis": false,
+          "posicao": 3
+        }
+      ]
+    },
+    {
+      "id": "tp-link-be550-wifi7",
       "nome": "TP-Link Acher BE550 Wi-Fi 7 Tri-Band BE9300 Router de 2.5G EasyMesh",
       "ofertas": [
         {
@@ -175,7 +202,7 @@
         },
         {
           "marketplace": "Mercado Livre",
-          "preco": 1589,
+          "preco": 1510,
           "link": "https://meli.la/2nN9a8V",
           "freteGratis": true,
           "posicao": 2
@@ -195,7 +222,7 @@
       "ofertas": [
         {
           "marketplace": "Amazon",
-          "preco": 1514.01,
+          "preco": 1566.55,
           "link": "https://amzn.to/40vCWxC",
           "freteGratis": true,
           "posicao": 1
@@ -229,7 +256,7 @@
         },
         {
           "marketplace": "Mercado Livre",
-          "preco": 78.99,
+          "preco": 71.42,
           "link": "https://mercadolivre.com/sec/1HhRqgf",
           "freteGratis": true,
           "posicao": 2
@@ -303,7 +330,7 @@
       "ofertas": [
         {
           "marketplace": "Amazon",
-          "preco": 62.9,
+          "preco": 70.9,
           "link": "https://amzn.to/4ngerNW",
           "freteGratis": false,
           "posicao": 4
