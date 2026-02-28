@@ -66,7 +66,7 @@ Ambos são sistemas **Wi-Fi 7 Tri-Band com 6 GHz**, portas 2.5 Gbps e suporte a 
 - 2.4 GHz: 574 Mbps  
 - 4× portas 2.5G  
 
-{% produtoOfertas "/produtos/casa/internet-roteadores/tp-link/tp-link-be63/" %}
+<div>{% produtoOfertas "/produtos/casa/internet-roteadores/tp-link/tp-link-be63/" %}</div>
 
 ### 🔹 Deco BE65 – BE11000
 <div class="w-full flex justify-start my-4 px-2">
@@ -88,7 +88,7 @@ Ambos são sistemas **Wi-Fi 7 Tri-Band com 6 GHz**, portas 2.5 Gbps e suporte a 
 
 O BE65 é tecnicamente superior em throughput bruto, especialmente nas bandas de 6 GHz e 2.4 GHz.
 
-{% produtoOfertas "/produtos/casa/internet-roteadores/tp-link/tp-link-deco-be65-wi-fi-7-tri-band/" %}
+<div>{% produtoOfertas "/produtos/casa/internet-roteadores/tp-link/tp-link-deco-be65-wi-fi-7-tri-band/" %}</div>
 
 ---
 

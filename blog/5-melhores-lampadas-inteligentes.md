@@ -58,7 +58,7 @@ A **Elgin Smart Color 10W** é perfeita para quem quer automatizar a casa gastan
 
 **Ponto negativo:** iluminação moderada, ideal para cômodos menores.  
 
-{% produtoOfertas "/produtos/casa/lampadas-inteligentes/elgin/smart-color-led-a60/" %}
+<div>{% produtoOfertas "/produtos/casa/lampadas-inteligentes/elgin/smart-color-led-a60/" %}</div>
 
 ---
 <h2 id="intelbras-ews-410">🥈 Intelbras Led Smart EWS410 – Melhor Nacional</h2>
@@ -86,7 +86,7 @@ A **Elgin Smart Color 10W** é perfeita para quem quer automatizar a casa gastan
 A **Intelbras EWS410** é uma ótima escolha nacional, oferecendo bom equilíbrio entre desempenho e custo. A configuração é intuitiva, o app responde rápido e o brilho é satisfatório para diversos tipos de ambiente.  
 **Ponto negativo:** a integração com outros dispositivos fora do ecossistema Intelbras pode ser limitada.  
 
-{% produtoOfertas "/produtos/casa/lampadas-inteligentes/intelbras/led-smart-ews410/" %}}
+<div>{% produtoOfertas "/produtos/casa/lampadas-inteligentes/intelbras/led-smart-ews410/" %}</div>
 
 ---
 
@@ -113,7 +113,7 @@ A **Intelbras EWS410** é uma ótima escolha nacional, oferecendo bom equilíbri
 
 A versão de 30W da Elgin é indicada para quem busca potência e praticidade. É fácil de instalar, responde bem aos comandos e ilumina até salas amplas. O único ponto a considerar é o consumo de energia relativamente maior, quando comparado aos modelos de menor potência.
 
-{% produtoOfertas "/produtos/casa/lampadas-inteligentes/elgin/led-smart-30w/" %}
+<div>{% produtoOfertas "/produtos/casa/lampadas-inteligentes/elgin/led-smart-30w/" %}</div>
 
 ---
 
@@ -141,7 +141,7 @@ A versão de 30W da Elgin é indicada para quem busca potência e praticidade. �
 A **TP-Link Tapo L530E** é uma lâmpada prática e eficiente, perfeita para quem busca economia e tecnologia. O aplicativo é simples de usar e permite configurar rotinas com facilidade.  
 **Ponto negativo:** a conectividade pode ser afetada por redes Wi-Fi com sinal fraco.  
 
-{% produtoOfertas "/produtos/casa/lampadas-inteligentes/tapo/multicolor-tapo-l530e/" %}
+<div>{% produtoOfertas "/produtos/casa/lampadas-inteligentes/tapo/multicolor-tapo-l530e/" %}</div>
 
 ---
 
@@ -170,7 +170,7 @@ A **TP-Link Tapo L530E** é uma lâmpada prática e eficiente, perfeita para que
 A **Glite Smart 10W** é ideal para quem quer começar no mundo das lâmpadas inteligentes sem gastar muito. Permite controle remoto por aplicativo, ajuste de cor e brilho, e programação de horários.  
 **Ponto negativo:** acabamento mais básico.
 
-{% produtoOfertas "/produtos/casa/lampadas-inteligentes/g-light/smart-led-a60/" %}
+<div>{% produtoOfertas "/produtos/casa/lampadas-inteligentes/g-light/smart-led-a60/" %}</div>
 
 ---
 
