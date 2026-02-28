@@ -219,11 +219,22 @@ Pronto! Agora sua casa tem uma automação!
 
 Testamos dezenas de modelos. Essas são as TOP 5 para quem está começando:
 
-### 1. 🥇 Smart Color Led A60
-**Por que é a melhor:** Melhor custo-benefício, versátil e colorida.
+<h3 id="elgin-smart-color-led-a60">1. 🥇 Smart Color Led A60 - melhor custo-benefício</h3>
 
+<div class="w-full flex justify-start my-4 px-2">
+  <a href="https://smartlifebr.com.br/produtos/casa/lampadas-inteligentes/elgin/smart-color-led-a60/" 
+  target="_blank" 
+  rel="noopener noreferrer"
+  title="Página do produto em uma nova aba">
+    <img src="/assets/img/casa/lampadas_inteligentes/elgin/smart-color-led/principal.jpg"
+         alt="Lâmpada Elgin Smart Color 10W RGB"
+         class="w-48 sm:w-56 md:w-64 lg:w-72 rounded-lg shadow-md my-2 hover:opacity-90 transition duration-200">
+  </a>
+</div>
+
+**Tipo:** RGB | **Conectividade:** Wi-Fi  
+### Por que é a melhor: Melhor custo-benefício, versátil e colorida.
 - **Marca:** Elgin
-- **Preço:** R$ 40.75 
 - **Cores:** 16 milhões
 - **App:** Elgin Smart
 - **Compatível:** Alexa, Google, Smart Life e Tuya
@@ -237,15 +248,26 @@ Testamos dezenas de modelos. Essas são as TOP 5 para quem está começando:
     - Potência de 10W pode não ser suficiente para ambientes maiores.
     - Conectividade pode ser instável em redes Wi-Fi congestionadas
 
-[🛒 Página do produto com melhores ofertas -> ](/produtos/casa/lampadas-inteligentes/elgin/smart-color-led-A60/)
+<div>{% produtoOfertas "/produtos/casa/lampadas-inteligentes/elgin/smart-color-led-a60/" %}</div>
 
 ---
 
-### 2. 🥈 Led Smart EWS410
-**Por que recomendamos:** Marca confiável e bom custo-benefício.
+<h3 id="intelbras-ews-410"> 2. 🥈 Led Smart EWS410 - melhor nacional</h3>
 
+<div class="w-full flex justify-start my-4 px-2">
+  <a href="https://smartlifebr.com.br/produtos/casa/lampadas-inteligentes/intelbras/led-smart-ews410/" 
+  target="_blank" 
+  rel="noopener noreferrer"
+  title="Página do produto em uma nova aba">
+    <img src="/assets/img/casa/lampadas_inteligentes/intelbras/led-smart-EWS410/principal.jpg"
+         alt="Intelbras Led Smart EWS410"
+         class="w-48 sm:w-56 md:w-64 lg:w-72 rounded-lg shadow-md my-2 hover:opacity-90 transition duration-200">
+  </a>
+</div>
+
+**Tipo:** RGB | **Conectividade:** Wi-Fi  
+### Por que recomendamos: Marca confiável, nacional e com bom custo-benefício.
 - **Marca:** Intelbras
-- **Preço:** R$ 40.58
 - **Cores:** 16 milhões
 - **App:** Izy Smart
 - **Compatível:** Alexa, Google
@@ -258,15 +280,27 @@ Testamos dezenas de modelos. Essas são as TOP 5 para quem está começando:
     - Interface do aplicativo menos intuitiva
     - Integração com outros dispositivos fora do ecossistema Intelbras pode ser limitada.
 
-[🛒 Página do produto com melhores ofertas -> ](/produtos/casa/lampadas-inteligentes/intelbras/led-smart-EWS410/)
+<div>{% produtoOfertas "/produtos/casa/lampadas-inteligentes/intelbras/led-smart-ews410/" %}</div>
 
 ---
 
-### 3. 🥉 Led Smart maior potência 30W
-**Por que vale a pena:** Maior potência
+<h3 id="elgin-smart-led-30w"> 3. 🥉 Led Smart maior potência 30W - potência e versatilidade</h3>
 
+<div class="w-full flex justify-start my-4 px-2">
+  <a href="https://smartlifebr.com.br/produtos/casa/lampadas-inteligentes/elgin/led-smart-30w/" 
+  target="_blank" 
+  rel="noopener noreferrer"
+  title="Página do produto em uma nova aba">
+    <img src="/assets/img/casa/lampadas_inteligentes/elgin/led-smart-30W/principal.webp"
+         alt="Lâmpada Elgin Smart LED 30W"
+         class="w-48 sm:w-56 md:w-64 lg:w-72 rounded-lg shadow-md my-2 hover:opacity-90 transition duration-200">
+  </a>
+</div>
+
+**Tipo:** RGB | **Conectividade:** Wi-Fi  
+
+### Por que vale a pena: Maior potência
 - **Marca:** Elgin
-- **Preço:** R$ 65.73
 - **Cores:** RGB + branco
 - **App:** Elgin Smart
 - **Compatível:** Alexa, Google
@@ -278,15 +312,26 @@ Testamos dezenas de modelos. Essas são as TOP 5 para quem está começando:
     - Maior consumo de energia em comparação com modelos de menor potência.
     - Preço mais elevado que modelos de menor potência
 
-[🛒 Página do produto com melhores ofertas->](/produtos/casa/lampadas-inteligentes/elgin/led-smart-30W/)
+<div>{% produtoOfertas "/produtos/casa/lampadas-inteligentes/elgin/led-smart-30w/" %}</div>
 
 ---
 
-### 4. Tapo L530E (TP-Link)
-**Para quem quer recursos avançados: Boa eficiência energética e controles completos.**
+<h3 id="tp-link-tapo-l530e"> 4. Tapo L530E (TP-Link) - Eficiência Energética</h3>
 
+<div class="w-full flex justify-start my-4 px-2">
+  <a href="https://smartlifebr.com.br/produtos/casa/lampadas-inteligentes/tapo/multicolor-tapo-l530e/" 
+  target="_blank" 
+  rel="noopener noreferrer"
+  title="Página do produto em uma nova aba">
+    <img src="/assets/img/casa/lampadas_inteligentes/tapo/multicolor-tapo-L530E/principal.jpg"
+         alt="Lâmpada TP-Link Tapo L530E"
+         class="w-48 sm:w-56 md:w-64 lg:w-72 rounded-lg shadow-md my-2 hover:opacity-90 transition duration-200">
+  </a>
+</div>
+
+**Tipo:** RGB | **Conectividade:** Wi-Fi  
+### Por que vale a pena: menor consumo de energia.
 - **Marca:** Tapo
-- **Preço:** R$ 44.99
 - **Cores:** 16 milhões
 - **App:** TP-Link
 - **Garantia:** 2 anos
@@ -297,15 +342,26 @@ Testamos dezenas de modelos. Essas são as TOP 5 para quem está começando:
 - **Pontos fracos:**
     - Conectividade pode ser afetada por redes Wi-Fi com sinal fraco.
 
-[🛒 Página do produto com melhores ofertas ->](/produtos/casa/lampadas-inteligentes/tapo/multicolor-tapo-L530E/)
+<div>{% produtoOfertas "/produtos/casa/lampadas-inteligentes/tapo/multicolor-tapo-l530e/" %}</div>
 
 ---
 
-### 5. Glight Smart LED A60
-**Boa performance com preço acessível.**
+<h3 id="glite-smart-led-10w">5. Glight Smart LED A60 - Preço mais acessível</h3>
 
+<div class="w-full flex justify-start my-4 px-2">
+  <a href="https://smartlifebr.com.br/produtos/casa/lampadas-inteligentes/g-light/smart-led-a60/" 
+  target="_blank" 
+  rel="noopener noreferrer"
+  title="Página do produto em uma nova aba">
+    <img src="/assets/img/casa/lampadas_inteligentes/g-light/smart-led-A60/principal.jpg"
+         alt="G-lite Smart LED A60"
+         class="w-48 sm:w-56 md:w-64 lg:w-72 rounded-lg shadow-md my-2 hover:opacity-90 transition duration-200">
+  </a>
+</div>
+
+**Tipo:** RGB | **Conectividade:** Wi-Fi  
+### Por que vale a pena: boa performance com preço acessível.**
 - **Marca:** G-light
-- **Preço:** R$ 29.9
 - **Cores:** 16 milhões
 - **App:** G-light Smart
 - **Garantia:** 2 anos
@@ -316,7 +372,7 @@ Testamos dezenas de modelos. Essas são as TOP 5 para quem está começando:
     - Qualidade de construção poderia ser melhor
     - Marca menos conhecida, suporte pode ser limitado
 
-[🛒 Página do produto com melhores ofertas ->](/produtos/casa/lampadas-inteligentes/g-light/smart-led-A60/)
+<div>{% produtoOfertas "/produtos/casa/lampadas-inteligentes/g-light/smart-led-a60/" %}</div>
 
 ---
 
@@ -328,7 +384,6 @@ Testamos dezenas de modelos. Essas são as TOP 5 para quem está começando:
 <thead class="bg-gray-100">
 <tr>
 <th class="p-2 text-left">Modelo</th>
-<th class="p-2">R$</th>
 <th class="p-2">W</th>
 <th class="p-2">lm</th>
 <th class="p-2">RGB</th>
@@ -341,7 +396,6 @@ Testamos dezenas de modelos. Essas são as TOP 5 para quem está começando:
 <tbody>
 <tr class="border-b">
 <td class="p-2">Elgin A60</td>
-<td class="p-2">40,75</td>
 <td class="p-2">10</td>
 <td class="p-2">803</td>
 <td class="p-2">✅</td>
@@ -352,7 +406,6 @@ Testamos dezenas de modelos. Essas são as TOP 5 para quem está começando:
 </tr>
 <tr class="border-b">
 <td class="p-2">Intelbras EWS410</td>
-<td class="p-2">40,58</td>
 <td class="p-2">10</td>
 <td class="p-2">806</td>
 <td class="p-2">✅</td>
@@ -363,7 +416,6 @@ Testamos dezenas de modelos. Essas são as TOP 5 para quem está começando:
 </tr>
 <tr class="border-b">
 <td class="p-2">Elgin 30W</td>
-<td class="p-2">65,73</td>
 <td class="p-2">30</td>
 <td class="p-2">2.600</td>
 <td class="p-2">✅</td>
@@ -374,7 +426,6 @@ Testamos dezenas de modelos. Essas são as TOP 5 para quem está começando:
 </tr>
 <tr class="border-b">
 <td class="p-2">Tapo L530E</td>
-<td class="p-2">44,99</td>
 <td class="p-2">8,3</td>
 <td class="p-2">806</td>
 <td class="p-2">✅</td>
@@ -385,7 +436,6 @@ Testamos dezenas de modelos. Essas são as TOP 5 para quem está começando:
 </tr>
 <tr>
 <td class="p-2">G-light A60</td>
-<td class="p-2">29,90</td>
 <td class="p-2">10</td>
 <td class="p-2">~810</td>
 <td class="p-2">✅</td>

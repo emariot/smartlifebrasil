@@ -36,7 +36,7 @@ Reunimos opções para todos os bolsos e necessidades.
 <h2 id="elgin-smart-color-led-10w">🥇 Lâmpada Inteligent Elgin Smart Color Led A60 – Melhor Geral</h2>
 
 <div class="w-full flex justify-start my-4 px-2">
-  <a href="https://smartlifebrasil.netlify.app/produtos/casa/lampadas-inteligentes/elgin/smart-color-led-A60/" 
+  <a href="https://smartlifebr.com.br/produtos/casa/lampadas-inteligentes/elgin/smart-color-led-a60/" 
   target="_blank" 
   rel="noopener noreferrer"
   title="Página do produto em uma nova aba">
@@ -58,14 +58,14 @@ A **Elgin Smart Color 10W** é perfeita para quem quer automatizar a casa gastan
 
 **Ponto negativo:** iluminação moderada, ideal para cômodos menores.  
 
-{% produtoOfertas "/produtos/casa/lampadas-inteligentes/elgin/smart-color-led-A60/" %}
+{% produtoOfertas "/produtos/casa/lampadas-inteligentes/elgin/smart-color-led-a60/" %}
 
 ---
 <h2 id="intelbras-ews-410">🥈 Intelbras Led Smart EWS410 – Melhor Nacional</h2>
 
 
 <div class="w-full flex justify-start my-4 px-2">
-  <a href="https://smartlifebrasil.netlify.app/produtos/casa/lampadas-inteligentes/intelbras/led-smart-EWS410/" 
+  <a href="https://smartlifebr.com.br/produtos/casa/lampadas-inteligentes/intelbras/led-smart-ews410/" 
   target="_blank" 
   rel="noopener noreferrer"
   title="Página do produto em uma nova aba">
@@ -86,14 +86,14 @@ A **Elgin Smart Color 10W** é perfeita para quem quer automatizar a casa gastan
 A **Intelbras EWS410** é uma ótima escolha nacional, oferecendo bom equilíbrio entre desempenho e custo. A configuração é intuitiva, o app responde rápido e o brilho é satisfatório para diversos tipos de ambiente.  
 **Ponto negativo:** a integração com outros dispositivos fora do ecossistema Intelbras pode ser limitada.  
 
-{% produtoOfertas "/produtos/casa/lampadas-inteligentes/intelbras/led-smart-EWS410/" %}
+{% produtoOfertas "/produtos/casa/lampadas-inteligentes/intelbras/led-smart-ews410/" %}}
 
 ---
 
 <h2 id="elgin-smart-led-30w">🥉 Elgin Smart LED 30W – Potência e Versatilidade</h2>
 
 <div class="w-full flex justify-start my-4 px-2">
-  <a href="https://smartlifebrasil.netlify.app/produtos/casa/lampadas-inteligentes/elgin/led-smart-30W/" 
+  <a href="https://smartlifebr.com.br/produtos/casa/lampadas-inteligentes/elgin/led-smart-30w/" 
   target="_blank" 
   rel="noopener noreferrer"
   title="Página do produto em uma nova aba">
@@ -113,14 +113,14 @@ A **Intelbras EWS410** é uma ótima escolha nacional, oferecendo bom equilíbri
 
 A versão de 30W da Elgin é indicada para quem busca potência e praticidade. É fácil de instalar, responde bem aos comandos e ilumina até salas amplas. O único ponto a considerar é o consumo de energia relativamente maior, quando comparado aos modelos de menor potência.
 
-{% produtoOfertas "/produtos/casa/lampadas-inteligentes/elgin/led-smart-30W/" %}
+{% produtoOfertas "/produtos/casa/lampadas-inteligentes/elgin/led-smart-30w/" %}
 
 ---
 
 <h2 id="tp-link-tapo-l530e">4️⃣ TP-Link Tapo L530E – Eficiência Energética</h2>
 
 <div class="w-full flex justify-start my-4 px-2">
-  <a href="https://smartlifebrasil.netlify.app/produtos/casa/lampadas-inteligentes/tapo/multicolor-tapo-L530E/" 
+  <a href="https://smartlifebr.com.br/produtos/casa/lampadas-inteligentes/tapo/multicolor-tapo-l530e/" 
   target="_blank" 
   rel="noopener noreferrer"
   title="Página do produto em uma nova aba">
@@ -141,14 +141,14 @@ A versão de 30W da Elgin é indicada para quem busca potência e praticidade. �
 A **TP-Link Tapo L530E** é uma lâmpada prática e eficiente, perfeita para quem busca economia e tecnologia. O aplicativo é simples de usar e permite configurar rotinas com facilidade.  
 **Ponto negativo:** a conectividade pode ser afetada por redes Wi-Fi com sinal fraco.  
 
-{% produtoOfertas "/produtos/casa/lampadas-inteligentes/tapo/multicolor-tapo-L530E/" %}
+{% produtoOfertas "/produtos/casa/lampadas-inteligentes/tapo/multicolor-tapo-l530e/" %}
 
 ---
 
 <h2 id="glite-smart-led-10w">5️⃣ G-lite Smart LED A60 – Mais barata</h2>
 
 <div class="w-full flex justify-start my-4 px-2">
-  <a href="http://smartlifebrasil.netlify.app/produtos/casa/lampadas-inteligentes/g-light/smart-led-A60/" 
+  <a href="https://smartlifebr.com.br/produtos/casa/lampadas-inteligentes/g-light/smart-led-a60/" 
   target="_blank" 
   rel="noopener noreferrer"
   title="Página do produto em uma nova aba">
@@ -170,7 +170,7 @@ A **TP-Link Tapo L530E** é uma lâmpada prática e eficiente, perfeita para que
 A **Glite Smart 10W** é ideal para quem quer começar no mundo das lâmpadas inteligentes sem gastar muito. Permite controle remoto por aplicativo, ajuste de cor e brilho, e programação de horários.  
 **Ponto negativo:** acabamento mais básico.
 
-{% produtoOfertas "/produtos/casa/lampadas-inteligentes/g-light/smart-led-A60/" %}
+{% produtoOfertas "/produtos/casa/lampadas-inteligentes/g-light/smart-led-a60/" %}
 
 ---
 
