@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-27T13:17:52.554Z",
+  "lastUpdated": "2026-02-28T02:34:53.405Z",
   "products": [
     {
       "id": "echo-dot-5-geracao",
@@ -14,7 +14,7 @@
         },
         {
           "marketplace": "Mercado Livre",
-          "preco": 420,
+          "preco": 390,
           "link": "https://mercadolivre.com/sec/2DafRRj",
           "freteGratis": true,
           "posicao": 2
@@ -68,7 +68,7 @@
         },
         {
           "marketplace": "Mercado Livre",
-          "preco": 319.9,
+          "preco": 259,
           "link": "https://mercadolivre.com/sec/18u5bFj",
           "freteGratis": true,
           "posicao": 2
@@ -88,7 +88,7 @@
       "ofertas": [
         {
           "marketplace": "Mercado Livre",
-          "preco": 423.36,
+          "preco": 424.18,
           "link": "https://mercadolivre.com/sec/13hE5Pp",
           "freteGratis": true,
           "posicao": 1
@@ -141,7 +141,7 @@
       "ofertas": [
         {
           "marketplace": "Amazon",
-          "preco": 974.9,
+          "preco": 973,
           "link": "https://amzn.to/48dxfYY",
           "freteGratis": false,
           "posicao": 4
@@ -175,15 +175,15 @@
         },
         {
           "marketplace": "Mercado Livre",
-          "preco": 587.9,
+          "preco": 533.3,
           "link": "https://meli.la/2Wtgurr",
           "freteGratis": true,
           "posicao": 2
         },
         {
           "marketplace": "Magazine Luiza",
-          "preco": 546.75,
-          "link": "https://divulgador.magalu.com/MZvl4Fpw",
+          "preco": 945,
+          "link": "https://divulgador.magalu.com/tMpWz1cS",
           "freteGratis": false,
           "posicao": 3
         }
@@ -202,7 +202,7 @@
         },
         {
           "marketplace": "Mercado Livre",
-          "preco": 1510,
+          "preco": 1599,
           "link": "https://meli.la/2nN9a8V",
           "freteGratis": true,
           "posicao": 2
@@ -217,12 +217,39 @@
       ]
     },
     {
+      "id": "tp-link-be63",
+      "nome": "TP-Link Deco BE63 Wi-Fi 7 Tri-Band BE10000",
+      "ofertas": [
+        {
+          "marketplace": "Amazon",
+          "preco": 1566.55,
+          "link": "https://amzn.to/4tYWsAh",
+          "freteGratis": true,
+          "posicao": 1
+        },
+        {
+          "marketplace": "Mercado Livre",
+          "preco": 1945,
+          "link": "https://meli.la/1uHAxn8",
+          "freteGratis": true,
+          "posicao": 2
+        },
+        {
+          "marketplace": "Magazine Luiza",
+          "preco": 1488.16,
+          "link": "https://divulgador.magalu.com/AlZOHNjk",
+          "freteGratis": true,
+          "posicao": 3
+        }
+      ]
+    },
+    {
       "id": "tp-link-deco-be65-wi-fi-7-tri-band",
       "nome": "TP-Link Deco BE65 Wi-Fi 7 Tri-Band BE11000",
       "ofertas": [
         {
           "marketplace": "Amazon",
-          "preco": 1566.55,
+          "preco": 1359.92,
           "link": "https://amzn.to/40vCWxC",
           "freteGratis": true,
           "posicao": 1
@@ -249,14 +276,14 @@
       "ofertas": [
         {
           "marketplace": "Amazon",
-          "preco": 70.7,
+          "preco": 69.99,
           "link": "https://amzn.to/3JlXaF8",
           "freteGratis": true,
           "posicao": 4
         },
         {
           "marketplace": "Mercado Livre",
-          "preco": 71.42,
+          "preco": 65.17,
           "link": "https://mercadolivre.com/sec/1HhRqgf",
           "freteGratis": true,
           "posicao": 2
@@ -330,14 +357,14 @@
       "ofertas": [
         {
           "marketplace": "Amazon",
-          "preco": 62.9,
+          "preco": 70.9,
           "link": "https://amzn.to/4ngerNW",
           "freteGratis": false,
           "posicao": 4
         },
         {
           "marketplace": "Mercado Livre",
-          "preco": 51.4,
+          "preco": 49.69,
           "link": "https://mercadolivre.com/sec/24euRM9",
           "freteGratis": true,
           "posicao": 1
@@ -371,8 +398,8 @@
         },
         {
           "marketplace": "Magazine Luiza",
-          "preco": 84.9,
-          "link": "https://divulgador.magalu.com/x1ypvrNE",
+          "preco": 54.9,
+          "link": "https://divulgador.magalu.com/MGnmZY46",
           "freteGratis": false,
           "posicao": 4
         }
