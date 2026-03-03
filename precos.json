@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-03T13:17:32.306Z",
+  "lastUpdated": "2026-03-03T21:12:38.063Z",
   "products": [
     {
       "id": "echo-dot-5-geracao",
@@ -14,7 +14,7 @@
         },
         {
           "marketplace": "Mercado Livre",
-          "preco": 389,
+          "preco": 384.99,
           "link": "https://mercadolivre.com/sec/2DafRRj",
           "freteGratis": true,
           "posicao": 2
@@ -88,7 +88,7 @@
       "ofertas": [
         {
           "marketplace": "Mercado Livre",
-          "preco": 427.45,
+          "preco": 437.26,
           "link": "https://mercadolivre.com/sec/13hE5Pp",
           "freteGratis": true,
           "posicao": 1
@@ -96,7 +96,7 @@
       ]
     },
     {
-      "id": "izy-speak-ISS-102A",
+      "id": "izy-speak-iss-102a",
       "nome": "Caixa de som inteligente IZY Speak ISS 102A da Intelbras",
       "ofertas": [
         {
@@ -121,7 +121,7 @@
       "ofertas": [
         {
           "marketplace": "Mercado Livre",
-          "preco": 359,
+          "preco": 313.59,
           "link": "https://mercadolivre.com/sec/1Zf8oXm",
           "freteGratis": true,
           "posicao": 1
@@ -175,7 +175,7 @@
         },
         {
           "marketplace": "Mercado Livre",
-          "preco": 588,
+          "preco": 399.99,
           "link": "https://meli.la/2Wtgurr",
           "freteGratis": true,
           "posicao": 2
@@ -249,21 +249,21 @@
       "ofertas": [
         {
           "marketplace": "Amazon",
-          "preco": 1215.05,
+          "preco": 1566.55,
           "link": "https://amzn.to/40vCWxC",
           "freteGratis": true,
           "posicao": 1
         },
         {
           "marketplace": "Mercado Livre",
-          "preco": 1279,
+          "preco": 1627,
           "link": "https://meli.la/2vHfmQo",
           "freteGratis": true,
           "posicao": 2
         },
         {
           "marketplace": "Magazine Luiza",
-          "preco": 1671.12,
+          "preco": 1345.51,
           "link": "https://divulgador.magalu.com/W4RTVbuD",
           "freteGratis": true,
           "posicao": 3
@@ -271,7 +271,7 @@
       ]
     },
     {
-      "id": "led-smart-30W",
+      "id": "led-smart-30w",
       "nome": "Lâmpada Inteligente Led Smart maior potência 30W",
       "ofertas": [
         {
@@ -283,7 +283,7 @@
         },
         {
           "marketplace": "Mercado Livre",
-          "preco": 65.17,
+          "preco": 69.99,
           "link": "https://mercadolivre.com/sec/1HhRqgf",
           "freteGratis": true,
           "posicao": 2
@@ -298,19 +298,19 @@
       ]
     },
     {
-      "id": "smart-color-led-A60",
+      "id": "smart-color-led-a60",
       "nome": "Lâmpada Inteligente Smart Color Led A60",
       "ofertas": [
         {
           "marketplace": "Amazon",
-          "preco": 38.66,
+          "preco": 38.91,
           "link": "https://amzn.to/3MY3btw",
           "freteGratis": true,
           "posicao": 2
         },
         {
           "marketplace": "Mercado Livre",
-          "preco": 39.7,
+          "preco": 34.79,
           "link": "https://mercadolivre.com/sec/2nANHEh",
           "freteGratis": true,
           "posicao": 1
@@ -325,7 +325,7 @@
       ]
     },
     {
-      "id": "smart-led-A60",
+      "id": "smart-led-a60",
       "nome": "Lâmpada Inteligente Smart G-light A60 RGBW",
       "ofertas": [
         {
@@ -352,7 +352,7 @@
       ]
     },
     {
-      "id": "led-smart-EWS410",
+      "id": "led-smart-ews410",
       "nome": "Lâmpada Inteligente Led Smart EWS410",
       "ofertas": [
         {
@@ -379,7 +379,7 @@
       ]
     },
     {
-      "id": "multicolor-tapo-L530E",
+      "id": "multicolor-tapo-l530e",
       "nome": "Lâmpada Inteligente Tapo L530E Multicolor TP-Link",
       "ofertas": [
         {
