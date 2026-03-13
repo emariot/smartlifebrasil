@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-12T13:21:00.160Z",
+  "lastUpdated": "2026-03-13T02:47:11.404Z",
   "products": [
     {
       "id": "echo-dot-5-geracao",
@@ -14,7 +14,7 @@
         },
         {
           "marketplace": "Mercado Livre",
-          "preco": 412.05,
+          "preco": 379.52,
           "link": "https://mercadolivre.com/sec/2DafRRj",
           "freteGratis": true,
           "posicao": 2
@@ -68,7 +68,7 @@
         },
         {
           "marketplace": "Mercado Livre",
-          "preco": 272,
+          "preco": 326,
           "link": "https://mercadolivre.com/sec/18u5bFj",
           "freteGratis": true,
           "posicao": 2
@@ -88,7 +88,7 @@
       "ofertas": [
         {
           "marketplace": "Mercado Livre",
-          "preco": 411.36,
+          "preco": 416.12,
           "link": "https://mercadolivre.com/sec/13hE5Pp",
           "freteGratis": true,
           "posicao": 1
@@ -121,7 +121,7 @@
       "ofertas": [
         {
           "marketplace": "Mercado Livre",
-          "preco": 389.99,
+          "preco": 309,
           "link": "https://mercadolivre.com/sec/1Zf8oXm",
           "freteGratis": true,
           "posicao": 1
@@ -148,7 +148,7 @@
         },
         {
           "marketplace": "Mercado Livre",
-          "preco": 1179,
+          "preco": 1099,
           "link": "https://mercadolivre.com/sec/12RYcfM",
           "freteGratis": true,
           "posicao": 3
@@ -168,7 +168,7 @@
       "ofertas": [
         {
           "marketplace": "Amazon",
-          "preco": 474.9,
+          "preco": 407.55,
           "link": "https://amzn.to/4kSKGDm",
           "freteGratis": true,
           "posicao": 1
@@ -195,7 +195,7 @@
       "ofertas": [
         {
           "marketplace": "Amazon",
-          "preco": 1329.05,
+          "preco": 1519.9,
           "link": "https://amzn.to/4rArvkb",
           "freteGratis": true,
           "posicao": 1
@@ -222,7 +222,7 @@
       "ofertas": [
         {
           "marketplace": "Amazon",
-          "preco": 1441.09,
+          "preco": 1566.55,
           "link": "https://amzn.to/4tYWsAh",
           "freteGratis": true,
           "posicao": 1
@@ -236,7 +236,7 @@
         },
         {
           "marketplace": "Magazine Luiza",
-          "preco": 1718.72,
+          "preco": 1472.44,
           "link": "https://divulgador.magalu.com/AlZOHNjk",
           "freteGratis": true,
           "posicao": 3
@@ -249,7 +249,7 @@
       "ofertas": [
         {
           "marketplace": "Amazon",
-          "preco": 1566.55,
+          "preco": 1279.92,
           "link": "https://amzn.to/40vCWxC",
           "freteGratis": true,
           "posicao": 1
@@ -263,7 +263,7 @@
         },
         {
           "marketplace": "Magazine Luiza",
-          "preco": 1376.09,
+          "preco": 1709.1,
           "link": "https://divulgador.magalu.com/W4RTVbuD",
           "freteGratis": true,
           "posicao": 3
@@ -276,7 +276,7 @@
       "ofertas": [
         {
           "marketplace": "Amazon",
-          "preco": 69.99,
+          "preco": 64.7,
           "link": "https://amzn.to/3JlXaF8",
           "freteGratis": true,
           "posicao": 4
@@ -310,7 +310,7 @@
         },
         {
           "marketplace": "Mercado Livre",
-          "preco": 36.25,
+          "preco": 38,
           "link": "https://mercadolivre.com/sec/2nANHEh",
           "freteGratis": true,
           "posicao": 1
@@ -357,7 +357,7 @@
       "ofertas": [
         {
           "marketplace": "Amazon",
-          "preco": 62.9,
+          "preco": 70.9,
           "link": "https://amzn.to/4ngerNW",
           "freteGratis": false,
           "posicao": 4
@@ -391,7 +391,7 @@
         },
         {
           "marketplace": "Mercado Livre",
-          "preco": 42,
+          "preco": 43.98,
           "link": "https://mercadolivre.com/sec/2JfKNcP",
           "freteGratis": true,
           "posicao": 1
