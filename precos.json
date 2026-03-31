@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-31T03:22:22.700Z",
+  "lastUpdated": "2026-03-31T13:54:38.750Z",
   "products": [
     {
       "id": "echo-dot-5-geracao",
@@ -14,7 +14,7 @@
         },
         {
           "marketplace": "Mercado Livre",
-          "preco": 394.89,
+          "preco": 354,
           "link": "https://mercadolivre.com/sec/2DafRRj",
           "freteGratis": true,
           "posicao": 2
@@ -68,7 +68,7 @@
         },
         {
           "marketplace": "Mercado Livre",
-          "preco": 323,
+          "preco": 324.99,
           "link": "https://mercadolivre.com/sec/18u5bFj",
           "freteGratis": true,
           "posicao": 2
@@ -101,7 +101,7 @@
       "ofertas": [
         {
           "marketplace": "Amazon",
-          "preco": 673.12,
+          "preco": 439.98,
           "link": "https://amzn.to/4qvfqwR",
           "freteGratis": true,
           "posicao": 4
@@ -202,7 +202,7 @@
         },
         {
           "marketplace": "Mercado Livre",
-          "preco": 1238,
+          "preco": 1420,
           "link": "https://meli.la/2nN9a8V",
           "freteGratis": true,
           "posicao": 2
@@ -236,7 +236,7 @@
         },
         {
           "marketplace": "Magazine Luiza",
-          "preco": 1503.35,
+          "preco": 1497.73,
           "link": "https://divulgador.magalu.com/AlZOHNjk",
           "freteGratis": true,
           "posicao": 3
@@ -263,7 +263,7 @@
         },
         {
           "marketplace": "Magazine Luiza",
-          "preco": 1709.1,
+          "preco": 1349.1,
           "link": "https://divulgador.magalu.com/W4RTVbuD",
           "freteGratis": true,
           "posicao": 3
@@ -283,7 +283,7 @@
         },
         {
           "marketplace": "Mercado Livre",
-          "preco": 67.14,
+          "preco": 65.17,
           "link": "https://mercadolivre.com/sec/1HhRqgf",
           "freteGratis": true,
           "posicao": 2
@@ -357,7 +357,7 @@
       "ofertas": [
         {
           "marketplace": "Amazon",
-          "preco": 59.9,
+          "preco": 62.9,
           "link": "https://amzn.to/4ngerNW",
           "freteGratis": false,
           "posicao": 4
