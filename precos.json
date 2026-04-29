@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-29T03:53:52.703Z",
+  "lastUpdated": "2026-04-29T14:23:51.702Z",
   "products": [
     {
       "id": "echo-dot-5-geracao",
@@ -14,7 +14,7 @@
         },
         {
           "marketplace": "Mercado Livre",
-          "preco": 385.42,
+          "preco": 398,
           "link": "https://mercadolivre.com/sec/2DafRRj",
           "freteGratis": true,
           "posicao": 2
@@ -41,7 +41,7 @@
         },
         {
           "marketplace": "Mercado Livre",
-          "preco": 576.6,
+          "preco": 578.89,
           "link": "https://mercadolivre.com/sec/2YV86xB",
           "freteGratis": true,
           "posicao": 2
@@ -68,7 +68,7 @@
         },
         {
           "marketplace": "Mercado Livre",
-          "preco": 395,
+          "preco": 308.35,
           "link": "https://mercadolivre.com/sec/18u5bFj",
           "freteGratis": true,
           "posicao": 2
@@ -222,7 +222,7 @@
       "ofertas": [
         {
           "marketplace": "Amazon",
-          "preco": 1494.1,
+          "preco": 1566.55,
           "link": "https://amzn.to/4tYWsAh",
           "freteGratis": true,
           "posicao": 1
@@ -249,7 +249,7 @@
       "ofertas": [
         {
           "marketplace": "Amazon",
-          "preco": 1566.55,
+          "preco": 1653.52,
           "link": "https://amzn.to/40vCWxC",
           "freteGratis": true,
           "posicao": 1
@@ -330,7 +330,7 @@
       "ofertas": [
         {
           "marketplace": "Amazon",
-          "preco": 29.9,
+          "preco": 39.51,
           "link": "https://amzn.to/3JcOPUo",
           "freteGratis": false,
           "posicao": 3
@@ -364,7 +364,7 @@
         },
         {
           "marketplace": "Mercado Livre",
-          "preco": 49,
+          "preco": 53.72,
           "link": "https://mercadolivre.com/sec/24euRM9",
           "freteGratis": true,
           "posicao": 1
