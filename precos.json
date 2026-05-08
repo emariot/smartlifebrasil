@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-07T14:40:13.297Z",
+  "lastUpdated": "2026-05-08T03:45:11.577Z",
   "products": [
     {
       "id": "echo-dot-5-geracao",
@@ -14,7 +14,7 @@
         },
         {
           "marketplace": "Mercado Livre",
-          "preco": 430,
+          "preco": 411.11,
           "link": "https://mercadolivre.com/sec/2DafRRj",
           "freteGratis": true,
           "posicao": 2
@@ -41,7 +41,7 @@
         },
         {
           "marketplace": "Mercado Livre",
-          "preco": 523.08,
+          "preco": 568.56,
           "link": "https://mercadolivre.com/sec/2YV86xB",
           "freteGratis": true,
           "posicao": 2
@@ -68,7 +68,7 @@
         },
         {
           "marketplace": "Mercado Livre",
-          "preco": 273.39,
+          "preco": 302.84,
           "link": "https://mercadolivre.com/sec/18u5bFj",
           "freteGratis": true,
           "posicao": 2
@@ -175,7 +175,7 @@
         },
         {
           "marketplace": "Mercado Livre",
-          "preco": 399.99,
+          "preco": 444.54,
           "link": "https://meli.la/2Wtgurr",
           "freteGratis": true,
           "posicao": 2
@@ -195,14 +195,14 @@
       "ofertas": [
         {
           "marketplace": "Amazon",
-          "preco": 1439.9,
+          "preco": 1519.9,
           "link": "https://amzn.to/4rArvkb",
           "freteGratis": true,
           "posicao": 1
         },
         {
           "marketplace": "Mercado Livre",
-          "preco": 1472,
+          "preco": 1636,
           "link": "https://meli.la/2nN9a8V",
           "freteGratis": true,
           "posicao": 2
@@ -249,7 +249,7 @@
       "ofertas": [
         {
           "marketplace": "Amazon",
-          "preco": 1566.55,
+          "preco": 1609.23,
           "link": "https://amzn.to/40vCWxC",
           "freteGratis": true,
           "posicao": 1
@@ -276,7 +276,7 @@
       "ofertas": [
         {
           "marketplace": "Amazon",
-          "preco": 57,
+          "preco": 69.99,
           "link": "https://amzn.to/3JlXaF8",
           "freteGratis": true,
           "posicao": 4
@@ -364,7 +364,7 @@
         },
         {
           "marketplace": "Mercado Livre",
-          "preco": 40.9,
+          "preco": 39.9,
           "link": "https://mercadolivre.com/sec/24euRM9",
           "freteGratis": true,
           "posicao": 1
@@ -384,7 +384,7 @@
       "ofertas": [
         {
           "marketplace": "Amazon",
-          "preco": 40.54,
+          "preco": 43.98,
           "link": "https://amzn.to/3WAJh9i",
           "freteGratis": true,
           "posicao": 2
