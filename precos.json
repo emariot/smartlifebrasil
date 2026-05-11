@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-11T04:15:12.025Z",
+  "lastUpdated": "2026-05-11T15:31:21.906Z",
   "products": [
     {
       "id": "echo-dot-5-geracao",
@@ -14,7 +14,7 @@
         },
         {
           "marketplace": "Mercado Livre",
-          "preco": 393.59,
+          "preco": 430,
           "link": "https://mercadolivre.com/sec/2DafRRj",
           "freteGratis": true,
           "posicao": 2
@@ -68,7 +68,7 @@
         },
         {
           "marketplace": "Mercado Livre",
-          "preco": 272.28,
+          "preco": 271.73,
           "link": "https://mercadolivre.com/sec/18u5bFj",
           "freteGratis": true,
           "posicao": 2
@@ -128,7 +128,7 @@
         },
         {
           "marketplace": "Magazine Luiza",
-          "preco": 650.99,
+          "preco": 664.99,
           "link": "https://divulgador.magalu.com/7BnLCt1p",
           "freteGratis": true,
           "posicao": 2
@@ -202,7 +202,7 @@
         },
         {
           "marketplace": "Mercado Livre",
-          "preco": 1472,
+          "preco": 1440,
           "link": "https://meli.la/2nN9a8V",
           "freteGratis": true,
           "posicao": 2
@@ -236,7 +236,7 @@
         },
         {
           "marketplace": "Magazine Luiza",
-          "preco": 1906.18,
+          "preco": 1429.26,
           "link": "https://divulgador.magalu.com/AlZOHNjk",
           "freteGratis": true,
           "posicao": 3
@@ -256,7 +256,7 @@
         },
         {
           "marketplace": "Mercado Livre",
-          "preco": 1609,
+          "preco": 1484,
           "link": "https://meli.la/2vHfmQo",
           "freteGratis": true,
           "posicao": 2
