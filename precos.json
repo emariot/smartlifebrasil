@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-15T04:10:44.936Z",
+  "lastUpdated": "2026-05-15T14:27:42.513Z",
   "products": [
     {
       "id": "echo-dot-5-geracao",
@@ -7,14 +7,14 @@
       "ofertas": [
         {
           "marketplace": "Amazon",
-          "preco": 429.01,
+          "preco": 459,
           "link": "https://amzn.to/3L8sCHH",
           "freteGratis": true,
           "posicao": 4
         },
         {
           "marketplace": "Mercado Livre",
-          "preco": 405,
+          "preco": 402.15,
           "link": "https://mercadolivre.com/sec/2DafRRj",
           "freteGratis": true,
           "posicao": 2
@@ -68,7 +68,7 @@
         },
         {
           "marketplace": "Mercado Livre",
-          "preco": 307.12,
+          "preco": 312.02,
           "link": "https://mercadolivre.com/sec/18u5bFj",
           "freteGratis": true,
           "posicao": 2
@@ -101,14 +101,14 @@
       "ofertas": [
         {
           "marketplace": "Amazon",
-          "preco": 439.98,
+          "preco": 599,
           "link": "https://amzn.to/4qvfqwR",
           "freteGratis": true,
           "posicao": 4
         },
         {
           "marketplace": "Mercado Livre",
-          "preco": 599,
+          "preco": 551.08,
           "link": "https://mercadolivre.com/sec/1BpaS2v",
           "freteGratis": true,
           "posicao": 2
@@ -121,7 +121,7 @@
       "ofertas": [
         {
           "marketplace": "Mercado Livre",
-          "preco": 329,
+          "preco": 302,
           "link": "https://mercadolivre.com/sec/1Zf8oXm",
           "freteGratis": true,
           "posicao": 1
@@ -195,7 +195,7 @@
       "ofertas": [
         {
           "marketplace": "Amazon",
-          "preco": 1519.9,
+          "preco": 1599.9,
           "link": "https://amzn.to/4rArvkb",
           "freteGratis": true,
           "posicao": 1
@@ -229,14 +229,14 @@
         },
         {
           "marketplace": "Mercado Livre",
-          "preco": 1849,
+          "preco": 1828,
           "link": "https://meli.la/1uHAxn8",
           "freteGratis": true,
           "posicao": 2
         },
         {
           "marketplace": "Magazine Luiza",
-          "preco": 1446.48,
+          "preco": 1701.8,
           "link": "https://divulgador.magalu.com/AlZOHNjk",
           "freteGratis": true,
           "posicao": 3
@@ -249,7 +249,7 @@
       "ofertas": [
         {
           "marketplace": "Amazon",
-          "preco": 1649,
+          "preco": 1566.55,
           "link": "https://amzn.to/40vCWxC",
           "freteGratis": true,
           "posicao": 1
