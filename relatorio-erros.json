@@ -1,59 +1,66 @@
 {
-  "timestamp": "2026-05-24T04:32:18.531Z",
-  "totalErros": 7,
+  "timestamp": "2026-05-24T14:04:02.696Z",
+  "totalErros": 8,
   "erros": [
     {
-      "timestamp": "2026-05-24T04:23:11.723Z",
+      "timestamp": "2026-05-24T13:54:24.527Z",
       "produto": "Caixa de som inteligente Echo Dot Max Amazon",
       "marketplace": "Magazine Luiza",
       "tipo": "LINK_MORTO",
       "detalhes": "HTTP 404 - Página não encontrada"
     },
     {
-      "timestamp": "2026-05-24T04:24:08.239Z",
+      "timestamp": "2026-05-24T13:55:21.507Z",
       "produto": "Caixa de som inteligente Echo Pop Amazon",
       "marketplace": "Magazine Luiza",
       "tipo": "LINK_MORTO",
       "detalhes": "HTTP 404 - Página não encontrada"
     },
     {
-      "timestamp": "2026-05-24T04:24:19.040Z",
+      "timestamp": "2026-05-24T13:55:31.398Z",
       "produto": "Caixa de som inteligente Nest Mini 2ª Geração",
       "marketplace": "Mercado Livre",
       "tipo": "SELETOR_NAO_ENCONTRADO",
       "detalhes": "Seletor \"[data-andes-money-amount=\"true\"][data-andes-money-amount-size=\"24\"]\" não existe. URL: https://www.mercadolivre.com.br/social/admir123/lists | HTML: <!DOCTYPE html><html lang=\"pt-BR\" data-assets-prefix=\"https://http2.mlstatic.com/frontend-assets/affiliates-social-profile-view/\"><head><meta charset=\"utf-8\"><link rel=\"preconnect\" href=\"https://http2.mlstatic.com\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, maximum-scale=5.0\"><link rel=\"preload\" href=\"https://http2.mlstatic.com/ui/webfonts/v3.0.0/proxima-nova/proximanova-light.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"><link rel=\"preload\" href=\"https://http2.mlstatic.com/ui/webfonts/v3.0.0/proxima-nova/proximanova-regular.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"><link rel=\"preload\" href=\"https://http2.mlstatic.com/ui/webfonts/v3.0.0/proxima-nova/proximanova-semibold.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"><link rel=\"preload\" as=\"image\" href=\"https://http2.mlstatic.com/D_NQ_609182-MLA110946015266_052026-OO.webp\"><link rel=\"stylesheet\" href=\"https://http2.mlstatic.com/frontend-assets/affiliates-social-profile-view/profilepath-lists-index.desktop.1929da49.css\" data-precedence=\"n-style\" crossorigin=\"\" fetchpriority=\"high\"><link href=\"https://http2.mlstatic.com/frontend-assets/cookies-consent-banner-builder/1.0.0-beta.3/cookie-consent-banner-opt-out/default-desktop.css\" rel=\"stylesheet\" type=\"text/css\" crossorigin=\"anonymous\" data-precedence=\"n-style\"><script src=\"https://http2.mlstatic.com/frontend-assets/affiliates-social-profile-view/framework.d0bc4564.js\" async=\"\" crossorigin=\"\" nonce=\"\"></script><script src=\"https://http2.m"
     },
     {
-      "timestamp": "2026-05-24T04:26:32.457Z",
+      "timestamp": "2026-05-24T13:58:20.785Z",
       "produto": "TP-Link BE3600 Dual-Band Wi-Fi 7 Router ache be 220",
       "marketplace": "Magazine Luiza",
       "tipo": "LINK_MORTO",
       "detalhes": "HTTP 404 - Página não encontrada"
     },
     {
-      "timestamp": "2026-05-24T04:29:39.211Z",
+      "timestamp": "2026-05-24T14:01:27.525Z",
       "produto": "TP-Link Deco BE65 Wi-Fi 7 Tri-Band BE11000",
       "marketplace": "Magazine Luiza",
       "tipo": "SELETOR_NAO_ENCONTRADO",
-      "detalhes": "Seletor \"[data-testid=\"price-value\"]\" não existe. URL: https://www.magazineluiza.com.br/roteador-mesh-tplink-deco-be65-wifi-7-triband-11000mbps-smart-home-tp-link/divulgador/oferta/hj6b21kc5j/in/rtdr/?promoter_id=5468444&partner_id=3440 | HTML: <!DOCTYPE html><html lang=\"pt-BR\"><head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"><title>Magazine Luiza | Não é possível acessar a página</title><link rel=\"stylesheet\" href=\"https://wx.mlcdn.com.br/akamai-bot/css/styles-v0.css\"></head><body><header class=\"header\"><img src=\"https://wx.mlcdn.com.br/shared/magalu/logo-white.svg\" alt=\"logo magalu\" width=\"122\" height=\"32\"></header><main class=\"main\"><img src=\"https://wx.mlcdn.com.br/shared/magalu/error-robot.svg\" class=\"illustration\" alt=\"icone robo com erro\" aria-hidden=\"true\"><h1 class=\"title\">Não é possível acessar a página</h1><p class=\"subtitle\">(Erro <span id=\"error-code\">403</span>)</p><p class=\"description\">Por favor, tente novamente em 1 minuto.<br>Se precisar, a gente pode te ajudar.<br>ID: <span id=\"error-id\">0.d169dc17.1779596974.5ee86f85</span></p><a href=\"https://atendimento.magazineluiza.com.br/hc/pt-br/\" class=\"btn\" target=\"_blank\" rel=\"noopener noreferrer\">Falar com o Magalu</a></main></body></html>"
+      "detalhes": "Seletor \"[data-testid=\"price-value\"]\" não existe. URL: https://www.magazineluiza.com.br/roteador-mesh-tplink-deco-be65-wifi-7-triband-11000mbps-smart-home-tp-link/divulgador/oferta/hj6b21kc5j/in/rtdr/?promoter_id=5468444&partner_id=3440 | HTML: <!DOCTYPE html><html lang=\"pt-BR\"><head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"><title>Magazine Luiza | Não é possível acessar a página</title><link rel=\"stylesheet\" href=\"https://wx.mlcdn.com.br/akamai-bot/css/styles-v0.css\"></head><body><header class=\"header\"><img src=\"https://wx.mlcdn.com.br/shared/magalu/logo-white.svg\" alt=\"logo magalu\" width=\"122\" height=\"32\"></header><main class=\"main\"><img src=\"https://wx.mlcdn.com.br/shared/magalu/error-robot.svg\" class=\"illustration\" alt=\"icone robo com erro\" aria-hidden=\"true\"><h1 class=\"title\">Não é possível acessar a página</h1><p class=\"subtitle\">(Erro <span id=\"error-code\">403</span>)</p><p class=\"description\">Por favor, tente novamente em 1 minuto.<br>Se precisar, a gente pode te ajudar.<br>ID: <span id=\"error-id\">0.65cfdb17.1779631282.4e3c0e5d</span></p><a href=\"https://atendimento.magazineluiza.com.br/hc/pt-br/\" class=\"btn\" target=\"_blank\" rel=\"noopener noreferrer\">Falar com o Magalu</a></main></body></html>"
     },
     {
-      "timestamp": "2026-05-24T04:30:06.768Z",
+      "timestamp": "2026-05-24T14:01:55.566Z",
       "produto": "Lâmpada Inteligente Led Smart maior potência 30W",
       "marketplace": "Magazine Luiza",
       "tipo": "LINK_MORTO",
       "detalhes": "HTTP 404 - Página não encontrada"
     },
     {
-      "timestamp": "2026-05-24T04:30:32.601Z",
+      "timestamp": "2026-05-24T14:02:23.228Z",
       "produto": "Lâmpada Inteligente Smart Color Led A60",
       "marketplace": "Magazine Luiza",
       "tipo": "LINK_MORTO",
       "detalhes": "HTTP 404 - Página não encontrada"
+    },
+    {
+      "timestamp": "2026-05-24T14:02:33.025Z",
+      "produto": "Lâmpada Inteligente Smart G-light A60 RGBW",
+      "marketplace": "Amazon",
+      "tipo": "SELETOR_NAO_ENCONTRADO",
+      "detalhes": "Seletor \".a-price\" não existe. URL: https://www.amazon.com.br/L%C3%82MPADA-INTELIGENTE-SMART-AUTOVOLT-COMPAT%C3%8DVEL/dp/B09QLJLWR5?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=24FU0TF4HZ6GI&dib=eyJ2IjoiMSJ9.sr-6f1-Yn3iVowoU4pTtA9jb6Wwyk1hNramWe5QmFmzPOzk5C-J5RSMaP6wY9lm70R3PscFAqw493QpH9gQ6n-TjdxkY6wcaDavIlOWFDye1xRURT9vF_JA51svOjcC3wS6FwsWySM0Rka-UzQeFpDP9MnxIfDnGuBgNS91S2nR5lVG4odumCuJ182TJsaXJ9QW1Xl4kY9T4HE_ojNqXUGInF-aQMYY72MZZrkh30BWkmfDJcDRk06wtOfW1QTjodKyLv9Li-SewcQJQIpXU5NSzp2mI24PiqfitoDEsJDk.wMLsT0x-K79VDaDjBELbTm31GNE9QlUjEqGV58L92ow&dib_tag=se&keywords=Smart+G-light+A60&qid=1761191701&sprefix=smart+g-light+a60,aps,271&sr=8-2&linkCode=sl1&tag=smartlifebras-20&linkId=fe2a51e5fc1b98e84395dc9b4bd0b3c5&language=pt_BR&ref_=as_li_ss_tl | HTML: <!DOCTYPE html><html class=\"a-no-js\" lang=\"pt-br\"><!--<![endif]--><head>\n<meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\">\n<meta charset=\"utf-8\">\n<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge,chrome=1\">\n<title dir=\"ltr\">Amazon.com.br</title>\n<meta name=\"viewport\" content=\"width=device-width\">\n<link rel=\"stylesheet\" href=\"https://images-na.ssl-images-amazon.com/images/G/01/AUIClients/AmazonUI-3c913031596ca78a3768f4e934b1cc02ce238101.secure.min._V1_.css\">\n<script>\n\nif (true === true) {\n    var ue_t0 = (+ new Date()),\n        ue_csm = window,\n        ue = { t0: ue_t0, d: function() { return (+new Date() - ue_t0); } },\n        ue_furl = \"fls-na.amazon.com\",\n        ue_mid = \"ATVPDKIKX0DER\",\n        ue_sid = (document.cookie.match(/session-id=([0-9-]+)/) || [])[1],\n        ue_sn = \"opfcaptcha.amazon.com\",\n        ue_id = '160YYGXD7MZPA1QVZBRK';\n}\n</script>\n<script src=\"https://images-na.ssl-images-amazon.com/images/G/01/csminstrumentation/csm-captcha-instrumentation.min.js\"></script><script src=\"https://images-na.ssl-images-amazon.com/images/G/01/csminstrumentation/rd-script-6d68177fa6061598e9509dc4b5bdd08d.js\"></script><script src=\"https://images-na.ssl-images-amazon.com/images/G/01/csminstrumentation/ue-base-1c399ad9886cab69575e1e5ee15c61a1._V313498596_.js\"></script><script src=\"https://images-na.ssl-images-amazon.com/images/G/01/AUIClients/ClientSideMetricsAUIJavascript-51171fbdd28e1a7a61e922e8f0272af8bc74d37b.secure.variant-desktop-session-snapshot-keyp"
     }
   ],
   "resumo": {
     "LINK_MORTO": 5,
-    "SELETOR_NAO_ENCONTRADO": 2
+    "SELETOR_NAO_ENCONTRADO": 3
   }
 }
