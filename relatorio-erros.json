@@ -1,44 +1,51 @@
 {
-  "timestamp": "2026-06-07T14:24:17.725Z",
-  "totalErros": 6,
+  "timestamp": "2026-06-08T05:08:15.909Z",
+  "totalErros": 7,
   "erros": [
     {
-      "timestamp": "2026-06-07T14:14:12.293Z",
+      "timestamp": "2026-06-08T04:57:25.692Z",
       "produto": "Caixa de som inteligente Echo Dot Max Amazon",
       "marketplace": "Magazine Luiza",
       "tipo": "LINK_MORTO",
       "detalhes": "HTTP 404 - Página não encontrada"
     },
     {
-      "timestamp": "2026-06-07T14:14:39.651Z",
+      "timestamp": "2026-06-08T04:57:36.755Z",
+      "produto": "Caixa de som inteligente Echo Pop Amazon",
+      "marketplace": "Amazon",
+      "tipo": "SEM_PRECO_AMAZON",
+      "detalhes": "Elemento .a-price-whole não encontrado"
+    },
+    {
+      "timestamp": "2026-06-08T04:57:53.891Z",
       "produto": "Caixa de som inteligente Echo Pop Amazon",
       "marketplace": "Magazine Luiza",
       "tipo": "LINK_MORTO",
       "detalhes": "HTTP 404 - Página não encontrada"
     },
     {
-      "timestamp": "2026-06-07T14:18:03.014Z",
+      "timestamp": "2026-06-08T05:01:52.794Z",
       "produto": "TP-Link BE3600 Dual-Band Wi-Fi 7 Router ache be 220",
       "marketplace": "Magazine Luiza",
       "tipo": "LINK_MORTO",
       "detalhes": "HTTP 404 - Página não encontrada"
     },
     {
-      "timestamp": "2026-06-07T14:21:13.377Z",
+      "timestamp": "2026-06-08T05:05:02.654Z",
       "produto": "TP-Link Deco BE65 Wi-Fi 7 Tri-Band BE11000",
       "marketplace": "Magazine Luiza",
       "tipo": "SELETOR_NAO_ENCONTRADO",
-      "detalhes": "Seletor \"[data-testid=\"price-value\"]\" não existe. URL: https://www.magazineluiza.com.br/roteador-mesh-tplink-deco-be65-wifi-7-triband-11000mbps-smart-home-tp-link/divulgador/oferta/hj6b21kc5j/in/rtdr/?promoter_id=5468444&partner_id=3440 | HTML: <!DOCTYPE html><html lang=\"pt-BR\"><head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"><title>Magazine Luiza | Não é possível acessar a página</title><link rel=\"stylesheet\" href=\"https://wx.mlcdn.com.br/akamai-bot/css/styles-v0.css\"></head><body><header class=\"header\"><img src=\"https://wx.mlcdn.com.br/shared/magalu/logo-white.svg\" alt=\"logo magalu\" width=\"122\" height=\"32\"></header><main class=\"main\"><img src=\"https://wx.mlcdn.com.br/shared/magalu/error-robot.svg\" class=\"illustration\" alt=\"icone robo com erro\" aria-hidden=\"true\"><h1 class=\"title\">Não é possível acessar a página</h1><p class=\"subtitle\">(Erro <span id=\"error-code\">403</span>)</p><p class=\"description\">Por favor, tente novamente em 1 minuto.<br>Se precisar, a gente pode te ajudar.<br>ID: <span id=\"error-id\">0.8d6bdc17.1780842068.1cd0d21d</span></p><a href=\"https://atendimento.magazineluiza.com.br/hc/pt-br/\" class=\"btn\" target=\"_blank\" rel=\"noopener noreferrer\">Falar com o Magalu</a></main></body></html>"
+      "detalhes": "Seletor \"[data-testid=\"price-value\"]\" não existe. URL: https://www.magazineluiza.com.br/roteador-mesh-tplink-deco-be65-wifi-7-triband-11000mbps-smart-home-tp-link/divulgador/oferta/hj6b21kc5j/in/rtdr/?promoter_id=5468444&partner_id=3440 | HTML: <!DOCTYPE html><html lang=\"pt-BR\"><head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"><title>Magazine Luiza | Não é possível acessar a página</title><link rel=\"stylesheet\" href=\"https://wx.mlcdn.com.br/akamai-bot/css/styles-v0.css\"></head><body><header class=\"header\"><img src=\"https://wx.mlcdn.com.br/shared/magalu/logo-white.svg\" alt=\"logo magalu\" width=\"122\" height=\"32\"></header><main class=\"main\"><img src=\"https://wx.mlcdn.com.br/shared/magalu/error-robot.svg\" class=\"illustration\" alt=\"icone robo com erro\" aria-hidden=\"true\"><h1 class=\"title\">Não é possível acessar a página</h1><p class=\"subtitle\">(Erro <span id=\"error-code\">403</span>)</p><p class=\"description\">Por favor, tente novamente em 1 minuto.<br>Se precisar, a gente pode te ajudar.<br>ID: <span id=\"error-id\">0.2706d217.1780895097.bd95c95</span></p><a href=\"https://atendimento.magazineluiza.com.br/hc/pt-br/\" class=\"btn\" target=\"_blank\" rel=\"noopener noreferrer\">Falar com o Magalu</a></main></body></html>"
     },
     {
-      "timestamp": "2026-06-07T14:21:41.499Z",
+      "timestamp": "2026-06-08T05:05:32.880Z",
       "produto": "Lâmpada Inteligente Led Smart maior potência 30W",
       "marketplace": "Magazine Luiza",
       "tipo": "LINK_MORTO",
       "detalhes": "HTTP 404 - Página não encontrada"
     },
     {
-      "timestamp": "2026-06-07T14:22:38.880Z",
+      "timestamp": "2026-06-08T05:06:31.473Z",
       "produto": "Lâmpada Inteligente Smart Color Led A60",
       "marketplace": "Magazine Luiza",
       "tipo": "LINK_MORTO",
@@ -47,6 +54,7 @@
   ],
   "resumo": {
     "LINK_MORTO": 5,
+    "SEM_PRECO_AMAZON": 1,
     "SELETOR_NAO_ENCONTRADO": 1
   }
 }
