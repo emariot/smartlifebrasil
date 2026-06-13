@@ -1,37 +1,37 @@
 {
-  "timestamp": "2026-06-12T15:44:17.428Z",
+  "timestamp": "2026-06-13T04:52:33.620Z",
   "totalErros": 5,
   "erros": [
     {
-      "timestamp": "2026-06-12T15:35:06.420Z",
+      "timestamp": "2026-06-13T04:43:10.272Z",
       "produto": "Caixa de som inteligente Echo Dot Max Amazon",
       "marketplace": "Magazine Luiza",
       "tipo": "LINK_MORTO",
       "detalhes": "HTTP 404 - Página não encontrada"
     },
     {
-      "timestamp": "2026-06-12T15:35:35.132Z",
+      "timestamp": "2026-06-13T04:43:37.200Z",
       "produto": "Caixa de som inteligente Echo Pop Amazon",
       "marketplace": "Magazine Luiza",
       "tipo": "LINK_MORTO",
       "detalhes": "HTTP 404 - Página não encontrada"
     },
     {
-      "timestamp": "2026-06-12T15:41:42.018Z",
+      "timestamp": "2026-06-13T04:49:20.697Z",
       "produto": "TP-Link Deco BE65 Wi-Fi 7 Tri-Band BE11000",
       "marketplace": "Magazine Luiza",
       "tipo": "SELETOR_NAO_ENCONTRADO",
-      "detalhes": "Seletor \"[data-testid=\"price-value\"]\" não existe. URL: https://www.magazineluiza.com.br/roteador-mesh-tplink-deco-be65-wifi-7-triband-11000mbps-smart-home-tp-link/divulgador/oferta/hj6b21kc5j/in/rtdr/?promoter_id=5468444&partner_id=3440 | HTML: <!DOCTYPE html><html lang=\"pt-BR\"><head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"><title>Magazine Luiza | Não é possível acessar a página</title><link rel=\"stylesheet\" href=\"https://wx.mlcdn.com.br/akamai-bot/css/styles-v0.css\"></head><body><header class=\"header\"><img src=\"https://wx.mlcdn.com.br/shared/magalu/logo-white.svg\" alt=\"logo magalu\" width=\"122\" height=\"32\"></header><main class=\"main\"><img src=\"https://wx.mlcdn.com.br/shared/magalu/error-robot.svg\" class=\"illustration\" alt=\"icone robo com erro\" aria-hidden=\"true\"><h1 class=\"title\">Não é possível acessar a página</h1><p class=\"subtitle\">(Erro <span id=\"error-code\">403</span>)</p><p class=\"description\">Por favor, tente novamente em 1 minuto.<br>Se precisar, a gente pode te ajudar.<br>ID: <span id=\"error-id\">0.e25ec817.1781278896.bee6ace</span></p><a href=\"https://atendimento.magazineluiza.com.br/hc/pt-br/\" class=\"btn\" target=\"_blank\" rel=\"noopener noreferrer\">Falar com o Magalu</a></main></body></html>"
+      "detalhes": "Seletor \"[data-testid=\"price-value\"]\" não existe. URL: https://www.magazineluiza.com.br/roteador-mesh-tplink-deco-be65-wifi-7-triband-11000mbps-smart-home-tp-link/divulgador/oferta/hj6b21kc5j/in/rtdr/?promoter_id=5468444&partner_id=3440 | HTML: <!DOCTYPE html><html lang=\"pt-BR\"><head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"><title>Magazine Luiza | Não é possível acessar a página</title><link rel=\"stylesheet\" href=\"https://wx.mlcdn.com.br/akamai-bot/css/styles-v0.css\"></head><body><header class=\"header\"><img src=\"https://wx.mlcdn.com.br/shared/magalu/logo-white.svg\" alt=\"logo magalu\" width=\"122\" height=\"32\"></header><main class=\"main\"><img src=\"https://wx.mlcdn.com.br/shared/magalu/error-robot.svg\" class=\"illustration\" alt=\"icone robo com erro\" aria-hidden=\"true\"><h1 class=\"title\">Não é possível acessar a página</h1><p class=\"subtitle\">(Erro <span id=\"error-code\">403</span>)</p><p class=\"description\">Por favor, tente novamente em 1 minuto.<br>Se precisar, a gente pode te ajudar.<br>ID: <span id=\"error-id\">0.254e4317.1781326155.eae615a</span></p><a href=\"https://atendimento.magazineluiza.com.br/hc/pt-br/\" class=\"btn\" target=\"_blank\" rel=\"noopener noreferrer\">Falar com o Magalu</a></main></body></html>"
     },
     {
-      "timestamp": "2026-06-12T15:42:08.236Z",
+      "timestamp": "2026-06-13T04:49:49.628Z",
       "produto": "Lâmpada Inteligente Led Smart maior potência 30W",
       "marketplace": "Magazine Luiza",
       "tipo": "LINK_MORTO",
       "detalhes": "HTTP 404 - Página não encontrada"
     },
     {
-      "timestamp": "2026-06-12T15:42:34.822Z",
+      "timestamp": "2026-06-13T04:50:47.791Z",
       "produto": "Lâmpada Inteligente Smart Color Led A60",
       "marketplace": "Magazine Luiza",
       "tipo": "LINK_MORTO",
