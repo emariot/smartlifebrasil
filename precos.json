@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-17T15:56:30.548Z",
+  "lastUpdated": "2026-06-18T04:52:22.191Z",
   "products": [
     {
       "id": "echo-dot-5-geracao",
@@ -34,7 +34,7 @@
       "ofertas": [
         {
           "marketplace": "Amazon",
-          "preco": 764.89,
+          "preco": 719,
           "link": "https://amzn.to/3Jv9W4q",
           "freteGratis": true,
           "posicao": 4
@@ -222,7 +222,7 @@
       "ofertas": [
         {
           "marketplace": "Amazon",
-          "preco": 1524.7,
+          "preco": 1455.7,
           "link": "https://amzn.to/4tYWsAh",
           "freteGratis": true,
           "posicao": 1
@@ -249,7 +249,7 @@
       "ofertas": [
         {
           "marketplace": "Amazon",
-          "preco": 1524.7,
+          "preco": 1455.7,
           "link": "https://amzn.to/40vCWxC",
           "freteGratis": true,
           "posicao": 1
@@ -310,7 +310,7 @@
         },
         {
           "marketplace": "Mercado Livre",
-          "preco": 23.38,
+          "preco": 32.02,
           "link": "https://mercadolivre.com/sec/2nANHEh",
           "freteGratis": true,
           "posicao": 1
@@ -357,7 +357,7 @@
       "ofertas": [
         {
           "marketplace": "Amazon",
-          "preco": 37.8,
+          "preco": 43,
           "link": "https://amzn.to/4ngerNW",
           "freteGratis": false,
           "posicao": 4
