@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-24T04:17:29.843Z",
+  "lastUpdated": "2026-06-24T14:49:44.358Z",
   "products": [
     {
       "id": "echo-dot-5-geracao",
@@ -121,7 +121,7 @@
       "ofertas": [
         {
           "marketplace": "Mercado Livre",
-          "preco": 328,
+          "preco": 335,
           "link": "https://mercadolivre.com/sec/1Zf8oXm",
           "freteGratis": true,
           "posicao": 1
@@ -195,7 +195,7 @@
       "ofertas": [
         {
           "marketplace": "Amazon",
-          "preco": 78.98,
+          "preco": 1519.9,
           "link": "https://amzn.to/4rArvkb",
           "freteGratis": true,
           "posicao": 1
@@ -236,7 +236,7 @@
         },
         {
           "marketplace": "Magazine Luiza",
-          "preco": 1409.56,
+          "preco": 1423.01,
           "link": "https://divulgador.magalu.com/AlZOHNjk",
           "freteGratis": true,
           "posicao": 3
@@ -310,7 +310,7 @@
         },
         {
           "marketplace": "Mercado Livre",
-          "preco": 31.89,
+          "preco": 33.26,
           "link": "https://mercadolivre.com/sec/2nANHEh",
           "freteGratis": true,
           "posicao": 1
@@ -330,7 +330,7 @@
       "ofertas": [
         {
           "marketplace": "Amazon",
-          "preco": 29.9,
+          "preco": 34.9,
           "link": "https://amzn.to/3JcOPUo",
           "freteGratis": false,
           "posicao": 3
@@ -357,7 +357,7 @@
       "ofertas": [
         {
           "marketplace": "Amazon",
-          "preco": 152.97,
+          "preco": 51.47,
           "link": "https://amzn.to/4ngerNW",
           "freteGratis": false,
           "posicao": 4
